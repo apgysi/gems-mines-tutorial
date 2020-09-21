@@ -1,0 +1,25 @@
+--- 
+title: "A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database"
+author: "Alexander Gysi"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+
+
+---
+
+# Prerequisites {-#prerequisites}
+
+ GEM-Selektor (GEMS), is a numerical modeling program with a graphical user interface based on Gibbs energy minimization and permits calculating and solving fluid-rock interaction problems of interest in geochemistry. 
+ 
+- Installation instructions for GEMS and more information about this modeling program can be found on the GEMS team webpage: http://gems.web.psi.ch/GEMS3/techinfo.html. 
+
+- Information about the MINES database and project files for the tutorials can be found under https://geoinfo.nmt.edu/tdb
+
+This booklet is subdivided into five modules. 
+
+- Module 1: Create your first project in GEMS and installing the MINES database

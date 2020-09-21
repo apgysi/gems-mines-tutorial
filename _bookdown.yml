@@ -1,0 +1,5 @@
+book_filename: "gems-mines-tutorial"
+language:
+  ui:
+    chapter_name: "Module "
+delete_merged_file: true
