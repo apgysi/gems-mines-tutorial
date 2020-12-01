@@ -1,3 +1,12 @@
+fig:fig-1
+fig:fig-2
+fig:fig-3
+fig:fig-4
+fig:fig-5
+fig:fig-6
+fig:fig-7
+fig:fig-8
+fig:fig-9
 intro
 installing-the-mines-thermodynamic-database
 creating-a-new-project-from-scratch
