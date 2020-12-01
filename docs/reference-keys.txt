@@ -1,0 +1,9 @@
+intro
+installing-the-mines-thermodynamic-database
+creating-a-new-project-from-scratch
+your-first-fluid-rock-equilibrium-model
+outcomes
+module-2
+module-3
+module-4
+module-5
