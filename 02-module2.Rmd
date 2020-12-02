@@ -121,7 +121,7 @@ What are the main differences for the simulations at 150 vs. 300 $^\circ$C? To m
 
 -- The resulting reaction path at 150 $^\circ$C is shown in \autoref{fig:process1i.jpeg}.
 
--- The resulting reaction path at 300 $^\circ$C is shown in \autoref{fig:process1j.jpeg
+-- The resulting reaction path at 300 $^\circ$C is shown in \autoref{fig:process1j.jpeg}
 
 ```{r,fig-14b, echo = FALSE, out.width="80%", fig.cap="Simulated K-feldspar reaction path show pH and moles minerals in equilibrium with a saline aqueous fluid at 150 °C and saturated water vapor pressure."} 
 knitr::include_graphics("figures/module2/fig-14.png")
