@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.11.30)  1 DEC 2020 18:38
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.11.30)  1 DEC 2020 18:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -854,6 +854,10 @@ e 374.
 LaTeX Warning: Reference `fig:process1i.jpeg' on page 26 undefined on input lin
 e 377.
 
+
+LaTeX Warning: Reference `fig:process1j.jpeg' on page 26 undefined on input lin
+e 379.
+
 File: figures/module2/fig-14.png Graphic file (type bmp)
 <figures/module2/fig-14.png>
 [26]
@@ -883,10 +887,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16869 strings out of 479393
- 295159 string characters out of 5879289
+ 16870 strings out of 479393
+ 295179 string characters out of 5879289
  742950 words of memory out of 5000000
- 36012 multiletter control sequences out of 15000+600000
+ 36013 multiletter control sequences out of 15000+600000
  541547 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  94i,6n,118p,630b,436s stack positions out of 5000i,500n,10000p,200000b,80000s
