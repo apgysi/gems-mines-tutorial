@@ -1,6 +1,6 @@
 # Create your first project in GEMS {#intro}
 
- Here we will learn how to create a new Project, the selection of thermodynamic databases, components and equations of state for your modeling project. We will also explain the project folder structure and how to install the [MINES thermodynamic database](https://geoinfo.nmt.edu/tdb) for modeling hydrothermal fluid-rock interaction and ore-forming processes . You will also learn how to interact basalt with water in your first equilibrium calculations.
+ Here we will learn how to create a new Project, the selection of thermodynamic databases, components and equations of state for your modeling project. We will also explain the project folder structure and how to install the [MINES thermodynamic database](https://geoinfo.nmt.edu/mines-tdb) for modeling hydrothermal fluid-rock interaction and ore-forming processes . You will also learn how to interact basalt with water in your first equilibrium calculations.
  
 ## Installing the MINES thermodynamic database
 
@@ -18,7 +18,7 @@ knitr::include_graphics("figures/module1/fig-1.png")
  	
 _In Linux this folder is in /Gems3-app/Resources/DB.default; In Mac OSX this folder is in /Applications/gems3 then right-click show package content and go to Contents/Resources/DB.default; In Windows this folder should be in /Gems3-app/Resources/DB.default._
  	
- 		The folder structure of the GEMS program, independent of the operating system used, consists of two main folders: 
+The folder structure of the GEMS program, independent of the operating system used, consists of two main folders: 
 
  		
 - Gems3-app

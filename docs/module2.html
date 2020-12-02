@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Module 2 Feldspar reaction path | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
+  <meta name="description" content="Module 2 Feldspar reaction path | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Module 2 Feldspar reaction path | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Module 2 Feldspar reaction path | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  
+  
+  
+
+<meta name="author" content="Alexander Gysi" />
+
+
+<meta name="date" content="2020-12-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="module-3.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">GEMS tutorial</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Create your first project in GEMS</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#installing-the-mines-thermodynamic-database"><i class="fa fa-check"></i><b>1.1</b> Installing the MINES thermodynamic database</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#creating-a-new-project-from-scratch"><i class="fa fa-check"></i><b>1.2</b> Creating a new project from scratch</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#your-first-fluid-rock-equilibrium-model"><i class="fa fa-check"></i><b>1.3</b> Your first fluid-rock equilibrium model</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#outcomes"><i class="fa fa-check"></i><b>1.4</b> Outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="module2.html"><a href="module2.html"><i class="fa fa-check"></i><b>2</b> Feldspar reaction path</a><ul>
+<li class="chapter" data-level="2.1" data-path="module2.html"><a href="module2.html#compute-the-chemical-equilibrium-of-single-chemical-systems-syseq"><i class="fa fa-check"></i><b>2.1</b> Compute the chemical equilibrium of single chemical systems (SysEq)</a></li>
+<li class="chapter" data-level="2.2" data-path="module2.html"><a href="module2.html#compute-processes-using-a-titration-model-process-s-mode"><i class="fa fa-check"></i><b>2.2</b> Compute processes using a titration model (Process, S mode)</a></li>
+<li class="chapter" data-level="2.3" data-path="module2.html"><a href="module2.html#change-p-t-of-the-titration-model"><i class="fa fa-check"></i><b>2.3</b> Change P-T of the titration model</a></li>
+<li class="chapter" data-level="2.4" data-path="module2.html"><a href="module2.html#tweak-and-plot-the-results"><i class="fa fa-check"></i><b>2.4</b> Tweak and plot the results</a></li>
+<li class="chapter" data-level="2.5" data-path="module2.html"><a href="module2.html#compute-processes-using-a-cooling-model-process-p-mode"><i class="fa fa-check"></i><b>2.5</b> Compute processes using a cooling model (Process, P mode)</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="module-3.html"><a href="module-3.html"><i class="fa fa-check"></i><b>3</b> Module 3</a></li>
+<li class="chapter" data-level="4" data-path="module-4.html"><a href="module-4.html"><i class="fa fa-check"></i><b>4</b> Module 4</a></li>
+<li class="chapter" data-level="5" data-path="module-5.html"><a href="module-5.html"><i class="fa fa-check"></i><b>5</b> Module 5</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="module2" class="section level1">
+<h1><span class="header-section-number">Module 2</span> Feldspar reaction path</h1>
+<p>In this tutorial, you will learn to model the reaction path of K-feldspar in contact with a NaCl-bearing aqueous solution and calculate the evolution of the fluid and the minerals formed as a function of increased fluid-rock interaction. You will also learn how to set up an automated cooling process simulation and plot results from multiple simulations. We will use the GEMS project file “Module2” that can be found either in the /Tutorial/Module2_fsp-reaction/unsolved workshop folder or download it directly <a href="https://geoinfo.nmt.edu/mines-tdb/GEMS-files/Module2.zip">here</a>.</p>
+<div id="compute-the-chemical-equilibrium-of-single-chemical-systems-syseq" class="section level2">
+<h2><span class="header-section-number">2.1</span> Compute the chemical equilibrium of single chemical systems (SysEq)</h2>
+<div class="figure"><span id="fig:fig-1b"></span>
+<img src="figures/module2/fig-1.jpg" alt="GEMS user interface showing the `Equilibria Calculation` and `Thermodynamic Database` modes." width="70%" />
+<p class="caption">
+Figure 2.1: GEMS user interface showing the <code>Equilibria Calculation</code> and <code>Thermodynamic Database</code> modes.
+</p>
+</div>
+<ul>
+<li><p>Copy the entire unzipped Module2 folder into your GEMS project directory located in Library/Gems3/projects. More information on the GEMS folder structure can be found in <a href="intro.html#intro">Module 1</a>.</p></li>
+<li><p>Open GEMS and choose the project in the <code>Equilibria Calculation Mode</code>. The user interface is shown in Figure <a href="module2.html#fig:fig-1b">2.1</a>. Panel 1 permits to create new records and run the program for calculations. Panel 2 gives you different calculation options.</p></li>
+<li><p>Choose the <code>Create a new record from scratch</code> from the menu in Panel 1 and fill the parameters listed in Figure <a href="module2.html#fig:fig-2b">2.2</a></p></li>
+<li><p>In the <code>Open recipe dialog</code>, which can also be found in Panel 1, add phases, quantity and units as shown in Figure <a href="module2.html#fig:fig-3b">2.3</a>; Aqua (1000 g), HCl (0.1 M), NaCl (50 g), O<span class="math inline">\(_{2(g)}\)</span> (1e-7) and K-feldspar (10 g).</p></li>
+</ul>
+<div class="figure"><span id="fig:fig-2b"></span>
+<img src="figures/module2/fig-2.jpg" alt="New record window. Select a name without spaces, a temperature and a pressure for your system. Note that a pressure of 0 corresond to saturated water vapor pressure." width="70%" />
+<p class="caption">
+Figure 2.2: New record window. Select a name without spaces, a temperature and a pressure for your system. Note that a pressure of 0 corresond to saturated water vapor pressure.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-3b"></span>
+<img src="figures/module2/fig-3.png" alt="System recipe dialog." width="70%" />
+<p class="caption">
+Figure 2.3: System recipe dialog.
+</p>
+</div>
+<ul>
+<li><p>Model the chemical equilibrium between 10 g of K-feldspar (microcline) and H<span class="math inline">\(_2\)</span>O at 150 <span class="math inline">\(^\circ\)</span>C by pressing <code>Calculate BCC</code> followed by <code>Calculate Equilibrium</code> in Panel 1. Inspect the pop up window with pH, redox (eH) and phase proportions, then accept.</p>
+<p>– Determine the pH of this system as shown in the lower right of the main window (Fig. <a href="module2.html#fig:fig-4b">2.4</a>).</p>
+<p>– What is the pH of this system with 10, 20, 50 and 100 g K-feldspar? Change the amount of feldspar by clicking the <code>Open recipe dialog</code> followed by <code>Calculate BCC</code> and by <code>Calculate Equilibrium</code>. What minerals are stable with increasing pH?</p></li>
+<li><p>Finally, clone your existing Rct_path_1 chemical system by selecting it and choosing <code>Clone a new record from this one</code> in Panel 1 (Fig. <a href="intro.html#fig:fig-1">1.1</a>). Change the name to Rct_path_2 and the temperature to 300 <span class="math inline">\(^\circ\)</span>C in the pop up window, and recalculate the equilibrium of this system.</p>
+<p>– Determine the pH of this system as shown in the lower right of the main window.</p>
+<p>– What is the pH of this system with 10, 20, 50 and 100 g K-feldspar? What minerals are stable with increasing pH?</p>
+<p>– Are there differences between the modeled system at 150 and 300 <span class="math inline">\(^\circ\)</span>C</p></li>
+</ul>
+<div class="figure"><span id="fig:fig-4b"></span>
+<img src="figures/module2/fig-4.png" alt="Results of the calculations, i.e. with 10 g K-feldspar added to the fluid." width="90%" />
+<p class="caption">
+Figure 2.4: Results of the calculations, i.e. with 10 g K-feldspar added to the fluid.
+</p>
+</div>
+</div>
+<div id="compute-processes-using-a-titration-model-process-s-mode" class="section level2">
+<h2><span class="header-section-number">2.2</span> Compute processes using a titration model (Process, S mode)</h2>
+<p>The previous part of this tutorial showed you how to do individual <code>SysEq</code> calculations. What if you want to automate this process and calculate the equilibria of 10 to 100 g feldspar in steps and plot the results, i.e. a titration model? In the following we will see how to set up <code>Process</code> simulations.</p>
+<ul>
+<li><p>Select the <code>Process</code> option in Panel 2 (Fig. <a href="module2.html#fig:fig-1b">2.1</a>).</p></li>
+<li><p>Click <code>Create a record from scratch</code> in Panel 1 and select your parent chemical system <code>SysEq</code> calculated previously at 150 <span class="math inline">\(^\circ\)</span>C (Fig. <a href="module2.html#fig:fig-5b">2.5</a>).</p></li>
+<li><p>Name this process simulation “titration_150C” and use the <code>Process simulation code</code> (S) as shown in Figures <a href="module2.html#fig:fig-6b">2.6</a>) and <a href="module2.html#fig:fig-7b">2.7</a>).</p></li>
+<li><p>In the next window, choose a model (<code>titration cNu linear</code>), a mineral ( <code>Compos</code>, Min_K-feldspar) and select the temperature (150 <span class="math inline">\(^\circ\)</span>C), pressure (0 for water vapor saturation P) and amount of mineral to be added (<code>iNu</code>: 10-250 g in 10 g steps) as shown in Figure <a href="module2.html#fig:fig-8b">2.8</a>. The parameters are: set <code>iTm</code> 1000, 1200, 1; set <code>iP</code> to 0 all fields; set <code>iNu</code> 10, 250, 10, corresponding to start, end, and step values.</p></li>
+<li><p>Select items to be plotted (<code>Scalars</code>: pH; <code>Xa</code>: Kaolinite, Pyrophyllite, Microcline, Muscovite, Albite and Quartz) as shown in Figure <a href="module2.html#fig:fig-9b">2.9</a>.</p></li>
+<li><p>Accept all the following dialogues. Then click on <code>Save this record to database</code> in Panel 1, which creates your new process simulation record. Then click on the calculator icon <code>Re-calculate and check record data</code> without displaying the graph.</p></li>
+</ul>
+<div class="figure"><span id="fig:fig-5b"></span>
+<img src="figures/module2/fig-5.png" alt="Select a parent chemical system (`SysEq`) for modeling a `Process`." width="70%" />
+<p class="caption">
+Figure 2.5: Select a parent chemical system (<code>SysEq</code>) for modeling a <code>Process</code>.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-6b"></span>
+<img src="figures/module2/fig-6.png" alt="Name the `Process` simulator and indicate the model type (note: the process type code names are described and changeable on the next screen as well)." width="70%" />
+<p class="caption">
+Figure 2.6: Name the <code>Process</code> simulator and indicate the model type (note: the process type code names are described and changeable on the next screen as well).
+</p>
+</div>
+<div class="figure"><span id="fig:fig-7b"></span>
+<img src="figures/module2/fig-7.png" alt="Window showing the different simulations types. Module 2 covers `mode S` for titration  or `mode P` for cooling/heating models." width="90%" />
+<p class="caption">
+Figure 2.7: Window showing the different simulations types. Module 2 covers <code>mode S</code> for titration or <code>mode P</code> for cooling/heating models.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-8b"></span>
+<img src="figures/module2/fig-8.png" alt="Set the parameters for the `Process` simulation; Set `iTm` 1000, 1200, 1; Set `iP` to 0 all fields; Set `iNu` 10, 250, 10." width="90%" />
+<p class="caption">
+Figure 2.8: Set the parameters for the <code>Process</code> simulation; Set <code>iTm</code> 1000, 1200, 1; Set <code>iP</code> to 0 all fields; Set <code>iNu</code> 10, 250, 10.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-9b"></span>
+<img src="figures/module2/fig-9.png" alt="Choose the results to be plotted, including pH and mole minerals." width="90%" />
+<p class="caption">
+Figure 2.9: Choose the results to be plotted, including pH and mole minerals.
+</p>
+</div>
+<ul>
+<li><p>There is a tab menu with 3 important selections: <code>Controls</code>, <code>Sampling</code> and <code>Results</code>. In the <code>Controls</code> tab add a description of the modeling project (Fig. <a href="module2.html#fig:fig-10b">2.10</a>). In the <code>Sampling</code> tab change the script as shown in Figure <a href="module2.html#fig:fig-11b">2.11</a> to choose as x-variable the amount of K-feldspar added (the process extent variable <code>cNu</code>).</p></li>
+<li><p>Click <code>Save this record to database</code>. Toggle to the <code>Results</code> tab to inspect your modeling results. Then click on the calculator icon <code>Re-calculate and check record data</code> and check what happens with the column xp. You just assigned the <code>cNu</code> variable to the x-axis and GEMS registered it. If not, go back on the <code>Sampling</code> tab and check your script! Now lets inspect the results…</p>
+<p>– How many grams of K-feldspar need to be added to get a constant pH and what is the value?</p>
+<p>– Which mineral assemblages buffer the fluid pH and can pH ranges be distinguished?</p></li>
+</ul>
+<div class="figure"><span id="fig:fig-10b"></span>
+<img src="figures/module2/fig-10.png" alt="The `Controls` window showing the model conditions. The top dialog is used to add a comment and the script dialog can be customized. `iTm` is used to set the record variable; `iP` to set pressure and `iTC` temperature; `iNu` is the process variable, in this case the amount of feldspar." width="100%" />
+<p class="caption">
+Figure 2.10: The <code>Controls</code> window showing the model conditions. The top dialog is used to add a comment and the script dialog can be customized. <code>iTm</code> is used to set the record variable; <code>iP</code> to set pressure and <code>iTC</code> temperature; <code>iNu</code> is the process variable, in this case the amount of feldspar.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-11b"></span>
+<img src="figures/module2/fig-11.png" alt="The `Sampling` window showing the x- and y-axes to be sampled. Make sure to change `xp[J]` to `cNu` which is the progress variable. Then click on a blank space to make sure the script window has been registered followed by `Save this record in the database` in the top panel." width="100%" />
+<p class="caption">
+Figure 2.11: The <code>Sampling</code> window showing the x- and y-axes to be sampled. Make sure to change <code>xp[J]</code> to <code>cNu</code> which is the progress variable. Then click on a blank space to make sure the script window has been registered followed by <code>Save this record in the database</code> in the top panel.
+</p>
+</div>
+</div>
+<div id="change-p-t-of-the-titration-model" class="section level2">
+<h2><span class="header-section-number">2.3</span> Change P-T of the titration model</h2>
+<p>Now lets clone our record to calculate the exact same titration model but changing the temperature (T) to 300 <span class="math inline">\(^\circ\)</span>C and the pressure (P) to 500 bar.</p>
+<ul>
+<li><p>Clone your existing process simulation by selecting the existing record on the left and choose <code>Clone a new record</code>, then select your <code>SysEq</code> parent system calculated at 300 <span class="math inline">\(^\circ\)</span>C (Fig. <a href="module2.html#fig:fig-12b">2.12</a>). Accept all the following dialogues.</p></li>
+<li><p>In the <code>Controls</code> tab change the description of the modeling project and change the temperature to 300 <span class="math inline">\(^\circ\)</span>C and pressure to 500 bar to replace the starting and ending values (Fig. <a href="module2.html#fig:fig-13b">2.13</a>). Click <code>Save this record to database</code>.</p></li>
+<li><p>Switch the tab to <code>Results</code> and click the calculator icon <code>Re-calculate and check record data</code> to see how the pH values and moles minerals are changed by increasing the system temperature.</p></li>
+<li><p>Toggle between both calculated process simulations at 150 and 300 <span class="math inline">\(^\circ\)</span>C on the left pane and compare the results.</p></li>
+</ul>
+<div class="figure"><span id="fig:fig-12b"></span>
+<img src="figures/module2/fig-12.png" alt="The `Sampling` window showing the x- and y-axes to be sampled. Make sure to change `xp[J]` to `cNu` which is the progress variable. Then click on a blank space to make sure the script window has been registered followed by `Save this record in the database` in the top panel." width="70%" />
+<p class="caption">
+Figure 2.12: The <code>Sampling</code> window showing the x- and y-axes to be sampled. Make sure to change <code>xp[J]</code> to <code>cNu</code> which is the progress variable. Then click on a blank space to make sure the script window has been registered followed by <code>Save this record in the database</code> in the top panel.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-13b"></span>
+<img src="figures/module2/fig-13.png" alt="The `Controls` window showing a model set up at a different temperture and pressure." width="80%" />
+<p class="caption">
+Figure 2.13: The <code>Controls</code> window showing a model set up at a different temperture and pressure.
+</p>
+</div>
+</div>
+<div id="tweak-and-plot-the-results" class="section level2">
+<h2><span class="header-section-number">2.4</span> Tweak and plot the results</h2>
+<p>What are the main differences for the simulations at 150 vs. 300 <span class="math inline">\(^\circ\)</span>C? To make a better comparison lets fine tune the models and plot them!</p>
+<ul>
+<li><p>Select the process simulation you generated previously at 150 <span class="math inline">\(^\circ\)</span>C and in the <code>Controls</code> tab change the amount of K-feldspar to be added using 2 to 50 g in 2 g steps and save.</p></li>
+<li><p>Choose the <code>Results</code> tab and click the calculator icon <code>Re-calculate and check record data</code>. Click on the small <code>Plot data on Graph dialog</code> in Panel 1. The resulting graph should look similar to Figure <a href="module2.html#fig:fig-14b">2.14</a>. The plots indicate different mineral assemblage buffer the fluid at different pH values. You can inspect which minerals by choosing the Customize button with values shown in .</p></li>
+</ul>
+<p>– The resulting reaction path at 150 <span class="math inline">\(^\circ\)</span>C is shown in .</p>
+<p>– The resulting reaction path at 300 <span class="math inline">\(^\circ\)</span>C is shown in \autoref{fig:process1j.jpeg</p>
+<div class="figure"><span id="fig:fig-14b"></span>
+<img src="figures/module2/fig-14.png" alt="Simulated K-feldspar reaction path show pH and moles minerals in equilibrium with a saline aqueous fluid at 150 °C and saturated water vapor pressure." width="80%" />
+<p class="caption">
+Figure 2.14: Simulated K-feldspar reaction path show pH and moles minerals in equilibrium with a saline aqueous fluid at 150 °C and saturated water vapor pressure.
+</p>
+</div>
+</div>
+<div id="compute-processes-using-a-cooling-model-process-p-mode" class="section level2">
+<h2><span class="header-section-number">2.5</span> Compute processes using a cooling model (Process, P mode)</h2>
+<p>Or what if you want to calculate the equilibria between feldspar and the aqueous fluid at 150 to 250 <span class="math inline">\(^\circ\)</span>C in steps, i.e. a cooling model?</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="module-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/apgysi/gems-mines-tutorial/edit/master/02-module2.Rmd",
+"text": "Suggest an edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["gems-mines-tutorial.pdf", "gems-mines-tutorial.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
