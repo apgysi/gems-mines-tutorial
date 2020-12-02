@@ -1,6 +1,6 @@
 # Feldspar reaction path {#module2}
 
-In this tutorial, you will learn to model the reaction path of K-feldspar in contact with a NaCl-bearing aqueous solution and calculate the evolution of the fluid and the minerals formed as a function of increased fluid-rock interaction. You will also learn how to set up  an automated cooling process simulation and plot results from multiple simulations. We will use the GEMS project file "Module2" that can be found either in the /Tutorial/Module2_fsp-reaction/unsolved workshop folder or download it directly [here](https://geoinfo.nmt.edu/mines-tdb/GEMS-files/Module2.zip). 
+In this tutorial, you will learn to model the reaction path of K-feldspar in contact with a NaCl-bearing aqueous solution and calculate the evolution of the fluid and the minerals formed as a function of increased fluid-rock interaction. You will also learn how to set up an automated cooling process simulation and plot results from multiple simulations. We will use the GEMS project file "Module2" that can be found either in the /Tutorial/Module2_fsp-reaction/unsolved workshop folder or download it directly [here](https://geoinfo.nmt.edu/mines-tdb/GEMS-files/Module2.zip). 
 
 ## Compute the chemical equilibrium of single chemical systems (SysEq)
 ```{r,fig-1b, echo = FALSE, out.width="70%", fig.cap="GEMS user interface showing the `Equilibria Calculation` and `Thermodynamic Database` modes."} 
@@ -29,7 +29,7 @@ knitr::include_graphics("figures/module2/fig-3.png")
 
   -- What is the pH of this system with 10, 20, 50 and 100 g K-feldspar? Change the amount of feldspar by clicking the `Open recipe dialog` followed by `Calculate BCC` and by `Calculate Equilibrium`. What minerals are stable with increasing pH?
 	
-- Finally, clone your existing Rct_path_1 chemical system by selecting it and choosing `Clone a new record from this one`	in Panel 1 (Fig. \@ref(fig:fig-1)). Change the name to Rct_path_2 and the temperature to 300 $^\circ$C in the pop up window, and recalculate the equilibrium of this system.
+- Finally, clone your existing Rct_path_1 chemical system by selecting it and choosing `Clone a new record from this one`	in Panel 1 (Fig. \@ref(fig:fig-1b)). Change the name to Rct_path_2 and the temperature to 300 $^\circ$C in the pop up window, and recalculate the equilibrium of this system.
 
   -- Determine the pH of this system as shown in the lower right of the main window.
 	 	
@@ -41,7 +41,7 @@ knitr::include_graphics("figures/module2/fig-3.png")
 ```{r,fig-4b, echo = FALSE, out.width="90%", fig.cap="Results of the calculations, i.e. with 10 g K-feldspar added to the fluid."} 
 knitr::include_graphics("figures/module2/fig-4.png")
 ```
-## Compute processes using a titration model (Process, S mode)
+## Compute a titration model (Process, S mode)
 
 The previous part of this tutorial showed you how to do individual `SysEq` calculations. What if you want to automate this process and calculate the equilibria of 10 to 100 g feldspar in steps and plot the results, i.e. a titration model? In the following we will see how to set up `Process` simulations.
 
@@ -92,7 +92,7 @@ knitr::include_graphics("figures/module2/fig-10.png")
 knitr::include_graphics("figures/module2/fig-11.png")
 ```
 
-## Change P-T of the titration model
+## Modify P-T of the feldspar reaction path
 Now lets clone our record to calculate the exact same titration model but  changing the temperature (T) to 300 $^\circ$C and the pressure (P) to 500 bar.
 
 - Clone your existing process simulation by selecting the existing record on the left and choose `Clone a new record`, then select your `SysEq` parent system calculated at 300 $^\circ$C (Fig. \@ref(fig:fig-12b)). Accept all the following dialogues. 
@@ -113,26 +113,76 @@ knitr::include_graphics("figures/module2/fig-13.png")
 
 ## Tweak and plot the results 
 
-What are the main differences for the simulations at 150 vs. 300 $^\circ$C? To make a better comparison lets fine tune the models and plot them!
+So what are the main differences for the simulations at 150 vs. 300 $^\circ$C? To make a better comparison lets fine tune our models and plot them!
+
 	
 - Select the process simulation you generated previously at 150 $^\circ$C and in the  `Controls` tab change the amount of K-feldspar to be added using 2 to 50 g in 2 g steps and save. 
 
-- Choose the `Results` tab and click the calculator icon `Re-calculate and check record data`. Click on the small `Plot data on Graph dialog` in Panel 1. The resulting graph should look similar to Figure \@ref(fig:fig-14b). The plots indicate different mineral assemblage buffer the fluid at different pH values. You can inspect which minerals by choosing the Customize button with values shown in \autoref{fig:process1h.jpeg}.
+- Choose the `Results` tab and click the calculator icon `Re-calculate and check record data`. Click on the small `Plot data on Graph dialog` icon in Panel 1. The resulting graph should look similar to Figure \@ref(fig:fig-14b). The plots indicate that different mineral assemblages buffer the fluid pH values. 
 
--- The resulting reaction path at 150 $^\circ$C is shown in \autoref{fig:process1i.jpeg}.
+- You can inspect which minerals by clicking the  `Customize` button at the bottom of the plot and enter the values shown in \@ref(fig:fig-15b), then click `Apply`. Click then on `Fragment` which will enable an inset view of your plot to have a closer look at the minerals. Clicking again `Fragment` zooms out to show the pH. It is also possible to do this with the mouse, but note that this will then overwrite the x-y-axis ranges you just entered manually.
 
--- The resulting reaction path at 300 $^\circ$C is shown in \autoref{fig:process1j.jpeg}
+- To label the lines on the plot simply drag the mineral names from the legend on the right into your plot. 
+
+- You can also switch on/off minerals or pH by toggling the corresponding fields in the laegend from 0 to off (or o-letter or 0-number keys on your keyboard). Now you should be able to reproduce the look in Figure \@ref(fig:fig-14b). To save, simply click on `Save` at the bottom of your plot in the desired format (e.g. pdf, png, etc.). 
 
 ```{r,fig-14b, echo = FALSE, out.width="80%", fig.cap="Simulated K-feldspar reaction path show pH and moles minerals in equilibrium with a saline aqueous fluid at 150 °C and saturated water vapor pressure."} 
 knitr::include_graphics("figures/module2/fig-14.png")
 ```
 
+```{r,fig-15b, echo = FALSE, out.width="80%", fig.cap="`Customize` window showing options to tweak the plot. Here you can change the plot type, x- and y-axes, the font size, add labels and also the zoom-in feature by selecting x-y under Fragment. The right legend can also be turned on/off by toggling 0 to off (or using the o-letter or 0-number keys on your keyboard), and legend names dragged into the plot."} 
+knitr::include_graphics("figures/module2/fig-15.png")
+```
+
+- Now select the process simulation you generated previously at 300 $^\circ$C and 500 bar. In the  `Controls` tab change the amount of K-feldspar to be added using 5 to 125 g in 5 g steps, re-calculate and save. Try to tweak your graph to look like Figure \@ref(fig:fig-16b). 
+
+- Figure \@ref(fig:fig-17b) shows an alternative way to make a cumulative plot. 
+
+- You can now easily compare both feldspar reaction path models generated using the `Process` simulation in S mode!
+
+-- The resulting reaction path at 150 $^\circ$C is shown in Figure \@ref(fig:fig-14b).
+
+-- The resulting reaction path at 300 $^\circ$C is shown in Figure \@ref(fig:fig-16b).
+
+```{r,fig-16b, echo = FALSE, out.width="80%", fig.cap="Simulated K-feldspar reaction path show pH and moles minerals in equilibrium with a saline aqueous fluid at 300 °C and 500 bar."} 
+knitr::include_graphics("figures/module2/fig-16.png")
+```
+
+```{r,fig-17b, echo = FALSE, out.width="80%", fig.cap="Simulated K-feldspar reaction path show pH and moles minerals in equilibrium with a saline aqueous fluid at 300 °C and 500 bar. To view this plot type choose the option `1- Cumulative` plot in the plot `Customize` window. Make sure to also switch off pH in the legend to only plot moles minerals."} 
+knitr::include_graphics("figures/module2/fig-17.png")
+```
+
+## Compute a cooling model (Process, P mode)
+
+This part of Module 2 describes how to calculate the equilibrium between feldspar and the aqueous fluid at a constant mineral/fluid ratio but varying temperature. We will set up a cooling model from 150 to 300 $^\circ$C in selected steps using the `Process` simulation in `P mode`. We will use knowledge gained until here. This part is quick so buckle up! 
+
+- Create a parent system equilibrium record in `SysEq` simulation mode \@ref(fig:fig-4b) by cloning Rct_path_2. Lets call this new record Rct_cooling, select 300 °C and 500 bar, and calculate its equilibrium.
+
+- Switch to `Process`simulation mode and clone Rct_path_2. Select the Rct_cooling `SysEq` record (Fig. \@ref(fig:fig-18b)). Then call this new record Cooling_150-300C and select P for the simulation mode.
+
+- In the `Controls` tab (or wizard step 2) select `No script`, set `iNu` to 0 and `iTC` to 300, 150, -5 as shown in Figure \@ref(fig:fig-19b).
+
+- The final step is to set the x-variable to temperature by modifying the script in the `Sampling` tab to `cTC` (Fig. \@ref(fig:fig-20b)). Save your record and re-calculate.
+
+- Now you can plot and tweak your results to look similar to Figure \@ref(fig:fig-21b)).
 
 
+```{r,fig-18b, echo = FALSE, out.width="70%", fig.cap="Select the parent record generated in `SysEq` for your new `Process` simulation."} 
+knitr::include_graphics("figures/module2/fig-18.png")
+```
 
+```{r,fig-19b, echo = FALSE, out.width="80%", fig.cap="`Controls` window showing the set up for a cooling model (no titration); select `No script`, set `iNu` to 0 and `iTC` to 300, 150, -5."} 
+knitr::include_graphics("figures/module2/fig-19.png")
+```
 
+```{r,fig-20b, echo = FALSE, out.width="80%", fig.cap="`Sampling` tab window showing how to modify the x-axis to display temperature `cTC`."} 
+knitr::include_graphics("figures/module2/fig-20.png")
+```
 
+```{r,fig-21b, echo = FALSE, out.width="80%", fig.cap="Cooling model showing the feldspar reaction path between 300 and 150 °C in 5 °C steps at a fluid/rock ratio of 100."} 
+knitr::include_graphics("figures/module2/fig-21.png")
+```
 
-## Compute processes using a cooling model (Process, P mode)
+## Outcomes
 
-Or what if you want to calculate the equilibria between feldspar and the aqueous fluid at 150 to 250 $^\circ$C in steps, i.e. a cooling model? 
+Good job! In Module 2 you learned how to run and automate fluid-mineral equilibria simulations using the `Process` mode. You can now generate titration models in `S mode` or cooling models in `P mode`. You also know how to do plots in GEMS, tweak and export them. 

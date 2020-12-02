@@ -24,7 +24,7 @@
 <meta name="author" content="Alexander Gysi" />
 
 
-<meta name="date" content="2020-12-01" />
+<meta name="date" content="2020-12-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -81,10 +81,11 @@
 </ul></li>
 <li class="chapter" data-level="2" data-path="module2.html"><a href="module2.html"><i class="fa fa-check"></i><b>2</b> Feldspar reaction path</a><ul>
 <li class="chapter" data-level="2.1" data-path="module2.html"><a href="module2.html#compute-the-chemical-equilibrium-of-single-chemical-systems-syseq"><i class="fa fa-check"></i><b>2.1</b> Compute the chemical equilibrium of single chemical systems (SysEq)</a></li>
-<li class="chapter" data-level="2.2" data-path="module2.html"><a href="module2.html#compute-processes-using-a-titration-model-process-s-mode"><i class="fa fa-check"></i><b>2.2</b> Compute processes using a titration model (Process, S mode)</a></li>
-<li class="chapter" data-level="2.3" data-path="module2.html"><a href="module2.html#change-p-t-of-the-titration-model"><i class="fa fa-check"></i><b>2.3</b> Change P-T of the titration model</a></li>
+<li class="chapter" data-level="2.2" data-path="module2.html"><a href="module2.html#compute-a-titration-model-process-s-mode"><i class="fa fa-check"></i><b>2.2</b> Compute a titration model (Process, S mode)</a></li>
+<li class="chapter" data-level="2.3" data-path="module2.html"><a href="module2.html#modify-p-t-of-the-feldspar-reaction-path"><i class="fa fa-check"></i><b>2.3</b> Modify P-T of the feldspar reaction path</a></li>
 <li class="chapter" data-level="2.4" data-path="module2.html"><a href="module2.html#tweak-and-plot-the-results"><i class="fa fa-check"></i><b>2.4</b> Tweak and plot the results</a></li>
-<li class="chapter" data-level="2.5" data-path="module2.html"><a href="module2.html#compute-processes-using-a-cooling-model-process-p-mode"><i class="fa fa-check"></i><b>2.5</b> Compute processes using a cooling model (Process, P mode)</a></li>
+<li class="chapter" data-level="2.5" data-path="module2.html"><a href="module2.html#compute-a-cooling-model-process-p-mode"><i class="fa fa-check"></i><b>2.5</b> Compute a cooling model (Process, P mode)</a></li>
+<li class="chapter" data-level="2.6" data-path="module2.html"><a href="module2.html#outcomes-1"><i class="fa fa-check"></i><b>2.6</b> Outcomes</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="module-3.html"><a href="module-3.html"><i class="fa fa-check"></i><b>3</b> Module 3</a></li>
 <li class="chapter" data-level="4" data-path="module-4.html"><a href="module-4.html"><i class="fa fa-check"></i><b>4</b> Module 4</a></li>
@@ -142,7 +143,7 @@ Figure 2.3: System recipe dialog.
 <li><p>Model the chemical equilibrium between 10 g of K-feldspar (microcline) and H<span class="math inline">\(_2\)</span>O at 150 <span class="math inline">\(^\circ\)</span>C by pressing <code>Calculate BCC</code> followed by <code>Calculate Equilibrium</code> in Panel 1. Inspect the pop up window with pH, redox (eH) and phase proportions, then accept.</p>
 <p>– Determine the pH of this system as shown in the lower right of the main window (Fig. <a href="module2.html#fig:fig-4b">2.4</a>).</p>
 <p>– What is the pH of this system with 10, 20, 50 and 100 g K-feldspar? Change the amount of feldspar by clicking the <code>Open recipe dialog</code> followed by <code>Calculate BCC</code> and by <code>Calculate Equilibrium</code>. What minerals are stable with increasing pH?</p></li>
-<li><p>Finally, clone your existing Rct_path_1 chemical system by selecting it and choosing <code>Clone a new record from this one</code> in Panel 1 (Fig. <a href="intro.html#fig:fig-1">1.1</a>). Change the name to Rct_path_2 and the temperature to 300 <span class="math inline">\(^\circ\)</span>C in the pop up window, and recalculate the equilibrium of this system.</p>
+<li><p>Finally, clone your existing Rct_path_1 chemical system by selecting it and choosing <code>Clone a new record from this one</code> in Panel 1 (Fig. <a href="module2.html#fig:fig-1b">2.1</a>). Change the name to Rct_path_2 and the temperature to 300 <span class="math inline">\(^\circ\)</span>C in the pop up window, and recalculate the equilibrium of this system.</p>
 <p>– Determine the pH of this system as shown in the lower right of the main window.</p>
 <p>– What is the pH of this system with 10, 20, 50 and 100 g K-feldspar? What minerals are stable with increasing pH?</p>
 <p>– Are there differences between the modeled system at 150 and 300 <span class="math inline">\(^\circ\)</span>C</p></li>
@@ -154,8 +155,8 @@ Figure 2.4: Results of the calculations, i.e. with 10 g K-feldspar added to the
 </p>
 </div>
 </div>
-<div id="compute-processes-using-a-titration-model-process-s-mode" class="section level2">
-<h2><span class="header-section-number">2.2</span> Compute processes using a titration model (Process, S mode)</h2>
+<div id="compute-a-titration-model-process-s-mode" class="section level2">
+<h2><span class="header-section-number">2.2</span> Compute a titration model (Process, S mode)</h2>
 <p>The previous part of this tutorial showed you how to do individual <code>SysEq</code> calculations. What if you want to automate this process and calculate the equilibria of 10 to 100 g feldspar in steps and plot the results, i.e. a titration model? In the following we will see how to set up <code>Process</code> simulations.</p>
 <ul>
 <li><p>Select the <code>Process</code> option in Panel 2 (Fig. <a href="module2.html#fig:fig-1b">2.1</a>).</p></li>
@@ -214,8 +215,8 @@ Figure 2.11: The <code>Sampling</code> window showing the x- and y-axes to be sa
 </p>
 </div>
 </div>
-<div id="change-p-t-of-the-titration-model" class="section level2">
-<h2><span class="header-section-number">2.3</span> Change P-T of the titration model</h2>
+<div id="modify-p-t-of-the-feldspar-reaction-path" class="section level2">
+<h2><span class="header-section-number">2.3</span> Modify P-T of the feldspar reaction path</h2>
 <p>Now lets clone our record to calculate the exact same titration model but changing the temperature (T) to 300 <span class="math inline">\(^\circ\)</span>C and the pressure (P) to 500 bar.</p>
 <ul>
 <li><p>Clone your existing process simulation by selecting the existing record on the left and choose <code>Clone a new record</code>, then select your <code>SysEq</code> parent system calculated at 300 <span class="math inline">\(^\circ\)</span>C (Fig. <a href="module2.html#fig:fig-12b">2.12</a>). Accept all the following dialogues.</p></li>
@@ -238,23 +239,84 @@ Figure 2.13: The <code>Controls</code> window showing a model set up at a differ
 </div>
 <div id="tweak-and-plot-the-results" class="section level2">
 <h2><span class="header-section-number">2.4</span> Tweak and plot the results</h2>
-<p>What are the main differences for the simulations at 150 vs. 300 <span class="math inline">\(^\circ\)</span>C? To make a better comparison lets fine tune the models and plot them!</p>
+<p>So what are the main differences for the simulations at 150 vs. 300 <span class="math inline">\(^\circ\)</span>C? To make a better comparison lets fine tune our models and plot them!</p>
 <ul>
 <li><p>Select the process simulation you generated previously at 150 <span class="math inline">\(^\circ\)</span>C and in the <code>Controls</code> tab change the amount of K-feldspar to be added using 2 to 50 g in 2 g steps and save.</p></li>
-<li><p>Choose the <code>Results</code> tab and click the calculator icon <code>Re-calculate and check record data</code>. Click on the small <code>Plot data on Graph dialog</code> in Panel 1. The resulting graph should look similar to Figure <a href="module2.html#fig:fig-14b">2.14</a>. The plots indicate different mineral assemblage buffer the fluid at different pH values. You can inspect which minerals by choosing the Customize button with values shown in .</p></li>
+<li><p>Choose the <code>Results</code> tab and click the calculator icon <code>Re-calculate and check record data</code>. Click on the small <code>Plot data on Graph dialog</code> icon in Panel 1. The resulting graph should look similar to Figure <a href="module2.html#fig:fig-14b">2.14</a>. The plots indicate that different mineral assemblages buffer the fluid pH values.</p></li>
+<li><p>You can inspect which minerals by clicking the <code>Customize</code> button at the bottom of the plot and enter the values shown in <a href="module2.html#fig:fig-15b">2.15</a>, then click <code>Apply</code>. Click then on <code>Fragment</code> which will enable an inset view of your plot to have a closer look at the minerals. Clicking again <code>Fragment</code> zooms out to show the pH. It is also possible to do this with the mouse, but note that this will then overwrite the x-y-axis ranges you just entered manually.</p></li>
+<li><p>To label the lines on the plot simply drag the mineral names from the legend on the right into your plot.</p></li>
+<li><p>You can also switch on/off minerals or pH by toggling the corresponding fields in the laegend from 0 to off (or o-letter or 0-number keys on your keyboard). Now you should be able to reproduce the look in Figure <a href="module2.html#fig:fig-14b">2.14</a>. To save, simply click on <code>Save</code> at the bottom of your plot in the desired format (e.g. pdf, png, etc.).</p></li>
 </ul>
-<p>– The resulting reaction path at 150 <span class="math inline">\(^\circ\)</span>C is shown in .</p>
-<p>– The resulting reaction path at 300 <span class="math inline">\(^\circ\)</span>C is shown in </p>
 <div class="figure"><span id="fig:fig-14b"></span>
 <img src="figures/module2/fig-14.png" alt="Simulated K-feldspar reaction path show pH and moles minerals in equilibrium with a saline aqueous fluid at 150 °C and saturated water vapor pressure." width="80%" />
 <p class="caption">
 Figure 2.14: Simulated K-feldspar reaction path show pH and moles minerals in equilibrium with a saline aqueous fluid at 150 °C and saturated water vapor pressure.
 </p>
 </div>
+<div class="figure"><span id="fig:fig-15b"></span>
+<img src="figures/module2/fig-15.png" alt="`Customize` window showing options to tweak the plot. Here you can change the plot type, x- and y-axes, the font size, add labels and also the zoom-in feature by selecting x-y under Fragment. The right legend can also be turned on/off by toggling 0 to off (or using the o-letter or 0-number keys on your keyboard), and legend names dragged into the plot." width="80%" />
+<p class="caption">
+Figure 2.15: <code>Customize</code> window showing options to tweak the plot. Here you can change the plot type, x- and y-axes, the font size, add labels and also the zoom-in feature by selecting x-y under Fragment. The right legend can also be turned on/off by toggling 0 to off (or using the o-letter or 0-number keys on your keyboard), and legend names dragged into the plot.
+</p>
 </div>
-<div id="compute-processes-using-a-cooling-model-process-p-mode" class="section level2">
-<h2><span class="header-section-number">2.5</span> Compute processes using a cooling model (Process, P mode)</h2>
-<p>Or what if you want to calculate the equilibria between feldspar and the aqueous fluid at 150 to 250 <span class="math inline">\(^\circ\)</span>C in steps, i.e. a cooling model?</p>
+<ul>
+<li><p>Now select the process simulation you generated previously at 300 <span class="math inline">\(^\circ\)</span>C and 500 bar. In the <code>Controls</code> tab change the amount of K-feldspar to be added using 5 to 125 g in 5 g steps, re-calculate and save. Try to tweak your graph to look like Figure <a href="module2.html#fig:fig-16b">2.16</a>.</p></li>
+<li><p>Figure <a href="module2.html#fig:fig-17b">2.17</a> shows an alternative way to make a cumulative plot.</p></li>
+<li><p>You can now easily compare both feldspar reaction path models generated using the <code>Process</code> simulation in S mode!</p></li>
+</ul>
+<p>– The resulting reaction path at 150 <span class="math inline">\(^\circ\)</span>C is shown in Figure <a href="module2.html#fig:fig-14b">2.14</a>.</p>
+<p>– The resulting reaction path at 300 <span class="math inline">\(^\circ\)</span>C is shown in Figure <a href="module2.html#fig:fig-16b">2.16</a>.</p>
+<div class="figure"><span id="fig:fig-16b"></span>
+<img src="figures/module2/fig-16.png" alt="Simulated K-feldspar reaction path show pH and moles minerals in equilibrium with a saline aqueous fluid at 300 °C and 500 bar." width="80%" />
+<p class="caption">
+Figure 2.16: Simulated K-feldspar reaction path show pH and moles minerals in equilibrium with a saline aqueous fluid at 300 °C and 500 bar.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-17b"></span>
+<img src="figures/module2/fig-17.png" alt="Simulated K-feldspar reaction path show pH and moles minerals in equilibrium with a saline aqueous fluid at 300 °C and 500 bar. To view this plot type choose the option `1- Cumulative` plot in the plot `Customize` window. Make sure to also switch off pH in the legend to only plot moles minerals." width="80%" />
+<p class="caption">
+Figure 2.17: Simulated K-feldspar reaction path show pH and moles minerals in equilibrium with a saline aqueous fluid at 300 °C and 500 bar. To view this plot type choose the option <code>1- Cumulative</code> plot in the plot <code>Customize</code> window. Make sure to also switch off pH in the legend to only plot moles minerals.
+</p>
+</div>
+</div>
+<div id="compute-a-cooling-model-process-p-mode" class="section level2">
+<h2><span class="header-section-number">2.5</span> Compute a cooling model (Process, P mode)</h2>
+<p>This part of Module 2 describes how to calculate the equilibrium between feldspar and the aqueous fluid at a constant mineral/fluid ratio but varying temperature. We will set up a cooling model from 150 to 300 <span class="math inline">\(^\circ\)</span>C in selected steps using the <code>Process</code> simulation in <code>P mode</code>. We will use knowledge gained until here. This part is quick so buckle up!</p>
+<ul>
+<li><p>Create a parent system equilibrium record in <code>SysEq</code> simulation mode <a href="module2.html#fig:fig-4b">2.4</a> by cloning Rct_path_2. Lets call this new record Rct_cooling, select 300 °C and 500 bar, and calculate its equilibrium.</p></li>
+<li><p>Switch to <code>Process</code>simulation mode and clone Rct_path_2. Select the Rct_cooling <code>SysEq</code> record (Fig. <a href="module2.html#fig:fig-18b">2.18</a>). Then call this new record Cooling_150-300C and select P for the simulation mode.</p></li>
+<li><p>In the <code>Controls</code> tab (or wizard step 2) select <code>No script</code>, set <code>iNu</code> to 0 and <code>iTC</code> to 300, 150, -5 as shown in Figure <a href="module2.html#fig:fig-19b">2.19</a>.</p></li>
+<li><p>The final step is to set the x-variable to temperature by modifying the script in the <code>Sampling</code> tab to <code>cTC</code> (Fig. <a href="module2.html#fig:fig-20b">2.20</a>). Save your record and re-calculate.</p></li>
+<li><p>Now you can plot and tweak your results to look similar to Figure <a href="module2.html#fig:fig-21b">2.21</a>).</p></li>
+</ul>
+<div class="figure"><span id="fig:fig-18b"></span>
+<img src="figures/module2/fig-18.png" alt="Select the parent record generated in `SysEq` for your new `Process` simulation." width="70%" />
+<p class="caption">
+Figure 2.18: Select the parent record generated in <code>SysEq</code> for your new <code>Process</code> simulation.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-19b"></span>
+<img src="figures/module2/fig-19.png" alt="`Controls` window showing the set up for a cooling model (no titration); select `No script`, set `iNu` to 0 and `iTC` to 300, 150, -5." width="80%" />
+<p class="caption">
+Figure 2.19: <code>Controls</code> window showing the set up for a cooling model (no titration); select <code>No script</code>, set <code>iNu</code> to 0 and <code>iTC</code> to 300, 150, -5.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-20b"></span>
+<img src="figures/module2/fig-20.png" alt="`Sampling` tab window showing how to modify the x-axis to display temperature `cTC`." width="80%" />
+<p class="caption">
+Figure 2.20: <code>Sampling</code> tab window showing how to modify the x-axis to display temperature <code>cTC</code>.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-21b"></span>
+<img src="figures/module2/fig-21.png" alt="Cooling model showing the feldspar reaction path between 300 and 150 °C in 5 °C steps at a fluid/rock ratio of 100." width="80%" />
+<p class="caption">
+Figure 2.21: Cooling model showing the feldspar reaction path between 300 and 150 °C in 5 °C steps at a fluid/rock ratio of 100.
+</p>
+</div>
+</div>
+<div id="outcomes-1" class="section level2">
+<h2><span class="header-section-number">2.6</span> Outcomes</h2>
+<p>Good job! In Module 2 you learned how to run and automate fluid-mineral equilibria simulations using the <code>Process</code> mode. You can now generate titration models in <code>S mode</code> or cooling models in <code>P mode</code>. You also know how to do plots in GEMS, tweak and export them.</p>
 
 </div>
 </div>
