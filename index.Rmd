@@ -18,7 +18,7 @@ link-citations: yes
  
 - Installation instructions for GEMS and more information about this modeling program can be found on the GEMS team webpage: http://gems.web.psi.ch/GEMS3/techinfo.html. 
 
-- Information about the MINES database and project files for the tutorials can be found under https://geoinfo.nmt.edu/tdb-mines
+- Information about the MINES database and project files for the tutorials can be found under https://geoinfo.nmt.edu/mines-tdb
 
 This booklet is subdivided into five modules. 
 

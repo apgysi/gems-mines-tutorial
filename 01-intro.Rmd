@@ -4,7 +4,7 @@
  
 ## Installing the MINES thermodynamic database
 
-The MINES thermodynamic database can be downloaded at https://geoinfo.nmt.edu/tdb (Fig. \@ref(fig:fig-1)).
+The MINES thermodynamic database can be downloaded at https://geoinfo.nmt.edu/mines-tdb (Fig. \@ref(fig:fig-1)).
 
 
 ```{r,fig-1, echo = FALSE, out.width="90%", fig.cap="The MINES thermodynamic database webpage and files to download. Select the weblink for MINES19."} 
