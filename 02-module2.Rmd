@@ -1,6 +1,6 @@
 # Feldspar reaction path {#module2}
 
-In this tutorial, you will learn to model the reaction path of K-feldspar in contact with a NaCl-bearing aqueous solution and calculate the evolution of the fluid and the minerals formed as a function of increased fluid-rock interaction. You will also learn how to set up an automated cooling process simulation and plot results from multiple simulations. We will use the GEMS project file "Module2" that can be found either in the /Tutorial/Module2_fsp-reaction/unsolved workshop folder or download it directly [here](https://geoinfo.nmt.edu/mines-tdb/GEMS-files/Module2.zip). 
+In this tutorial, you will learn to model the reaction path of K-feldspar in contact with a NaCl-bearing aqueous solution and calculate the evolution of the fluid and the minerals formed as a function of increased fluid-rock interaction. You will also learn how to set up an automated cooling process simulation and plot results from multiple simulations. We will use the GEMS project file "Module2" that can be found either in the /Tutorial/Module2 workshop folder or download it directly [here](https://geoinfo.nmt.edu/mines-tdb/GEMS-files/Module2.zip). 
 
 ## Compute the chemical equilibrium of single chemical systems (SysEq)
 ```{r,fig-1b, echo = FALSE, out.width="70%", fig.cap="GEMS user interface showing the `Equilibria Calculation` and `Thermodynamic Database` modes."} 

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Module 3 Greisenization Part (I) | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
+  <meta name="description" content="Module 3 Greisenization Part (I) | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Module 3 Greisenization Part (I) | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Module 3 Greisenization Part (I) | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  
+  
+  
+
+<meta name="author" content="Alexander Gysi" />
+
+
+<meta name="date" content="2020-12-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="module2.html"/>
+<link rel="next" href="module4.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">GEMS tutorial</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Create your first project in GEMS</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#installing-the-mines-thermodynamic-database"><i class="fa fa-check"></i><b>1.1</b> Installing the MINES thermodynamic database</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#creating-a-new-project-from-scratch"><i class="fa fa-check"></i><b>1.2</b> Creating a new project from scratch</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#your-first-fluid-rock-equilibrium-model"><i class="fa fa-check"></i><b>1.3</b> Your first fluid-rock equilibrium model</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#outcomes"><i class="fa fa-check"></i><b>1.4</b> Outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="module2.html"><a href="module2.html"><i class="fa fa-check"></i><b>2</b> Feldspar reaction path</a><ul>
+<li class="chapter" data-level="2.1" data-path="module2.html"><a href="module2.html#compute-the-chemical-equilibrium-of-single-chemical-systems-syseq"><i class="fa fa-check"></i><b>2.1</b> Compute the chemical equilibrium of single chemical systems (SysEq)</a></li>
+<li class="chapter" data-level="2.2" data-path="module2.html"><a href="module2.html#compute-a-titration-model-process-s-mode"><i class="fa fa-check"></i><b>2.2</b> Compute a titration model (Process, S mode)</a></li>
+<li class="chapter" data-level="2.3" data-path="module2.html"><a href="module2.html#modify-p-t-of-the-feldspar-reaction-path"><i class="fa fa-check"></i><b>2.3</b> Modify P-T of the feldspar reaction path</a></li>
+<li class="chapter" data-level="2.4" data-path="module2.html"><a href="module2.html#tweak-and-plot-the-results"><i class="fa fa-check"></i><b>2.4</b> Tweak and plot the results</a></li>
+<li class="chapter" data-level="2.5" data-path="module2.html"><a href="module2.html#compute-a-cooling-model-process-p-mode"><i class="fa fa-check"></i><b>2.5</b> Compute a cooling model (Process, P mode)</a></li>
+<li class="chapter" data-level="2.6" data-path="module2.html"><a href="module2.html#outcomes-1"><i class="fa fa-check"></i><b>2.6</b> Outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="module3.html"><a href="module3.html"><i class="fa fa-check"></i><b>3</b> Greisenization Part (I)</a><ul>
+<li class="chapter" data-level="3.1" data-path="module3.html"><a href="module3.html#create-a-custom-rock-and-fluid"><i class="fa fa-check"></i><b>3.1</b> Create a custom rock and fluid</a></li>
+<li class="chapter" data-level="3.2" data-path="module3.html"><a href="module3.html#add-minerals-and-aqueous-species-to-database"><i class="fa fa-check"></i><b>3.2</b> Add minerals and aqueous species to database</a></li>
+<li class="chapter" data-level="3.3" data-path="module3.html"><a href="module3.html#titration-of-leucogranite-to-greisen-fluid"><i class="fa fa-check"></i><b>3.3</b> Titration of leucogranite to greisen fluid</a></li>
+<li class="chapter" data-level="3.4" data-path="module3.html"><a href="module3.html#outcomes-2"><i class="fa fa-check"></i><b>3.4</b> Outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="module4.html"><a href="module4.html"><i class="fa fa-check"></i><b>4</b> Greisenization Part (II)</a></li>
+<li class="chapter" data-level="5" data-path="module-5.html"><a href="module-5.html"><i class="fa fa-check"></i><b>5</b> Module 5</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="module3" class="section level1">
+<h1><span class="header-section-number">Module 3</span> Greisenization Part (I)</h1>
+<p>In this module you will model the reaction path of a leucogranite during greisenization and evaluate the solubility of tin (Sn). We will learn how to: a) create <code>Predefined Composition Objects</code> (a rock or fluid composition), b) add new minerals or aqueous species to your thermodynamic database and c) simulate a more complex fluid-rock reaction path using our knowledge gained from <a href="module2.html#module2">Module 2</a>. The example follows a modeling study of the East Kemptville tin deposit from Halter et al. (1998), Chem. Geol. 150, 1-17. We will use the GEMS project file “Module3” that can be found either in the /Tutorial/Module3 workshop folder or download it directly <a href="https://geoinfo.nmt.edu/mines-tdb/GEMS-files/Module3.zip">here</a>.</p>
+<div id="create-a-custom-rock-and-fluid" class="section level2">
+<h2><span class="header-section-number">3.1</span> Create a custom rock and fluid</h2>
+<div class="figure"><span id="fig:fig-1c"></span>
+<img src="figures/module3/fig-1.png" alt="GEMS user interface in Thermodynamic Database Mode. For adding a fluid or a rock choose Compos in Panel 2. For adding a mineral and/or aqueous species to your database choose DComp or ReacDC in Panel 2." width="100%" />
+<p class="caption">
+Figure 3.1: GEMS user interface in Thermodynamic Database Mode. For adding a fluid or a rock choose Compos in Panel 2. For adding a mineral and/or aqueous species to your database choose DComp or ReacDC in Panel 2.
+</p>
+</div>
+<ul>
+<li><p>Copy the entire unzipped Module3 folder into your GEMS project directory located in Library/Gems3/projects. More information on the GEMS folder structure can be found in <a href="intro.html#intro">Module 1</a>.</p></li>
+<li><p>Open GEMS, choose the project and switch to the <code>Thermodynamic Database Mode</code> and select in Panel 2 the option <code>Compos</code> for creating a predefined composition object (PCO). The user interface is shown in Figure <a href="module3.html#fig:fig-1c">3.1</a>.</p></li>
+<li><p>Select the record “Fluid_greisen”. In this example the fluid was already prepared for you. GEMS is versatile in the way one can add the composition of a fluid or a rock. The fluid in this example was added using independent components (<code>IComp</code>), meaning single elements. You can check this by clicking on the wrench symbol (<code>Remake</code>) and inspect the selection. It is also possible to input minerals or custom chemical formula, for example if we would like to add 1 kg of H<span class="math inline">\(_{2}\)</span>O to this system we could define a user-defined formula; more on this later.</p></li>
+<li><p>Data input/output windows are shown in Figure <a href="module3.html#fig:fig-1c">3.1</a> using mole units (M). Other units such as molality (m, mol/kg H2O) or ppm can be defined. The normalization factor can be chosen so that the output windows shows the mole elements for 1 kg of substance (or adding a 0 would not yield any normalization).</p></li>
+</ul>
+<div class="figure"><span id="fig:fig-2c"></span>
+<img src="figures/module3/fig-2.png" alt="Parameters for creating a rock as PCO." width="80%" />
+<p class="caption">
+Figure 3.2: Parameters for creating a rock as PCO.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-3c"></span>
+<img src="figures/module3/fig-3.png" alt="Options for adding chemical components for a PCO. These include   exttt{Independent Components} (e.g. Al, K, Na),     exttt{Dependent Components} (e.g. microcline, quartz, H$_2$O) or user-defined formulae. " width="90%" />
+<p class="caption">
+Figure 3.3: Options for adding chemical components for a PCO. These include exttt{Independent Components} (e.g. Al, K, Na), exttt{Dependent Components} (e.g. microcline, quartz, H<span class="math inline">\(_2\)</span>O) or user-defined formulae.
+</p>
+</div>
+<ul>
+<li><p>To create the rock click on <code>Clone a new record</code> in Panel 1. Fill the parameters as shown in Figure <a href="module3.html#fig:fig-2c">3.2</a>.</p></li>
+<li><p>On the next dialog select “Use formulae of Dependent Components” (Fig. <a href="module3.html#fig:fig-3c">3.3</a>). In the next dialog choose first independent components IComp (i.e., K, Al, Si, O, H, Na) then the dependent components <code>DComp</code>: Microcline, Muscovite, Albite and Quartz (Fig. <a href="module3.html#fig:fig-4c">3.4</a>).</p></li>
+<li><p>Select the <code>Settings</code> tab and fill out the amounts of <code>DComp</code> as shown in Figure <a href="module3.html#fig:fig-5c">3.5</a>. Select the <code>Page 1</code> tab, add information for this PCO and normalize it to 1 kg; add zero values for <code>IComp</code>. Press <code>Re-calculate</code> in Panel 1 and save; your output results should be the same as shown in Figure <a href="module3.html#fig:fig-6c">3.6</a>.</p></li>
+</ul>
+<div class="figure"><span id="fig:fig-4c"></span>
+<img src="figures/module3/fig-4.png" alt="Dialog to select Dependent Components." width="90%" />
+<p class="caption">
+Figure 3.4: Dialog to select Dependent Components.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-5c"></span>
+<img src="figures/module3/fig-5.png" alt="Dialog to add amounts of Dependent Components. Note the units are here in wt. percent." width="90%" />
+<p class="caption">
+Figure 3.5: Dialog to add amounts of Dependent Components. Note the units are here in wt. percent.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-6c"></span>
+<img src="figures/module3/fig-6.png" alt="Dialogue to add informations on the PCO and add its normalization value (i.e., 1 kg). Make sure to put 0 values in the input window on the right side for IComp if only the input of DComp should be used for your rock composition." width="90%" />
+<p class="caption">
+Figure 3.6: Dialogue to add informations on the PCO and add its normalization value (i.e., 1 kg). Make sure to put 0 values in the input window on the right side for IComp if only the input of DComp should be used for your rock composition.
+</p>
+</div>
+<ul>
+<li><p>Switch to the <code>Equilibria Calculation Mode</code> (Fig. <a href="module3.html#fig:fig-7c">3.7</a>) and stay in <code>SysEq</code> mode to calculate the equilibrium of a single system; GEMS will ask whether you want to proceed with adding the rock to your project.</p></li>
+<li><p>Click on <code>Create a new record record from scratch</code>, give the system the following name “Greisen_Fl”, and a temperature of 250 <span class="math inline">\(^\circ\)</span>C and pressure of 4000 bar.</p></li>
+<li><p>In the <code>Open recipe dialog</code> add 200 g of rock (R_leucogranite) and 1000 g of fluid (Fluid_greisen). Calculate the equilibrium.</p></li>
+<li><p>Clone this record and modify the system to 450 <span class="math inline">\(^\circ\)</span>C and 4000 bar, calculate equilibrium.</p></li>
+<li><p>Now lets explore the detailed results by clicking on <code>Open EqDemo Window (GEM task results)</code> in Panel 1 just next to the <code>Calculate Equilibrium</code> button. The window is shown in Figure <a href="module3.html#fig:fig-8c">3.8</a>. Use this detailed results window to explore the following few questions:</p>
+<p>– What is the pH of this system?</p>
+<p>– How much Sn (molality) can you dissolve in this solution?</p>
+<p>– What is the major Sn aqueous species in your model? Following the paper by Halter et al. (1998), which Sn species might be missing in their study?</p>
+<p>– Topaz is a common mineral found in Greisen. Here we only have the hydroxide (OH) endmember Topaz-OH, in the next section we will see how to add a mineral and aqueous species.</p></li>
+</ul>
+<div class="figure"><span id="fig:fig-7c"></span>
+<img src="figures/module3/fig-7.png" alt="Equilibria Calculation mode with Open Recipe dialog (can be accessed by pressing on the yellow vial in Panel 1) where you can add the amounts of rock and fluid." width="100%" />
+<p class="caption">
+Figure 3.7: Equilibria Calculation mode with Open Recipe dialog (can be accessed by pressing on the yellow vial in Panel 1) where you can add the amounts of rock and fluid.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-8c"></span>
+<img src="figures/module3/fig-8.png" alt="Open EqDemo Window (GEM task results) window: tab EqIC can be used to inspect the total dissolved molality of Sn (m_t column); EqPh tab gives information on the mass, volume, moles and saturation index (Fa) of cassiterite (SnO$_2$); EqDC tab shows the activities and amounts of Dependent Components, for example Sn chloride aqueous species. The EqGen give a general overview of pH, pe, Ionic Strength, and gas fugacities (lgFug)." width="100%" />
+<p class="caption">
+Figure 3.8: Open EqDemo Window (GEM task results) window: tab EqIC can be used to inspect the total dissolved molality of Sn (m_t column); EqPh tab gives information on the mass, volume, moles and saturation index (Fa) of cassiterite (SnO<span class="math inline">\(_2\)</span>); EqDC tab shows the activities and amounts of Dependent Components, for example Sn chloride aqueous species. The EqGen give a general overview of pH, pe, Ionic Strength, and gas fugacities (lgFug).
+</p>
+</div>
+</div>
+<div id="add-minerals-and-aqueous-species-to-database" class="section level2">
+<h2><span class="header-section-number">3.2</span> Add minerals and aqueous species to database</h2>
+<div class="figure"><span id="fig:fig-9c"></span>
+<img src="figures/module3/fig-9.png" alt="Thermodynamic database mode showing DComp records and input fields for Topaz-F." width="100%" />
+<p class="caption">
+Figure 3.9: Thermodynamic database mode showing DComp records and input fields for Topaz-F.
+</p>
+</div>
+<ul>
+<li><p>Switch to the <code>Thermodynamic Database Mode</code> and select in Panel 2 (left side) the option <code>DComp</code> for adding a new mineral phase. Select the records Topaz-OH or Topaz-F and check the inputs. Figure <a href="module3.html#fig:fig-9c">3.9</a> shows the <code>Page 1</code> input tab for Topaz-F. I already added this mineral for you but will briefly explain how to create such a record. Note the heat capacity function (Cp) can be set in the <code>Page 2</code> tab of this window.</p></li>
+<li><p>The easiest way would be to clone an existing record, for example Topaz-OH, choose the adequate thermodynamic model for P-T corrections, and then update the thermodynamic properties (G, H, S, Cp function and V). Here few more infos:</p></li>
+</ul>
+<p>– Once every field is complete, click on <code>Re-calculate and check record data</code> on the top Panel 1; GEMS checks for internal consistency of your data, for example you can enter only G and S, and the program will re-calculate the H value.</p>
+<p>– To inspect the Topaz-F record you can select it and click on the red wrench next to the calculator on the top Panel 1. There you can explore different model options and come back to the main <code>DComp</code> window (Fig. <a href="module3.html#fig:fig-9c">3.9</a>).</p>
+<p>– The top part of the window needs a mineral name and the chemical formula; the {} brackets are used to indicate a mixing site, i.e. Topaz can mix OH and F on this crystallographic site.</p>
+<p>– Scroll through the list of mineral records, one can see that “s” is used for solids, “f” for a fluid (i.e. non-ideal gas), and “a” for aqueous species. There you can explore for example the Al(OH)2+ species and see a typical set up for entering the temperature and pressure corrections for aqueous species.</p>
+<div class="figure"><span id="fig:fig-10c"></span>
+<img src="figures/module3/fig-10.png" alt="Thermodynamic database mode showing the Phase records option for creating mineral. The selected record shows the input parameters for the newly created ideal solid solution between Topaz-OH and Topaz-F with (1) name of phase, (2) selected mineral end members of the solid solution and (3) code for defining junior and major mineral (reserved for non-ideal solid solution)." width="100%" />
+<p class="caption">
+Figure 3.10: Thermodynamic database mode showing the Phase records option for creating mineral. The selected record shows the input parameters for the newly created ideal solid solution between Topaz-OH and Topaz-F with (1) name of phase, (2) selected mineral end members of the solid solution and (3) code for defining junior and major mineral (reserved for non-ideal solid solution).
+</p>
+</div>
+<div class="figure"><span id="fig:fig-11c"></span>
+<img src="figures/module3/fig-11.png" alt="Datafields for creating a Phase record." width="70%" />
+<p class="caption">
+Figure 3.11: Datafields for creating a Phase record.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-12c"></span>
+<img src="figures/module3/fig-12.png" alt="Selection of phase or phase endmembers for solid solutions. For a Topaz solid solution we select the OH and F endmembers" width="70%" />
+<p class="caption">
+Figure 3.12: Selection of phase or phase endmembers for solid solutions. For a Topaz solid solution we select the OH and F endmembers
+</p>
+</div>
+<ul>
+<li><p>The final step to have the new mineral phase appear in our project consists in adding a phase record in the <code>Phase</code> option (Fig. <a href="module3.html#fig:fig-10c">3.10</a>).</p></li>
+<li><p>Select the Topaz-OH record and click <code>Clone a new record</code> in Panel 1. Fill the parameters listed in Figure <a href="module3.html#fig:fig-11c">3.11</a>.</p></li>
+<li><p>Click next and select the mineral(s) for which you want to create a new phase. Here we select both Topaz-OH and Topaz-F for a binary solid solution (Fig. <a href="module3.html#fig:fig-12c">3.12</a>). Note that if we would like to only add a pure phase we select only one mineral in this menu. The resulting phase record should be similar to Figure <a href="module3.html#fig:fig-10c">3.10</a>.</p></li>
+<li><p>The last step is to switch to the <code>Equilibria Calculation Mode</code>, accept addition of the newly created phase and re-calculate the equilibrium of your two records created previously at 250 and 450 <span class="math inline">\(^\circ\)</span>C and 4000 bar. Now expand the Topaz solid solution, congratulation you just formed topaz! See also Figure <a href="module3.html#fig:fig-13c">3.13</a>.</p></li>
+</ul>
+<div class="figure"><span id="fig:fig-13c"></span>
+<img src="figures/module3/fig-13.png" alt="Equilibria Calculation mode showing the calculated composition of a topaz solid solution (Topaz-OH and Topaz-F)." width="100%" />
+<p class="caption">
+Figure 3.13: Equilibria Calculation mode showing the calculated composition of a topaz solid solution (Topaz-OH and Topaz-F).
+</p>
+</div>
+</div>
+<div id="titration-of-leucogranite-to-greisen-fluid" class="section level2">
+<h2><span class="header-section-number">3.3</span> Titration of leucogranite to greisen fluid</h2>
+<div class="figure"><span id="fig:fig-14c"></span>
+<img src="figures/module3/fig-14.png" alt="Select a parent chemical system (`SysEq`) for modeling a `Process`." width="70%" />
+<p class="caption">
+Figure 3.14: Select a parent chemical system (<code>SysEq</code>) for modeling a <code>Process</code>.
+</p>
+</div>
+<ul>
+<li><p>Switch to the <code>Equilibria Calculation Mode</code>, since we have already computed a single system chemical equilibrium we can go ahead and select the option <code>Process</code> in Panel 2.</p></li>
+<li><p><code>Create a new record from scratch</code> and select “Greisen_Fl, 4000, 250” as your parent chemical system record (Fig. <a href="module3.html#fig:fig-14c">3.14</a>). Note that the parent chemical record needs to contain the fluid and the rock to be titrated with the correct units (double check in <code>SysEq</code>).</p></li>
+<li><p>Create a titration model similar to Module 2 for the feldspar reaction path, except this time we will choose “R_leucogranite” as the titrant. The simulation conditions will be 250 <span class="math inline">\(^\circ\)</span>C and 4000 bar, and we will add 0.1 g to 2000 g of R_leucogranite to Fluid_greisen. Figures <a href="module3.html#fig:fig-15c">3.15</a>, <a href="module3.html#fig:fig-16c">3.16</a>, and <a href="module3.html#fig:fig-17c">3.17</a> show the parameters to be entered in the subsequent <code>Process</code> wizard windows. Don’t forget to un-tick the box “Save generated SysEq records” in Step 5 to avoid saving too many <code>SysEq</code> records.</p></li>
+<li><p>Click <code>Next</code>, <code>Finish</code>, and save this record.</p></li>
+</ul>
+<div class="figure"><span id="fig:fig-15c"></span>
+<img src="figures/module3/fig-15.png" alt="Name the `Process` simulator and indicate the model type." width="70%" />
+<p class="caption">
+Figure 3.15: Name the <code>Process</code> simulator and indicate the model type.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-16c"></span>
+<img src="figures/module3/fig-16.png" alt="Input parameters for a titration model of a rock (R_leucogranite) reacting with a greisenizing fluid (Fluid_greisen). (1) Select titration mode (Titration cNu linear), (2) titrant, (3) amount of rock to add, and (4) P-T conditions." width="100%" />
+<p class="caption">
+Figure 3.16: Input parameters for a titration model of a rock (R_leucogranite) reacting with a greisenizing fluid (Fluid_greisen). (1) Select titration mode (Titration cNu linear), (2) titrant, (3) amount of rock to add, and (4) P-T conditions.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-17c"></span>
+<img src="figures/module3/fig-17.png" alt="Choose the results to be plotted. Here we choose the mass minerals (in gram) using phM." width="100%" />
+<p class="caption">
+Figure 3.17: Choose the results to be plotted. Here we choose the mass minerals (in gram) using phM.
+</p>
+</div>
+<ul>
+<li><p>Back to the main <code>Process</code> simulation window, check the <code>Controls</code> tab as shown in Figure <a href="module3.html#fig:fig-18c">3.18</a>.</p></li>
+<li><p>Switch to the <code>Sampling</code> window and choose cNu (i.e. amount of rock added) instead of J as shown in Figure <a href="module3.html#fig:fig-19c">3.19</a>. Make sure to click on an empty area outside the script box followed by save for GEMS to register the change.</p></li>
+<li><p>Switch now to the <code>Results</code> tab, click <code>Re-calculate</code> on Panel 1 and inspect the calculated results. Make sure to save the changes.</p></li>
+</ul>
+<div class="figure"><span id="fig:fig-18c"></span>
+<img src="figures/module3/fig-18.png" alt="`Controls` tab showing the parameters to set up a `Process` simulation for a titration model at 250 °C and 4kbar. Before plotting your results, (1) check you calculation control (P-T-x) script, then (2) switch the tab to `Sampling` and choose cNu for extent of reaction (amount of rock added) for the x-axis, (3) Re-calculate (numerical results can be viewed in the `Results` tab). To visualize the plot click on the plot symbol on Panel 1. To change model parameters click on Remake." width="100%" />
+<p class="caption">
+Figure 3.18: <code>Controls</code> tab showing the parameters to set up a <code>Process</code> simulation for a titration model at 250 °C and 4kbar. Before plotting your results, (1) check you calculation control (P-T-x) script, then (2) switch the tab to <code>Sampling</code> and choose cNu for extent of reaction (amount of rock added) for the x-axis, (3) Re-calculate (numerical results can be viewed in the <code>Results</code> tab). To visualize the plot click on the plot symbol on Panel 1. To change model parameters click on Remake.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-19c"></span>
+<img src="figures/module3/fig-19.png" alt="`Sampling` tab showing the script to extract values for the x-y axis. Change here the `xp[J]` variable to cNu, i.e. we assigned this variable to the amount of rock (R_leucogranite) added to the system at each step. See also the script in the `Controls` window." width="80%" />
+<p class="caption">
+Figure 3.19: <code>Sampling</code> tab showing the script to extract values for the x-y axis. Change here the <code>xp[J]</code> variable to cNu, i.e. we assigned this variable to the amount of rock (R_leucogranite) added to the system at each step. See also the script in the <code>Controls</code> window.
+</p>
+</div>
+<ul>
+<li><p>Lets plot the results using the Plot dialog in Panel 1 (Fig. <a href="module3.html#fig:fig-18c">3.18</a>)</p></li>
+<li><p>Select <code>Customize</code> at the bottom of the plot and use the parameters shown in Figure <a href="module3.html#fig:fig-20c">3.20</a>. We can enter 0-2000 g for the x-axis and 0-815 g for the y-axis. Under <code>Fragment</code> enter 0-0.5 g for the y-axis.</p></li>
+<li><p>The final titration models should look similar to Figures <a href="module3.html#fig:fig-21c">3.21</a> and <a href="module3.html#fig:fig-22c">3.22</a>. By customizing the inset view of the graph (Fragment option) it is possible to inspect the stability of cassiterite and topaz in more detail.</p></li>
+<li><p>You can also create additional plots to investigate for example the Sn speciation, pH, etc. by cloning the existing records and change the plotting parameters. Simply click <code>Remake</code> (red wrench) in Panel 1 (Fig. <a href="module3.html#fig:fig-18c">3.18</a>) and select the sampling parameters in Step 3 of the <code>Process</code> wizard. Additional modeling results are shown in Figure <a href="module3.html#fig:fig-23c">3.23</a> to give you some inspiration!</p></li>
+<li><p>Finally note: always inspect your script in the <code>Controls</code> and <code>Sampling</code> tabs to make sure your set up is ok.</p></li>
+</ul>
+<p>– Note what happens to cassiterite, pyrrhotite and topaz from 450 to 250 <span class="math inline">\(^\circ\)</span>C?</p>
+<p>– Do you recognize different alteration styles commonly observed in ore deposits?</p>
+<p>– Compare your simulations to Figs. 2 and 4 in the paper from Halter et al. (1998). What is the difference in mineralogy vs. reaction progress (rock added)?</p>
+<p>– Give three factors that can affect cassiterite (SnO<span class="math inline">\(_2\)</span>) precipitation and Sn mobility in a hydrothermal fluid.</p>
+<div class="figure"><span id="fig:fig-20c"></span>
+<img src="figures/module3/fig-20.png" alt="Plot dialog showing the parameters for x-y axes for the main Graph and the inset view using Fragment. This dialog can be accessed from the `Customize` button." width="100%" />
+<p class="caption">
+Figure 3.20: Plot dialog showing the parameters for x-y axes for the main Graph and the inset view using Fragment. This dialog can be accessed from the <code>Customize</code> button.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-21c"></span>
+<img src="figures/module3/fig-21.png" alt="Simulated leucogranite titration model showing the stable minerals (g) in equilibrium with a greisenizing fluid at 250 °C and 4000 bar as a function of Rock (g leucogranite) added. Comparison with Figure 2 in the Halter et al. (1998) paper indicates that our overall simulated mineralogy is similar to the progression one can expect to find in natural greisen. This progression goes from a quartz vein towards a qtz-greisen, qtz-topaz-greisen, qtz-sericite greisen, to a leucogranite." width="80%" />
+<p class="caption">
+Figure 3.21: Simulated leucogranite titration model showing the stable minerals (g) in equilibrium with a greisenizing fluid at 250 °C and 4000 bar as a function of Rock (g leucogranite) added. Comparison with Figure 2 in the Halter et al. (1998) paper indicates that our overall simulated mineralogy is similar to the progression one can expect to find in natural greisen. This progression goes from a quartz vein towards a qtz-greisen, qtz-topaz-greisen, qtz-sericite greisen, to a leucogranite.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-22c"></span>
+<img src="figures/module3/fig-22.png" alt="Graph inset view of the leucogranite titration model at 250 °C and 4000 bar. Note certain minerals included in the calculations (e.g., magnetite and annite) were not displayed in this and previous graphs. Comparison with Halter et al. (1998) indicates that our simulated mineralogy is similar to what we find in natural greisen. The control on mineralogy can by explained by the acidity of the fluid that will also control Sn mobility. Looking at a vein alteration halo, the system changes from a fluid buffered pH (center of the quartz vein) towards a more rock buffered pH (towards the leucogranite), which is expressed in the tiration model by the increased amount of leucogranite added to the fluid (progress extent). Additional plots are necessary to show the full complexity of this system as shown below." width="80%" />
+<p class="caption">
+Figure 3.22: Graph inset view of the leucogranite titration model at 250 °C and 4000 bar. Note certain minerals included in the calculations (e.g., magnetite and annite) were not displayed in this and previous graphs. Comparison with Halter et al. (1998) indicates that our simulated mineralogy is similar to what we find in natural greisen. The control on mineralogy can by explained by the acidity of the fluid that will also control Sn mobility. Looking at a vein alteration halo, the system changes from a fluid buffered pH (center of the quartz vein) towards a more rock buffered pH (towards the leucogranite), which is expressed in the tiration model by the increased amount of leucogranite added to the fluid (progress extent). Additional plots are necessary to show the full complexity of this system as shown below.
+</p>
+</div>
+<div class="figure"><span id="fig:fig-23c"></span>
+<img src="figures/module3/fig-23.png" alt="Simulated leucogranite titration model showing the log activity of aqueous Sn species vs. pH at equilibrium with a greisenizing fluid at 250 °C and 4000 bar. Similar to the feldspar reaction path (Module 2), adding rock to the fluid will lead to an increase in pH and a corresponding decrease in Sn mobility. These simulations highlight the importance of pH and salinity for the speciation of Sn and the solubility of cassiterite. " width="80%" />
+<p class="caption">
+Figure 3.23: Simulated leucogranite titration model showing the log activity of aqueous Sn species vs. pH at equilibrium with a greisenizing fluid at 250 °C and 4000 bar. Similar to the feldspar reaction path (Module 2), adding rock to the fluid will lead to an increase in pH and a corresponding decrease in Sn mobility. These simulations highlight the importance of pH and salinity for the speciation of Sn and the solubility of cassiterite.
+</p>
+</div>
+</div>
+<div id="outcomes-2" class="section level2">
+<h2><span class="header-section-number">3.4</span> Outcomes</h2>
+<p>In this module you looked into the <code>Thermodynamic Database</code> mode and learned how to create a fluid and a rock (<code>PCO</code>). You also learned how to set up a <code>Phase</code> record such as a topaz solid solution and how to inspect thermodynamic data for minerals and aqueous species in <code>DComp</code>. You can now also set up different titration models with complex fluid and rock compositions, and design selected plot types for data interpretation. This module also highlights the importance of comparing the model with natural ore-forming systems.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="module2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="module4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/apgysi/gems-mines-tutorial/edit/master/03-module3.Rmd",
+"text": "Suggest an edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["gems-mines-tutorial.pdf", "gems-mines-tutorial.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
