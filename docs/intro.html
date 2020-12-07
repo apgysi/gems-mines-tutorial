@@ -24,7 +24,7 @@
 <meta name="author" content="Alexander Gysi" />
 
 
-<meta name="date" content="2020-12-06" />
+<meta name="date" content="2020-12-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -135,7 +135,9 @@ Figure 1.1: The MINES thermodynamic database webpage and files to download. Sele
 <li><p>Download and unzip the DB19.default archive folder to Downloads. Select all the database files in this folder and copy them (Fig. <a href="intro.html#fig:fig-2">1.2</a>).</p></li>
 <li><p>Merge these database files with the Gems3-app/Resources/DB.default folder by pasting them into DB.default (Fig. <a href="intro.html#fig:fig-3">1.3</a>).</p></li>
 </ul>
-<p><em>In Linux this folder is in /Gems3-app/Resources/DB.default; In Mac OSX this folder is in /Applications/gems3 then right-click show package content and go to Contents/Resources/DB.default; In Windows this folder should be in /Gems3-app/Resources/DB.default.</em></p>
+<p>– In Linux this folder is in /Gems3-app/Resources/DB.default</p>
+<p>– In Mac OSX this folder is in /Applications/gems3 then right-click show package content and go to Contents/Resources/DB.default</p>
+<p>– In Windows Gems 3.7, this folder should be in GEMS370/Gems3-app/Resources/DB.default.</p>
 <p>The folder structure of the GEMS program, independent of the operating system used, consists of two main folders:</p>
 <ul>
 <li>Gems3-app
@@ -163,7 +165,7 @@ Figure 1.3: Database files merged with the Gems3-app/Resources/DB.default folder
 <div id="creating-a-new-project-from-scratch" class="section level2">
 <h2><span class="header-section-number">1.2</span> Creating a new project from scratch</h2>
 <ul>
-<li><p>Open GEMS and click <code>New Project</code> in the Modeling Projects window. Give a name to your project (no spaces). The user interface is shown in Figure <a href="intro.html#fig:fig-4">1.4</a>.</p></li>
+<li><p>Once you copied the database files, close GEMS. Open GEMS and click <code>New Project</code> in the Modeling Projects window. Give a name to your project (no spaces). The user interface is shown in Figure <a href="intro.html#fig:fig-4">1.4</a>. Note if you run into display problem on high dpi screens (4K), I suggest to change the display resolution (e.g. to 1920 x 1080) and restart gems.</p></li>
 <li><p>In the next window, you can choose the thermodynamic database for your project. Select the database files 3rdparty/MINES and support, then deselect other databases as shown in Figure <a href="intro.html#fig:fig-5">1.5</a>. Click <code>Next</code>.</p></li>
 </ul>
 <p><em>Do not forget, you have an extensive list of minerals included in this database. Once you have gone through the tutorials and are familiar with GEMS, it is suggested that in thermodynamic database mode you switch to the <code>Phase</code> module (Fig. <a href="intro.html#fig:fig-9">1.9</a>), and remove minerals that are not relevant for your own specific project. Also, for less advanced users, it is easiedt to not use the ternary non-ideal feldspar solid solution model (ss) but only their end members (i.e., anorthite, albite and microcline).</em></p>

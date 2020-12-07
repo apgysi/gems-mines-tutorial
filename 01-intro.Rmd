@@ -16,11 +16,14 @@ knitr::include_graphics("figures/module1/fig-1.png")
 
 - Merge these database files with the Gems3-app/Resources/DB.default folder by pasting them into DB.default (Fig. \@ref(fig:fig-3)). 
  	
-_In Linux this folder is in /Gems3-app/Resources/DB.default; In Mac OSX this folder is in /Applications/gems3 then right-click show package content and go to Contents/Resources/DB.default; In Windows this folder should be in /Gems3-app/Resources/DB.default._
+-- In Linux this folder is in /Gems3-app/Resources/DB.default 
+
+-- In Mac OSX this folder is in /Applications/gems3 then right-click show package content and go to Contents/Resources/DB.default
+
+-- In Windows Gems 3.7, this folder should be in GEMS370/Gems3-app/Resources/DB.default. 
  	
 The folder structure of the GEMS program, independent of the operating system used, consists of two main folders: 
 
- 		
 - Gems3-app
     + The GEMS3-app folder contains the program resources and also a subfolder Resources/ DB.default, which will be used to copy the MINES thermodynamic database files into it. 
 
@@ -38,7 +41,7 @@ knitr::include_graphics("figures/module1/fig-3.png")
  
 ## Creating a new project from scratch
 
-- Open GEMS and click `New Project` in the Modeling Projects window. Give a name to your project (no spaces). The user interface is shown in Figure \@ref(fig:fig-4). 
+- Once you copied the database files, close GEMS. Open GEMS and click `New Project` in the Modeling Projects window. Give a name to your project (no spaces). The user interface is shown in Figure \@ref(fig:fig-4). Note if you run into display problem on high dpi screens (4K), I suggest to change the display resolution (e.g. to 1920 x 1080) and restart gems. 
  
 - In the next window, you can choose the thermodynamic database for your project.	Select the database files 3rdparty/MINES and support, then deselect other databases as shown in Figure \@ref(fig:fig-5). Click `Next`.
  	

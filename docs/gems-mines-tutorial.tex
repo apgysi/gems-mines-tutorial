@@ -80,7 +80,7 @@
 
 \title{A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database}
 \author{Alexander Gysi}
-\date{2020-12-06}
+\date{2020-12-07}
 
 \begin{document}
 \maketitle
@@ -123,7 +123,11 @@ The MINES thermodynamic database can be downloaded at \url{https://geoinfo.nmt.e
   Merge these database files with the Gems3-app/Resources/DB.default folder by pasting them into DB.default (Fig. \ref{fig:fig-3}).
 \end{itemize}
 
-\emph{In Linux this folder is in /Gems3-app/Resources/DB.default; In Mac OSX this folder is in /Applications/gems3 then right-click show package content and go to Contents/Resources/DB.default; In Windows this folder should be in /Gems3-app/Resources/DB.default.}
+-- In Linux this folder is in /Gems3-app/Resources/DB.default
+
+-- In Mac OSX this folder is in /Applications/gems3 then right-click show package content and go to Contents/Resources/DB.default
+
+-- In Windows Gems 3.7, this folder should be in GEMS370/Gems3-app/Resources/DB.default.
 
 The folder structure of the GEMS program, independent of the operating system used, consists of two main folders:
 
@@ -160,7 +164,7 @@ The folder structure of the GEMS program, independent of the operating system us
 
 \begin{itemize}
 \item
-  Open GEMS and click \texttt{New\ Project} in the Modeling Projects window. Give a name to your project (no spaces). The user interface is shown in Figure \ref{fig:fig-4}.
+  Once you copied the database files, close GEMS. Open GEMS and click \texttt{New\ Project} in the Modeling Projects window. Give a name to your project (no spaces). The user interface is shown in Figure \ref{fig:fig-4}. Note if you run into display problem on high dpi screens (4K), I suggest to change the display resolution (e.g.~to 1920 x 1080) and restart gems.
 \item
   In the next window, you can choose the thermodynamic database for your project. Select the database files 3rdparty/MINES and support, then deselect other databases as shown in Figure \ref{fig:fig-5}. Click \texttt{Next}.
 \end{itemize}
@@ -234,8 +238,16 @@ In this tutorial, you will learn to model the reaction path of K-feldspar in con
 \end{figure}
 
 \begin{itemize}
+\tightlist
 \item
   Copy the entire unzipped Module2 folder into your GEMS project directory located in Library/Gems3/projects. More information on the GEMS folder structure can be found in \protect\hyperlink{intro}{Module 1}.
+\end{itemize}
+
+-- For Windows users the project folder is located in C:/GEMS370/Library/Gems3/projects/ or similar.
+
+-- For Mac OSX users, open Finder, on the top click on Go to\ldots{} and enter \textasciitilde/Library/Gems3
+
+\begin{itemize}
 \item
   Open GEMS and choose the project in the \texttt{Equilibria\ Calculation\ Mode}. The user interface is shown in Figure \ref{fig:fig-1b}. Panel 1 permits to create new records and run the program for calculations. Panel 2 gives you different calculation options.
 \item

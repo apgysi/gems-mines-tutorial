@@ -9,6 +9,10 @@ knitr::include_graphics("figures/module2/fig-1.jpg")
 
 - Copy the entire unzipped Module2 folder into your GEMS project directory located in Library/Gems3/projects. More information on the GEMS folder structure can be found in [Module 1](#intro). 
 
+-- For Windows users the project folder is located in C:/GEMS370/Library/Gems3/projects/ or similar.
+
+-- For Mac OSX users, open Finder, on the top click on Go to... and enter ~/Library/Gems3
+
 - Open GEMS and choose the project in the `Equilibria Calculation Mode`. The user interface is shown in Figure \@ref(fig:fig-1b). Panel 1 permits to create new records and run the program for calculations. Panel 2 gives you different calculation options. 
 
 - Choose the `Create a new record from scratch` from the menu in Panel 1 and fill the parameters listed in Figure \@ref(fig:fig-2b)
