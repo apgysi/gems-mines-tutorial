@@ -20,6 +20,4 @@ link-citations: yes
 
 - Information about the MINES database and project files for the tutorials can be found under https://geoinfo.nmt.edu/mines-tdb
 
-This booklet is subdivided into five modules. 
 
-- Module 1: Create your first project in GEMS and installing the MINES database
