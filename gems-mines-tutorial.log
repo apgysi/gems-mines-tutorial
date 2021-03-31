@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2021.3.30)  31 MAR 2021 13:49
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2021.3.30)  31 MAR 2021 14:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1032,41 +1032,52 @@ Overfull \hbox (286.40125pt too wide) has occurred while \output is active
 MULATIONS OF HYDROTHERMAL SEAWATER-BASALT INTERACTION
  []
 
-[72] [73]
+[72]
 File: figures/module5/fig-2.png Graphic file (type bmp)
 <figures/module5/fig-2.png>
 
+Overfull \hbox (597.52303pt too wide) in paragraph at lines 894--894
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 84.50523pt on input line 895.
+
+[73]
 Overfull \hbox (286.40125pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 74 \TU/lmr/m/sl/10 CHAPTER 5.  GEM2MT REACTIVE MASS TRANSPORT SI
 MULATIONS OF HYDROTHERMAL SEAWATER-BASALT INTERACTION
  []
 
 [74]
-Overfull \hbox (120.77342pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 5.3.  ONE-DIMENSIONAL REACTIVE TRANSPORT WITH ADVECTION/DISPERS
-ION (A) MODE \TU/lmr/m/n/10 75
- []
-
+File: figures/module5/fig-3.png Graphic file (type bmp)
+<figures/module5/fig-3.png>
 [75]
-No file gems-mines-tutorial.bbl.
-
 Overfull \hbox (286.40125pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 76 \TU/lmr/m/sl/10 CHAPTER 5.  GEM2MT REACTIVE MASS TRANSPORT SI
 MULATIONS OF HYDROTHERMAL SEAWATER-BASALT INTERACTION
  []
 
-[76] (./gems-mines-tutorial.aux)
+[76]
+No file gems-mines-tutorial.bbl.
+
+Overfull \hbox (120.77342pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 5.3.  ONE-DIMENSIONAL REACTIVE TRANSPORT WITH ADVECTION/DISPERS
+ION (A) MODE \TU/lmr/m/n/10 77
+ []
+
+[77] (./gems-mines-tutorial.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19187 strings out of 477299
- 340353 string characters out of 5838338
- 831383 words of memory out of 5000000
- 38512 multiletter control sequences out of 15000+600000
+ 19198 strings out of 477299
+ 340625 string characters out of 5838338
+ 831803 words of memory out of 5000000
+ 38523 multiletter control sequences out of 15000+600000
  409889 words of font info for 81 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  94i,6n,118p,976b,436s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gems-mines-tutorial.pdf (76 pages).
+Output written on gems-mines-tutorial.pdf (77 pages).
