@@ -72,6 +72,8 @@ fig:fig-18d
 fig:fig-19d
 fig:fig-20d
 fig:fig-21d
+fig:fig-1e
+fig:fig-2e
 intro
 installing-the-mines-thermodynamic-database
 creating-a-new-project-from-scratch
@@ -93,4 +95,7 @@ module4
 multi-pass-leaching-model
 modify-p-t-of-the-leaching-model
 single-pass-flushing-and-cooling-model
-module-5
+module5
+sequential-reactors-chain-s-mode
+flow-through-reactors-chain-f-mode
+one-dimensional-reactive-transport-with-advectiondispersion-a-mode

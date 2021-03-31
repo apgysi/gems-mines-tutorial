@@ -62,7 +62,7 @@ knitr::include_graphics("figures/module3/fig-6.png")
 knitr::include_graphics("figures/module3/fig-7.png")
 ```
 
-```{r,fig-8c, echo = FALSE, out.width="100%", fig.cap="Open EqDemo Window (GEM task results) window: tab EqIC can be used to inspect the total dissolved molality of Sn (m_t column); EqPh tab gives information on the mass, volume, moles and saturation index (Fa) of cassiterite (SnO$_2$); EqDC tab shows the activities and amounts of Dependent Components, for example Sn chloride aqueous species. The EqGen give a general overview of pH, pe, Ionic Strength, and gas fugacities (lgFug)."} 
+```{r,fig-8c, echo = FALSE, out.width="100%", fig.cap="Open EqDemo Window (GEM task results) window: tab EqIC can be used to inspect the total dissolved molality of Sn (m\\_t column); EqPh tab gives information on the mass, volume, moles and saturation index (Fa) of cassiterite (SnO2); EqDC tab shows the activities and amounts of Dependent Components, for example Sn chloride aqueous species. The EqGen gives a general overview of pH, pe, ionic strength and gas fugacities (lgFug)."} 
 knitr::include_graphics("figures/module3/fig-8.png")
 ```
 
@@ -83,7 +83,7 @@ knitr::include_graphics("figures/module3/fig-9.png")
 
 -- Scroll through the list of mineral records, one can see that "s" is used for solids, "f" for a fluid (i.e. non-ideal gas), and "a" for aqueous species. There you can explore for example the Al(OH)2+ species and see a typical set up for entering the temperature and pressure corrections for aqueous species.
 
-```{r,fig-10c, echo = FALSE, out.width="100%", fig.cap="Thermodynamic database mode showing the Phase records option for creating mineral. The selected record shows the input parameters for the newly created ideal solid solution between Topaz-OH and Topaz-F with (1) name of phase, (2) selected mineral end members of the solid solution and (3) code for defining junior and major mineral (reserved for non-ideal solid solution)."} 
+```{r,fig-10c, echo = FALSE, out.width="100%", fig.cap="Thermodynamic database mode showing the Phase records option for creating mineral. The selected record shows the input parameters for the newly created ideal solid solution between Topaz-OH and Topaz-F with (1) name of phase, (2) selected mineral endmembers of the solid solution and (3) code for defining junior and major mineral (reserved for non-ideal solid solution)."} 
 knitr::include_graphics("figures/module3/fig-10.png")
 ```
 
@@ -125,7 +125,7 @@ knitr::include_graphics("figures/module3/fig-14.png")
 knitr::include_graphics("figures/module3/fig-15.png")
 ```
 
-```{r,fig-16c, echo = FALSE, out.width="100%", fig.cap="Input parameters for a titration model of a rock (R_leucogranite) reacting with a greisenizing fluid (Fluid_greisen). (1) Select titration mode (Titration cNu linear), (2) titrant, (3) amount of rock to add, and (4) P-T conditions."} 
+```{r,fig-16c, echo = FALSE, out.width="100%", fig.cap="Input parameters for a titration model of a rock (R\\_leucogranite) reacting with a greisenizing fluid (Fluid\\_greisen). (1) Select titration mode (Titration cNu linear), (2) titrant, (3) amount of rock to add, and (4) P-T conditions."} 
 knitr::include_graphics("figures/module3/fig-16.png")
 ```
 
@@ -144,7 +144,7 @@ knitr::include_graphics("figures/module3/fig-18.png")
 ```
 
 
-```{r,fig-19c, echo = FALSE, out.width="80%", fig.cap="`Sampling` tab showing the script to extract values for the x-y axis. Change here the `xp[J]` variable to cNu, i.e. we assigned this variable to the amount of rock (R_leucogranite) added to the system at each step. See also the script in the `Controls` window."} 
+```{r,fig-19c, echo = FALSE, out.width="80%", fig.cap="`Sampling` tab showing the script to extract values for the x-y axis. Change here the `xp[J]` variable to cNu, i.e. we assigned this variable to the amount of rock (R\\_leucogranite) added to the system at each step. See also the script in the `Controls` window."} 
 knitr::include_graphics("figures/module3/fig-19.png")
 ```
 

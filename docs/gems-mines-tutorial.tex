@@ -4,10 +4,10 @@
 %
 \documentclass[
 ]{book}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -41,7 +41,8 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -50,7 +51,7 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -75,12 +76,15 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
 \title{A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database}
 \author{Alexander Gysi}
-\date{2020-12-07}
+\date{2021-03-30}
 
 \begin{document}
 \maketitle
@@ -169,15 +173,15 @@ The folder structure of the GEMS program, independent of the operating system us
   In the next window, you can choose the thermodynamic database for your project. Select the database files 3rdparty/MINES and support, then deselect other databases as shown in Figure \ref{fig:fig-5}. Click \texttt{Next}.
 \end{itemize}
 
-\emph{Do not forget, you have an extensive list of minerals included in this database. Once you have gone through the tutorials and are familiar with GEMS, it is suggested that in thermodynamic database mode you switch to the \texttt{Phase} module (Fig. \ref{fig:fig-9}), and remove minerals that are not relevant for your own specific project. Also, for less advanced users, it is easiedt to not use the ternary non-ideal feldspar solid solution model (ss) but only their end members (i.e., anorthite, albite and microcline).}
+\emph{Do not forget, you have an extensive list of minerals included in this database. Once you have gone through the tutorials and are familiar with GEMS, it is suggested that in thermodynamic database mode you switch to the \texttt{Phase} module (Fig. \ref{fig:fig-9}), and remove minerals that are not relevant for your own specific project. Also, for less advanced users, it is easiest to not use the ternary non-ideal feldspar solid solution model (ss) but only their end members (i.e., anorthite, albite and microcline).}
 
 \begin{figure}
 \includegraphics[width=0.7\linewidth]{figures/module1/fig-4} \caption{GEMS user interface showing the project window. Click on make a `New Project` and select a project name without spaces.}\label{fig:fig-4}
 \end{figure}
 
-\textbackslash begin\{figure\}
-\includegraphics[width=0.7\linewidth]{figures/module1/fig-5} \textbackslash caption\{Select 3rdparty/mines and support, and for phases select only withoutss. \emph{Note that we recommend only advanced users to choose withss; the expanded tab shows pure for endmembers and ss for different solid solution endmembers}\}\label{fig:fig-5}
-\textbackslash end\{figure\}
+\begin{figure}
+\includegraphics[width=0.7\linewidth]{figures/module1/fig-5} \caption{Select 3rdparty/mines and support, and for phases select only withoutss. Note that we recommend only advanced users to choose withss; the expanded tab shows pure for endmembers and ss for different solid solution endmembers}\label{fig:fig-5}
+\end{figure}
 
 \begin{itemize}
 \item
@@ -527,9 +531,9 @@ In this module you will model the reaction path of a leucogranite during greisen
 \includegraphics[width=1\linewidth]{figures/module3/fig-7} \caption{Equilibria Calculation mode with Open Recipe dialog (can be accessed by pressing on the yellow vial in Panel 1) where you can add the amounts of rock and fluid.}\label{fig:fig-7c}
 \end{figure}
 
-\textbackslash begin\{figure\}
-\includegraphics[width=1\linewidth]{figures/module3/fig-8} \textbackslash caption\{Open EqDemo Window (GEM task results) window: tab EqIC can be used to inspect the total dissolved molality of Sn (m\_t column); EqPh tab gives information on the mass, volume, moles and saturation index (Fa) of cassiterite (SnO\(_2\)); EqDC tab shows the activities and amounts of Dependent Components, for example Sn chloride aqueous species. The EqGen give a general overview of pH, pe, Ionic Strength, and gas fugacities (lgFug).\}\label{fig:fig-8c}
-\textbackslash end\{figure\}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figures/module3/fig-8} \caption{Open EqDemo Window (GEM task results) window: tab EqIC can be used to inspect the total dissolved molality of Sn (m\_t column); EqPh tab gives information on the mass, volume, moles and saturation index (Fa) of cassiterite (SnO2); EqDC tab shows the activities and amounts of Dependent Components, for example Sn chloride aqueous species. The EqGen gives a general overview of pH, pe, ionic strength and gas fugacities (lgFug).}\label{fig:fig-8c}
+\end{figure}
 
 \hypertarget{add-minerals-and-aqueous-species-to-database}{%
 \section{Add minerals and aqueous species to database}\label{add-minerals-and-aqueous-species-to-database}}
@@ -554,7 +558,7 @@ In this module you will model the reaction path of a leucogranite during greisen
 -- Scroll through the list of mineral records, one can see that ``s'' is used for solids, ``f'' for a fluid (i.e.~non-ideal gas), and ``a'' for aqueous species. There you can explore for example the Al(OH)2+ species and see a typical set up for entering the temperature and pressure corrections for aqueous species.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{figures/module3/fig-10} \caption{Thermodynamic database mode showing the Phase records option for creating mineral. The selected record shows the input parameters for the newly created ideal solid solution between Topaz-OH and Topaz-F with (1) name of phase, (2) selected mineral end members of the solid solution and (3) code for defining junior and major mineral (reserved for non-ideal solid solution).}\label{fig:fig-10c}
+\includegraphics[width=1\linewidth]{figures/module3/fig-10} \caption{Thermodynamic database mode showing the Phase records option for creating mineral. The selected record shows the input parameters for the newly created ideal solid solution between Topaz-OH and Topaz-F with (1) name of phase, (2) selected mineral endmembers of the solid solution and (3) code for defining junior and major mineral (reserved for non-ideal solid solution).}\label{fig:fig-10c}
 \end{figure}
 
 \begin{figure}
@@ -602,9 +606,9 @@ In this module you will model the reaction path of a leucogranite during greisen
 \includegraphics[width=0.7\linewidth]{figures/module3/fig-15} \caption{Name the `Process` simulator and indicate the model type.}\label{fig:fig-15c}
 \end{figure}
 
-\textbackslash begin\{figure\}
-\includegraphics[width=1\linewidth]{figures/module3/fig-16} \textbackslash caption\{Input parameters for a titration model of a rock (R\_leucogranite) reacting with a greisenizing fluid (Fluid\_greisen). (1) Select titration mode (Titration cNu linear), (2) titrant, (3) amount of rock to add, and (4) P-T conditions.\}\label{fig:fig-16c}
-\textbackslash end\{figure\}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figures/module3/fig-16} \caption{Input parameters for a titration model of a rock (R\_leucogranite) reacting with a greisenizing fluid (Fluid\_greisen). (1) Select titration mode (Titration cNu linear), (2) titrant, (3) amount of rock to add, and (4) P-T conditions.}\label{fig:fig-16c}
+\end{figure}
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{figures/module3/fig-17} \caption{Choose the results to be plotted. Here we choose the mass minerals (in gram) using phM.}\label{fig:fig-17c}
@@ -623,9 +627,9 @@ In this module you will model the reaction path of a leucogranite during greisen
 \includegraphics[width=1\linewidth]{figures/module3/fig-18} \caption{`Controls` tab showing the parameters to set up a `Process` simulation for a titration model at 250 °C and 4kbar. Before plotting your results, (1) check you calculation control (P-T-x) script, then (2) switch the tab to `Sampling` and choose cNu for extent of reaction (amount of rock added) for the x-axis, (3) Re-calculate (numerical results can be viewed in the `Results` tab). To visualize the plot click on the plot symbol on Panel 1. To change model parameters click on Remake.}\label{fig:fig-18c}
 \end{figure}
 
-\textbackslash begin\{figure\}
-\includegraphics[width=0.8\linewidth]{figures/module3/fig-19} \textbackslash caption\{\texttt{Sampling} tab showing the script to extract values for the x-y axis. Change here the \texttt{xp{[}J{]}} variable to cNu, i.e.~we assigned this variable to the amount of rock (R\_leucogranite) added to the system at each step. See also the script in the \texttt{Controls} window.\}\label{fig:fig-19c}
-\textbackslash end\{figure\}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{figures/module3/fig-19} \caption{`Sampling` tab showing the script to extract values for the x-y axis. Change here the `xp[J]` variable to cNu, i.e. we assigned this variable to the amount of rock (R\_leucogranite) added to the system at each step. See also the script in the `Controls` window.}\label{fig:fig-19c}
+\end{figure}
 
 \begin{itemize}
 \item
@@ -700,24 +704,24 @@ To set up such a model, we need a PCO for the rock (R\_leucogranite) and fluid (
   Create the parent system records in \texttt{SysEq} by cloning the two records you already created in Module 3; Greisen\_Fl records at 250 and 450 \(^\circ\)C and 4 kbar. Rename these system records to ``Rock\_leach'', and leave all the other parameters. For the input take for now 100 g of fluid and 1000 g of rock using the \texttt{Open\ recipe\ dialog} (Fig. \ref{fig:fig-2d}). Calculate the equilibrium. Save.
 \end{itemize}
 
-\textbackslash begin\{figure\}
-\includegraphics[width=1\linewidth]{figures/module4/fig-2} \textbackslash caption\{Create two new parent equilibrium systems containing the fluid (F-greisen 100 g) and rock (R\_leucogranite 1000 g) by cloning the Greisen\_Fl records.\}\label{fig:fig-2d}
-\textbackslash end\{figure\}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figures/module4/fig-2} \caption{Create two new parent equilibrium systems containing the fluid (F-greisen 100 g) and rock (R\_leucogranite 1000 g) by cloning the Greisen\_Fl records.}\label{fig:fig-2d}
+\end{figure}
 
 \begin{itemize}
 \item
-  Switch to \texttt{Process} simulation and clone your record built for the titration model in Module 3. Select your parent chemical system equilibria record ``Rock\_leach'' at 450 \(^\circ\)C (Figs. \ref{fig:fig-3d}).
+  Switch to \texttt{Process} simulation and clone your record built for the titration model in Module 3. Select your parent chemical system equilibria record "Rock\textbackslash\_leach" at 450 \(^\circ\)C (Figs. \ref{fig:fig-3d}).
 \item
-  Name the simulation task ``Rock-leaching\_450C'' and use as simulation code R this time instead of S (Figs. \ref{fig:fig-4d} and \ref{fig:fig-5d}).
+  Name the simulation task "Rock-leaching\textbackslash\_450C" and use as simulation code R this time instead of S (Figs. \ref{fig:fig-4d} and \ref{fig:fig-5d}).
 \item
-  In the next window tick the option ``Leaching: Compos source'', select the fluid (Fluid\_greisen), then select the rock (R\_leucogranite) as illustrated in Figure \ref{fig:fig-6d}. Make sure to the follow the exact sequence so the script generated by the wizard will work automatically.
+  In the next window tick the option ``Leaching: Compos source'', select the fluid (Fluid\textbackslash\_greisen), then select the rock (R\textbackslash\_leucogranite) as illustrated in Figure \ref{fig:fig-6d}. Make sure to the follow the exact sequence so the script generated by the wizard will work automatically.
 \item
   Click Next\ldots{} Finish.
 \end{itemize}
 
-\textbackslash begin\{figure\}
-\includegraphics[width=1\linewidth]{figures/module4/fig-3} \textbackslash caption\{Selection of parent system equilibrium records for setting up a new Process simulation. Note to create a new Process record clone an existing Greisen\_titration model already created in Module 3.\}\label{fig:fig-3d}
-\textbackslash end\{figure\}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figures/module4/fig-3} \caption{Selection of parent system equilibrium records for setting up a new Process simulation. Note to create a new Process record clone an existing Greisen\_titration model already created in Module 3.}\label{fig:fig-3d}
+\end{figure}
 
 \begin{figure}
 \includegraphics[width=0.7\linewidth]{figures/module4/fig-4} \caption{Create a new record for a Process simulation in R mode.}\label{fig:fig-4d}
@@ -725,10 +729,9 @@ To set up such a model, we need a PCO for the rock (R\_leucogranite) and fluid (
 \begin{figure}
 \includegraphics[width=0.9\linewidth]{figures/module4/fig-5} \caption{Select the simulation in R mode for setting up either a leaching or flushing models.}\label{fig:fig-5d}
 \end{figure}
-
-\textbackslash begin\{figure\}
-\includegraphics[width=1\linewidth]{figures/module4/fig-6} \textbackslash caption\{The Process dialogue for a multipass leaching model (mode R). To set up this system select Leaching (1), then the fluid (F\_greisen) (2) and the rock (R\_leucogranite) (3). Check that the definitions of your rock and fluid look similar to the script window (4). Select the number of fluid aliquots (5), i.e.~200 fluid aliquots (iTm: from 1000 to 1200 in steps of 1), and set P-T conditions (6). Note if we want to increase the number of fluid aliquots passing through the rock, we need to increase iTm for example from 1000 to 1400 in steps of 1 to create 400 aliquots. Also note that the fluid to rock ratio was set and can be changed in the parent SysEq record.\}\label{fig:fig-6d}
-\textbackslash end\{figure\}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figures/module4/fig-6} \caption{The Process dialogue for a multipass leaching model (mode R). To set up this system select Leaching (1), then the fluid (F\_greisen) (2) and the rock (R\_leucogranite) (3). Check that the definitions of your rock and fluid look similar to the script window (4). Select the number of fluid aliquots (5), i.e. 200 fluid aliquots (iTm: from 1000 to 1200 in steps of 1), and set P-T conditions (6). Note if we want to increase the number of fluid aliquots passing through the rock, we need to increase iTm for example from 1000 to 1400 in steps of 1 to create 400 aliquots. Also note that the fluid to rock ratio was set and can be changed in the parent SysEq record.}\label{fig:fig-6d}
+\end{figure}
 
 \begin{itemize}
 \item
@@ -757,7 +760,7 @@ To set up such a model, we need a PCO for the rock (R\_leucogranite) and fluid (
 
 \begin{itemize}
 \item
-  To change the model temperature, we are now going to create a new ``Rock\_leach'' simulation by cloning the Process record and selecting the correspond parent chemical system at 250 °C (Fig. \ref{fig:fig-10d}).
+  To change the model temperature, we are now going to create a new "Rock\textbackslash\_leach" simulation by cloning the Process record and selecting the correspond parent chemical system at 250 °C (Fig. \ref{fig:fig-10d}).
 \item
   Click next and Finish.
 \item
@@ -791,7 +794,7 @@ This model can also be set up using the R mode in \texttt{Process} simulation an
 
 \begin{itemize}
 \item
-  Create the parent system records in \texttt{SysEq} by cloning the Rock\_leach model created earlier at 450 °C and 4 kbar. Rename this system records to ``Rock\_flush'', and leave all the other parameters (Fig. \ref{fig:fig-14d}).
+  Create the parent system records in \texttt{SysEq} by cloning the Rock\textbackslash\_leach model created earlier at 450 °C and 4 kbar. Rename this system records to "Rock\textbackslash\_flush", and leave all the other parameters (Fig. \ref{fig:fig-14d}).
 \item
   Calculate the equilibrium. Save.
 \end{itemize}
@@ -802,26 +805,26 @@ This model can also be set up using the R mode in \texttt{Process} simulation an
 
 \begin{itemize}
 \item
-  Switch to \texttt{Process} simulation and clone one of the ``Rock-leaching'' models by electing your parent record ``Rock\_flush'' created previously at 450 °C and 4 kbar (Fig. \ref{fig:fig-15d}).
+  Switch to \texttt{Process} simulation and clone one of the ``Rock-leaching'' models by electing your parent record "Rock\textbackslash\_flush" created previously at 450 °C and 4 kbar (Fig. \ref{fig:fig-15d}).
 \item
   Call the new record ``Rock-flushing-cool'' and use the code R for the process simulation mode (Fig. \ref{fig:fig-16d}).
 \item
   Change the system parameters in the next Process wizard window to cool your system from 450 down to 250 °C at 4 kbar. Select the ``Flushing: Compos source'' model and the other options shown in Figure \ref{fig:fig-17d}. Make sure to the follow the exact sequence so the script generated by the wizard will work automatically.
 \item
-  In the following window select the sampling parameters. Here we will choose log of total dissolved Sn (lgm\_t, molality) and log activity (lga) of the aqueous Sn species as shown in Figure \ref{fig:fig-18d}.
+  In the following window select the sampling parameters. Here we will choose log of total dissolved Sn (lgm\textbackslash\_t, molality) and log activity (lga) of the aqueous Sn species as shown in Figure \ref{fig:fig-18d}.
 \end{itemize}
 
-\textbackslash begin\{figure\}
-\includegraphics[width=1\linewidth]{figures/module4/fig-15} \textbackslash caption\{Select the parent record Rock\_flush to create a new Process simulation by cloning on of the previously created Rock\_leaching records.\}\label{fig:fig-15d}
-\textbackslash end\{figure\}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figures/module4/fig-15} \caption{Select the parent record Rock\_flush to create a new Process simulation by cloning on of the previously created Rock\_leaching records.}\label{fig:fig-15d}
+\end{figure}
 
 \begin{figure}
 \includegraphics[width=0.7\linewidth]{figures/module4/fig-16} \caption{Input window the create a record for the flushing model.}\label{fig:fig-16d}
 \end{figure}
 
-\textbackslash begin\{figure\}
-\includegraphics[width=1\linewidth]{figures/module4/fig-17} \textbackslash caption\{The Process dialogue for a single-pass cooling model (R). To set up this system select Flushing (1), then the rock (2) and (3). Check that the definitions of Fluid\_greisen and R\_leucogranite look similar to the script window (4). In (5) we select the temperature change between each rock column or step (i.e.~from 450 to 250 °C in -5 °C steps). In (6) we select the number of rock columns (i.e.~40).\}\label{fig:fig-17d}
-\textbackslash end\{figure\}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figures/module4/fig-17} \caption{The Process dialogue for a single-pass cooling model (R). To set up this system select Flushing (1), then the rock (2) and (3). Check that the definitions of Fluidgreisen and R\_leucogranite look similar to the script window (4). In (5) we select the temperature change between each rock column or step (i.e. from 450 to 250 °C  in -5 °C  steps). In (6) we select the number of rock columns (i.e. 40).}\label{fig:fig-17d}
+\end{figure}
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{figures/module4/fig-18} \caption{Sampling dialog in the Process wizard for selecting the Sn species to be plotted.}\label{fig:fig-18d}
@@ -844,10 +847,132 @@ This model can also be set up using the R mode in \texttt{Process} simulation an
 \includegraphics[width=0.9\linewidth]{figures/module4/fig-21} \caption{Single-pass flushing model showing the aqueous Sn species and total dissolved Sn concentrations in a greisen fluid reacted stepwise with leucogranite and cooled from  450 to 250 °C at 4kbar.}\label{fig:fig-21d}
 \end{figure}
 
-\hypertarget{module-5}{%
-\chapter{Module 5}\label{module-5}}
+\hypertarget{module5}{%
+\chapter{GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction}\label{module5}}
 
-Work in progress\ldots{}
+The GEM2MT module is a tool for automation of one-dimensional (1-D) reactive mass transport simulations coupled with GEM calculation of equilibrium states in spatially distributed nodes (boxes, volumes) over time steps. GEM2MT can be used to simulate the open system evolution and fluid-rock reactions occurring along a fluid flow path (e.g.~vein, fracture, porous media, etc.). This type of simulation solves simple reactive mass transport problems, which requires the definition of fluxes between boxes of certain fluid/rock mass or volume ratios (or alternatively porosity and permeability) where fluid is moved sequentially or simultaneously from one box to the other. The GEM2MT module can simulate reactive transport in three main modes (see help file for more info):
+
+\begin{itemize}
+\tightlist
+\item
+  Sequential reactor chain and waves (S)
+\item
+  Flow-through and box-flux sequence (F, B)
+\item
+  One-dimensional reactive transport with advection/dispersion/diffusion (A,D,W)
+\end{itemize}
+
+To prepare for such simulations, two Compos (PCO) records are usually created in thermodynamic database mode. These two system compositions can then be copy/pasted and added later to GEM2MT, either using individual elements (Independent Components) and/or user-defined formulae units. In this example we use for Rock ``R\_Basalt'' and for Fluid ``F\_Seawater'' (already prepared in Module 5) and an example ``SWB-reactor'' was created in SysEq at 250 \(^{\circ}\)C and 500 bar.
+
+\hypertarget{sequential-reactors-chain-s-mode}{%
+\section{``Sequential reactors chain'' S mode}\label{sequential-reactors-chain-s-mode}}
+
+In this mode, we can simulate a ``wave'' of a fluid that will pass through a series of 100 rock nodes once per step (i.e., a wave consists of ca. 100 substeps) with an initial fluid/rock ratio of 10. A schematic of the sequential reactors chain is shown in Figure \ref{fig:fig-1e}.
+
+\begin{figure}
+\includegraphics[width=0.7\linewidth]{figures/module5/fig-1} \caption{Schematic showing the sequential reactors chain (S mode). A sequence of steps forms a wave where the fluid passes and equilibrates sequentially through all of the reactors in the chain until the fluid reaches the last reactor, at which point another wave starts in the first reactor.}\label{fig:fig-1e}
+\end{figure}
+
+\begin{itemize}
+\item
+  Create a parent system record containing the 1000 g of the fluid and 100 g of the rock in SysEq at the temperature and pressure of interest (i.e.~250 \(^{\circ}\)C and 500 bar). This record will have to be selected when creating a new GEM2MT record (object) containing all the phases and elements relevant to the fluid-rock system of interest. Lets call this system ``SWB\_gem2mt''.
+\item
+  Switch to the GEM2MT module and create a new record. Select the parent system containing the rock and the fluid created above. Call this record ``sequential-reactor''
+\item
+  In Step 1 of the wizard, select the S mode.
+\item
+  In Step 2 of the wizard, set the number of nodes (nC= 101) and the maximum number of steps (in this case, ``waves'', i.e.~1000). Select 2 for the number of initial chemical system recipes, which will allow us to define the initial compositions and masses of the fluid and rock initial systems. \emph{Optionally, we can set the number of user-defined formula units that will be used for augmenting initial bulk elemental compositions of the fluid and the rock.}
+\item
+  In Step 3, we select ``Move aqueous fluid''.
+\item
+  In Step 4, we select P, T, V, Initial system, Node type, MPG flux, and Initial mass.
+\item
+  In Step 5, we select the variables you want to plot in each node after each ``wave''. Under n1vPH (volumes of minerals) select Cpx, Chlorite, Epidote, Calcite, Albite, Quartz, Prehnite, Wairakite, Anhydrite, Pyrite.
+\end{itemize}
+
+After completing the wizard, we get to the GEM2MT module window ``Initial'' page. There we need to enter a comment about the simulation, the names of rock and fluid, temperature, pressure, mass of fluid and rock, and the initial composition of the fluid and the rock.
+
+\begin{itemize}
+\item
+  In the first row (index 0), enter the name of system ``Fluid'' or similar, and add a mass of 1 kg. In the second row (index 1), enter the name of system ``Rock'' or similar, and add a mass of 0.1 kg. In both cases, set temperature (e.g.~250 \(^{\circ}\)C) and pressure (e.g.~500 bar) for equilibrium conditions.
+\item
+  Next in the mICb table below of quantity/concentration of IC in initial systems, enter (copy-paste) the concentration and units for each element to define the compositions of rock and fluid in the corresponding rows. \emph{Optionally, type user-defined formulae (e.g.~``SiO2'', ``CO2'', etc.) and enter their units and quantities, which will be added (after unit conversions) to the bulk elemental compositions of initial systems for fluid and rock.}
+\end{itemize}
+
+The initialization script (visible in the lower part of the ``Initial'' page) should have been created by the wizard and normally does not need editing in the S mode. Click the ``Calculate'' toolbar button and (at the very first time) do not plot the nodes. Stop calculation after a few ``waves'' and start it again with graph plotting to inspect the results.
+
+\hypertarget{flow-through-reactors-chain-f-mode}{%
+\section{Flow-through reactors chain (F) mode}\label{flow-through-reactors-chain-f-mode}}
+
+In this mode, we can simulate the simultaneous transport of (reacted) fluid in one direction through all nodes from one node to the next. This mode requires the definition of equal zero- and/or first-order fluxes of fluid connecting each node with the next one; equal rates of the fluid flux should be specified (in mass/time (step) units). In this example we will transport about 20 g fluid/step through each node simultaneously. The very first box in the chain is declared a ``constant-flux source'' and it contains only ``fresh'' fluid but no rock; the very last box is declared a ``constant-flux sink''.
+
+\begin{figure}
+\includegraphics[width=0.7\linewidth]{figures/module5/fig-2} \caption{Schematic showing the flow-through reactors chain (F mode). At each step a defined flux of fluid is pumped into the first reactor and the same amount of fluid out of the last reactor. In this simulation mode the same amount of fluid passes simultanously from one reactor to another with a flux/step corresponding to the fluid in/output flux.}\label{fig:fig-2e}
+\end{figure}
+
+The initial setup for F mode is similar to that for S mode, with an important difference that the same mass of fluid (corresponding to the effective fluid/rock mass ratio) should be present in all nodes containing the rock at the initial step. In this example, we will start by adding 9 kg of H2O to 1 kg in our initial rock composition. Since we normalize the total rock to 0.1 kg during initialization, the starting composition of each node will be 90 g of H2O and 10 g of rock. At each (time) step, about one fifth of fluid in each box is transported to the next box, for this we will use a flux constant of 0.2.
+- Under GEM2MT, we create a new record (you can clone the record prepare in S mode) selecting the parent system containing the rock and fluid created in SysEq (``SWB\_gem2mt'').
+
+\begin{itemize}
+\item
+  In Step 1 of the wizard, we select the F mode.
+\item
+  In Step 2 of the wizard, we set the number of nodes (e.g.~nC= 101) and a maximum number of (time) steps (e.g.~1000). Enter 1 for the number of user-defined formula units (to add at least H2O to the rock initial composition).
+\item
+  In Step 4, we set P, T, V, Initial system, Node type, MPG flux, and Initial mass.
+\item
+  In Step 5, we select the output variables you want to plot in each nodes. Under n1vPH (volumes of minerals) select Actinolite, Chlorite, Epidote, Prehnite, Albite, Quartz, Anhydrite, Pyrite, Cpx, Wairakite, Calcite.
+\end{itemize}
+
+After completing the wizard, we get to the GEM2MT module window ``Initial'' page. There we need to enter the names of rock and fluid initial systems, their temperature, pressure, masses, and the initial compositions of the fluid and the rock (already done in Example 1). For the rock composition we will add 9 kg H2O (unit G) as a user-defined formulae, which will be added (after unit conversions) to the bulk elemental compositions of initial systems of the rock. The rock should contain enough initial H2O to have the desired fluid/rock mass ratio (e.g.~if normalized to 1 kg of rock, add 9 kg of H2O for a fluid/rock ratio of about 10).
+
+\begin{itemize}
+\tightlist
+\item
+  The initialization script (visible in the lower part of the ``Initial'' page) should have been created by the wizard. In this script, we check that the Flux Rate (FDLf) is set to the desired value. This script will then assign a zero-order flux (0) from node 0 to 1 with a flux of 0.2, and assign a first-order flux (1) with a flux of 0.2 between all the other nodes. The correspond script part that can be changed and initializes each node is the following:
+\end{itemize}
+
+\begin{verbatim}
+$     flux order 1 (proportional to source MPG mass)
+FDLf[qf][0] =: ( qf=0? 0: 1);
+$     flux rate constant
+FDLf[qf][1] =: ( qf=0? 0.2: 0.2);
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Switch to tab ``Fluxes'', there we need to set the amount of phase(s) that are transported in the flux in the first box. For defining unit flux as composed of 10 g aqueous solution phase, enter 0.1 G of aq\_gen phase for quantities of phases in MGP column (for a flux constant of 0.1). In the other boxes, a flux constant of 0.1, means that the mass of fluid transported between the boxes will be about 100g times 0.1 = 10g/step.
+\end{itemize}
+
+Click the ``Calculate'' toolbar button and (at the very first time) do not plot the nodes. Stop calculation after a few ``steps'', then start it again with plotting.
+
+\hypertarget{one-dimensional-reactive-transport-with-advectiondispersion-a-mode}{%
+\section{One-dimensional reactive transport with advection/dispersion (A) mode}\label{one-dimensional-reactive-transport-with-advectiondispersion-a-mode}}
+
+\begin{itemize}
+\item
+  Under GEM2MT, we create a new record selecting the parent system containing the rock and fluid created in SysEq (``SWB\_gem2mt'').
+\item
+  In Step 1 of the wizard, we select the A mode.
+\item
+  In Step 2 of the wizard, we set the number of nodes (e.g.~nC= 101) and a maximum number of (time mTau) steps (e.g.~1000). Enter 1 for the number of user-defined formula units (to add at least H2O to the rock initial composition).
+\item
+  In Step 4, in addition to default options in S and F modes, we choose Initial node volume, Advection veolocity, Init. node porosity, Init. eff. permeability, Init. media dispersivity.
+\item
+  In Step 5, we select the output variables you want to plot in each nodes.
+\end{itemize}
+
+-- After completing the wizard, we get to the GEM2MT module window ``Initial'' page. There we need to enter the names of rock and fluid initial systems, their temperature, pressure, masses, and the initial compositions of the fluid and the rock (similar to Example 2). For the mass of rock choose 1 kg.
+
+\begin{itemize}
+\item
+  The initialization script (visible in the lower part of the ``Initial'' page) should have been created by the wizard. Instead of defining fluxes, we will define advection velocity, porosity etc. To do this we switch to the ``Nodes'' tab and choose spatial dimension x (e.g.~0.2 m), time step reduction factor 1,for initial node volume 1 m3, advection velocity 1e-07 m/s, porosity 0.3, permeability 1e-14, dispersivity 0.001 initial dispersivity 2e-9 m.
+\item
+  Switch to tab ``Setup'', choose 1,000,000 for total time mTau and a step of 100.
+\end{itemize}
+
+-- Click the ``Calculate'' toolbar button and (at the very first time) do not plot the nodes. Stop calculation after a few ``steps'', then start it again with plotting.
 
   \bibliography{book.bib,packages.bib}
 

@@ -45,14 +45,14 @@ knitr::include_graphics("figures/module1/fig-3.png")
  
 - In the next window, you can choose the thermodynamic database for your project.	Select the database files 3rdparty/MINES and support, then deselect other databases as shown in Figure \@ref(fig:fig-5). Click `Next`.
  	
-_Do not forget, you have an extensive list of minerals included in this database. Once you have gone through the tutorials and are familiar with GEMS, it is suggested that in thermodynamic database mode you switch to the `Phase` module (Fig. \@ref(fig:fig-9)), and remove minerals that are not relevant for your own specific project. Also, for less advanced users, it is easiedt to not use the ternary non-ideal feldspar solid solution model (ss) but only their end members (i.e., anorthite, albite and microcline)._
+_Do not forget, you have an extensive list of minerals included in this database. Once you have gone through the tutorials and are familiar with GEMS, it is suggested that in thermodynamic database mode you switch to the `Phase` module (Fig. \@ref(fig:fig-9)), and remove minerals that are not relevant for your own specific project. Also, for less advanced users, it is easiest to not use the ternary non-ideal feldspar solid solution model (ss) but only their end members (i.e., anorthite, albite and microcline)._
 
 
 ```{r,fig-4, echo = FALSE, out.width="70%", fig.cap="GEMS user interface showing the project window. Click on make a `New Project` and select a project name without spaces."} 
 knitr::include_graphics("figures/module1/fig-4.png")
 ```
 
-```{r,fig-5, echo = FALSE, out.width="70%", fig.cap="Select 3rdparty/mines and support, and for phases select only withoutss. _Note that we recommend only advanced users to choose withss; the expanded tab shows pure for endmembers and ss for different solid solution endmembers_"} 
+```{r,fig-5, echo = FALSE, out.width="70%", fig.cap="Select 3rdparty/mines and support, and for phases select only withoutss. Note that we recommend only advanced users to choose withss; the expanded tab shows pure for endmembers and ss for different solid solution endmembers"} 
 knitr::include_graphics("figures/module1/fig-5.png")
 ```
  	
