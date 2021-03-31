@@ -24,7 +24,7 @@
 <meta name="author" content="Alexander Gysi" />
 
 
-<meta name="date" content="2021-03-30" />
+<meta name="date" content="2021-03-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -169,24 +169,25 @@ Figure 5.1: Schematic showing the sequential reactors chain (S mode). A sequence
 Figure 5.2: Schematic showing the flow-through reactors chain (F mode). At each step a defined flux of fluid is pumped into the first reactor and the same amount of fluid out of the last reactor. In this simulation mode the same amount of fluid passes simultanously from one reactor to another with a flux/step corresponding to the fluid in/output flux.
 </p>
 </div>
-<p>The initial setup for F mode is similar to that for S mode, with an important difference that the same mass of fluid (corresponding to the effective fluid/rock mass ratio) should be present in all nodes containing the rock at the initial step. In this example, we will start by adding 9 kg of H2O to 1 kg in our initial rock composition. Since we normalize the total rock to 0.1 kg during initialization, the starting composition of each node will be 90 g of H2O and 10 g of rock. At each (time) step, about one fifth of fluid in each box is transported to the next box, for this we will use a flux constant of 0.2.
-- Under GEM2MT, we create a new record (you can clone the record prepare in S mode) selecting the parent system containing the rock and fluid created in SysEq (“SWB_gem2mt”).</p>
+<p>The initial setup for F mode is similar to that for S mode, with an important difference that the same mass of fluid (corresponding to the effective fluid/rock mass ratio) should be present in all nodes containing the rock at the initial step. In this example, we will start by adding 10 kg of H2O to 1 kg in our initial rock composition. Since we normalize the total rock to 0.110 kg during initialization, the starting composition of each node will be 100 g of H2O and 10 g of rock. At each (time) step, about one fifth of fluid in each box is transported to the next box, for this we will use a flux constant of 0.2.</p>
 <ul>
+<li><p>Under GEM2MT, we create a new record (you can clone the record prepare in S mode) selecting the parent system containing the rock and fluid created in SysEq (“SWB_gem2mt”).</p></li>
 <li><p>In Step 1 of the wizard, we select the F mode.</p></li>
 <li><p>In Step 2 of the wizard, we set the number of nodes (e.g. nC= 101) and a maximum number of (time) steps (e.g. 1000). Enter 1 for the number of user-defined formula units (to add at least H2O to the rock initial composition).</p></li>
 <li><p>In Step 4, we set P, T, V, Initial system, Node type, MPG flux, and Initial mass.</p></li>
-<li><p>In Step 5, we select the output variables you want to plot in each nodes. Under n1vPH (volumes of minerals) select Actinolite, Chlorite, Epidote, Prehnite, Albite, Quartz, Anhydrite, Pyrite, Cpx, Wairakite, Calcite.</p></li>
+<li><p>In Step 5, we select the output variables you want to plot in each nodes. Under n1vPH (volumes of minerals) select Cpx, Chlorite, Epidote, Calcite, Albite, Quartz, Prehnite, Wairakite, Anhydrite, Pyrite.</p></li>
 </ul>
-<p>After completing the wizard, we get to the GEM2MT module window “Initial” page. There we need to enter the names of rock and fluid initial systems, their temperature, pressure, masses, and the initial compositions of the fluid and the rock (already done in Example 1). For the rock composition we will add 9 kg H2O (unit G) as a user-defined formulae, which will be added (after unit conversions) to the bulk elemental compositions of initial systems of the rock. The rock should contain enough initial H2O to have the desired fluid/rock mass ratio (e.g. if normalized to 1 kg of rock, add 9 kg of H2O for a fluid/rock ratio of about 10).</p>
+<p>After completing the wizard, we get to the GEM2MT module window “Initial” page. There we need to enter the names of rock and fluid initial systems, their temperature, pressure, masses, and the initial compositions of the fluid and the rock (already done in Example 1). For the rock composition we will add 10 kg H2O (unit G) as a user-defined formulae, which will be added (after unit conversions) to the bulk elemental compositions of initial systems of the rock. The rock should contain enough initial H2O to have the desired fluid/rock mass ratio (e.g. if normalized to 1 kg of rock, add 10 kg of H2O for a fluid/rock ratio of about 10). Also make sure to have all elements present in both the fluid and the rock, i.e. you can add a small amount (1e-9 moles) of C, Cl, and S to the rock and a small amount (1e-9 moles) of Al, Fe, Si and Ti to the fluid.</p>
 <ul>
-<li>The initialization script (visible in the lower part of the “Initial” page) should have been created by the wizard. In this script, we check that the Flux Rate (FDLf) is set to the desired value. This script will then assign a zero-order flux (0) from node 0 to 1 with a flux of 0.2, and assign a first-order flux (1) with a flux of 0.2 between all the other nodes. The correspond script part that can be changed and initializes each node is the following:</li>
+<li>The initialization script (visible in the lower part of the “Initial” page) should have been created by the wizard. In this script, we check that the Flux Rate (FDLf) is set to the desired value. This script will then assign a zero-order flux (0) from node 0 to 1 with a flux of 0.1, and assign a first-order flux (1) with a flux of 0.2 between all the other nodes (or boxes). A 1st order flux means that the mass (of fluid) transported per (time) step is proportional to the mass of fluid phase in the outgoing box.</li>
 </ul>
+<p>The correspond script part that can be changed and initializes each node is the following:</p>
 <pre><code>$     flux order 1 (proportional to source MPG mass)
 FDLf[qf][0] =: ( qf=0? 0: 1);
 $     flux rate constant
-FDLf[qf][1] =: ( qf=0? 0.2: 0.2);</code></pre>
+FDLf[qf][1] =: ( qf=0? 0.1: 0.2);</code></pre>
 <ul>
-<li>Switch to tab “Fluxes,” there we need to set the amount of phase(s) that are transported in the flux in the first box. For defining unit flux as composed of 10 g aqueous solution phase, enter 0.1 G of aq_gen phase for quantities of phases in MGP column (for a flux constant of 0.1). In the other boxes, a flux constant of 0.1, means that the mass of fluid transported between the boxes will be about 100g times 0.1 = 10g/step.</li>
+<li>Switch to tab “Fluxes,” there we need to set the amount of phase(s) that are transported in the flux in the first box. For defining unit flux as composed of 20 g aqueous solution phase, enter 0.2 G of aq_gen phase for quantities of phases in MGP column (for a flux constant of 0.1). In the other boxes, a flux constant of 0.2, means that the mass of fluid transported between the boxes will be about 100g times 0.2 = 20g/step.</li>
 </ul>
 <p>Click the “Calculate” toolbar button and (at the very first time) do not plot the nodes. Stop calculation after a few “steps,” then start it again with plotting.</p>
 </div>
