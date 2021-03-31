@@ -33,7 +33,14 @@ knitr::include_graphics("figures/module5/fig-1.png")
 - In Step 5, we select the variables you want to plot in each node after each "wave". Under n1vPH (volumes of minerals) select Cpx, Chlorite, Epidote, Calcite, Albite, Quartz, Prehnite, Wairakite, Anhydrite, Pyrite.
 
 
-After completing the wizard, we get to the GEM2MT module window "Initial" page. There we need to enter a comment about the simulation, the names of rock and fluid, temperature, pressure, mass of fluid and rock, and the initial composition of the fluid and the rock. 
+
+```{r,fig-2e, echo = FALSE, out.width="900%", fig.cap="GEM2MT module Initial window page showing the steps to set up 1) the initial name of rock and fluid, 2) pressure and temperature, 3) input quantity of rock and fluid in kg, 4) compositions of rock and fluid (i.e., row index 0 corresponds to the fluid and row index 1 to rock), and 5) input of additional user-defined formulae and units (these fields can be added/selected in the wizard window)."}
+knitr::include_graphics("figures/module5/fig-2.png")
+```
+
+
+
+After completing the wizard, we get to the GEM2MT module window "Initial" page (Fig. \@ref(fig:fig-2e)). There we need to enter a comment about the simulation, the names of rock and fluid, temperature, pressure, mass of fluid and rock, and the initial composition of the fluid and the rock. 
 
 - In the first row (index 0), enter the name of system "Fluid" or similar, and add a mass of 1 kg. In the second row (index 1), enter the name of system "Rock" or similar, and add a mass of 0.1 kg. In both cases, set temperature (e.g. 250 $^{\circ}$C) and pressure (e.g. 500 bar) for equilibrium conditions.
 
@@ -45,8 +52,8 @@ The initialization script (visible in the lower part of the "Initial" page) shou
 
 In this mode, we can simulate the simultaneous transport of (reacted) fluid in one direction through all nodes from one node to the next. This mode requires the definition of equal zero- and/or first-order fluxes of fluid connecting each node with the next one; equal rates of the fluid flux should be specified (in mass/time (step) units). In this example we will transport about 20 g fluid/step through each node simultaneously. The very first box in the chain is declared a "constant-flux source" and it contains only "fresh" fluid but no rock; the very last box is declared a "constant-flux sink".  
 
-```{r,fig-2e, echo = FALSE, out.width="70%", fig.cap="Schematic showing the flow-through reactors chain (F mode). At each step a defined flux of fluid is pumped into the first reactor and the same amount of fluid out of the last reactor. In this simulation mode the same amount of fluid passes simultanously from one reactor to another with a flux/step corresponding to the fluid in/output flux."}
-knitr::include_graphics("figures/module5/fig-2.png")
+```{r,fig-3e, echo = FALSE, out.width="70%", fig.cap="Schematic showing the flow-through reactors chain (F mode). At each step a defined flux of fluid is pumped into the first reactor and the same amount of fluid out of the last reactor. In this simulation mode the same amount of fluid passes simultanously from one reactor to another with a flux/step corresponding to the fluid in/output flux."}
+knitr::include_graphics("figures/module5/fig-3.png")
 ```
 
 The initial setup for F mode is similar to that for S mode, with an important difference that the same mass of fluid (corresponding to the effective fluid/rock mass ratio) should be present in all nodes containing the rock at the initial step. In this example, we will start by adding 10 kg of H2O to 1 kg in our initial rock composition. Since we normalize the total rock to 0.110 kg during initialization, the starting composition of each node will be 100 g of H2O and 10 g of rock. At each (time) step, about one fifth of fluid in each box is transported to the next box, for this we will use a flux constant of 0.2. 
