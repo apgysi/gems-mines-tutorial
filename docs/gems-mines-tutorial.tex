@@ -929,6 +929,10 @@ The initial setup for F mode is similar to that for S mode, with an important di
   In Step 5, we select the output variables you want to plot in each nodes. Under n1vPH (volumes of minerals) select Cpx, Chlorite, Epidote, Calcite, Albite, Quartz, Prehnite, Wairakite, Anhydrite, Pyrite.
 \end{itemize}
 
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figures/module5/fig-4} \caption{GEM2MT module Initial window page showing the steps to set up the flow-through reactor mode. Note we added 10 kg of H2O (User-defined formula) to the 1 kg of rock, and normalized the input weight of the rock to 0.110 kg (i.e. 100 g of fluid and 10 g of rock). It is also necessary to add all IC elements in the rock and fluids, which is achieved by adding a small arbitrary amount (1e-9 M). The flux can be adjusted in the script window.}\label{fig:fig-4e}
+\end{figure}
+
 After completing the wizard, we get to the GEM2MT module window ``Initial'' page. There we need to enter the names of rock and fluid initial systems, their temperature, pressure, masses, and the initial compositions of the fluid and the rock (already done in Example 1). For the rock composition we will add 10 kg H2O (unit G) as a user-defined formulae, which will be added (after unit conversions) to the bulk elemental compositions of initial systems of the rock. The rock should contain enough initial H2O to have the desired fluid/rock mass ratio (e.g.~if normalized to 1 kg of rock, add 10 kg of H2O for a fluid/rock ratio of about 10). Also make sure to have all elements present in both the fluid and the rock, i.e.~you can add a small amount (1e-9 moles) of C, Cl, and S to the rock and a small amount (1e-9 moles) of Al, Fe, Si and Ti to the fluid.
 
 \begin{itemize}
