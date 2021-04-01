@@ -191,9 +191,9 @@ Figure 5.3: Schematic showing the flow-through reactors chain (F mode). At each 
 <pre><code>$     flux order 1 (proportional to source MPG mass)
 FDLf[qf][0] =: ( qf=0? 0: 1);
 $     flux rate constant
-FDLf[qf][1] =: ( qf=0? 0.1: 0.2);</code></pre>
+FDLf[qf][1] =: ( qf=0? 1: 0.2);</code></pre>
 <ul>
-<li>Switch to tab “Fluxes,” there we need to set the amount of phase(s) that are transported in the flux in the first box. For defining unit flux as composed of 20 g aqueous solution phase, enter 0.2 G of aq_gen phase for quantities of phases in MGP column (for a flux constant of 0.1). In the other boxes, a flux constant of 0.2, means that the mass of fluid transported between the boxes will be about 100g times 0.2 = 20g/step.</li>
+<li>Switch to tab “Fluxes,” there we need to set the amount of phase(s) that are transported in the flux in the first box. For defining unit flux as composed of 20 g aqueous solution phase, enter 0.02 G of aq_gen phase for quantities of phases in MGP column (for a flux constant of 1). In the other boxes, a flux constant of 0.2, means that the mass of fluid transported between the boxes will be about 100g times 0.2 = 20g/step.</li>
 </ul>
 <p>Click the “Calculate” toolbar button and (at the very first time) do not plot the nodes. Stop calculation after a few “steps,” then start it again with plotting.</p>
 </div>
