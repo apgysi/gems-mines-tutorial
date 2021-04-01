@@ -101,5 +101,3 @@ module5
 sequential-reactors-chain-s-mode
 flow-through-reactors-chain-f-mode
 one-dimensional-reactive-transport-with-advectiondispersion-a-mode
-collaborators
-thanks

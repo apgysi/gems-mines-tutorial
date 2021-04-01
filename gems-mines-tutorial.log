@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2021.3.30)  31 MAR 2021 21:25
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2021.3.30)  31 MAR 2021 22:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -793,23 +793,23 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 3.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 3.
-)
+[3])
 \tf@toc=\write3
-[3] [4
+[4] [5
 
-] [5] [6
+] [6
 
 ]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--115
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 []\TU/lmr/bx/n/14.4 Installing the MINES thermodynamic
  []
 
 File: figures/module1/fig-1.png Graphic file (type bmp)
 <figures/module1/fig-1.png>
 
-Underfull \hbox (badness 2626) in paragraph at lines 134--135
+Underfull \hbox (badness 2626) in paragraph at lines 137--138
 []\TU/lmr/m/n/10 – In Windows Gems 3.7, this folder should be in GEMS370/Gems3-
 
  []
@@ -830,7 +830,7 @@ File: figures/module1/fig-6.png Graphic file (type bmp)
 File: figures/module1/fig-7.png Graphic file (type bmp)
 <figures/module1/fig-7.png>
 
-Underfull \hbox (badness 2253) in paragraph at lines 216--217
+Underfull \hbox (badness 2253) in paragraph at lines 219--220
 []\TU/lmr/m/n/10 Finally, you can click on \TU/lmtt/m/n/10 Calculate BCC \TU/lm
 r/m/n/10 followed by \TU/lmtt/m/n/10 Calculate
  []
@@ -846,7 +846,7 @@ Chapter 2.
 File: figures/module2/fig-1.jpg Graphic file (type bmp)
 <figures/module2/fig-1.jpg>
 [17]
-Overfull \hbox (47.06pt too wide) in paragraph at lines 250--251
+Overfull \hbox (47.06pt too wide) in paragraph at lines 253--254
 []\TU/lmr/m/n/10 – For Windows users the project folder is located in C:/GEMS37
 0/Library/Gems3/projects/
  []
@@ -859,7 +859,7 @@ File: figures/module2/fig-3.png Graphic file (type bmp)
 File: figures/module2/fig-4.png Graphic file (type bmp)
 <figures/module2/fig-4.png>
 
-Underfull \hbox (badness 1383) in paragraph at lines 293--293
+Underfull \hbox (badness 1383) in paragraph at lines 296--296
 []\TU/lmr/bx/n/14.4 Compute a titration model (Process, S
  []
 
@@ -925,7 +925,7 @@ File: figures/module3/fig-7.png Graphic file (type bmp)
 File: figures/module3/fig-8.png Graphic file (type bmp)
 <figures/module3/fig-8.png>
 
-Underfull \hbox (badness 4479) in paragraph at lines 539--539
+Underfull \hbox (badness 4479) in paragraph at lines 542--542
 []\TU/lmr/bx/n/14.4 Add minerals and aqueous species to
  []
 
@@ -1010,8 +1010,8 @@ File: figures/module4/fig-17.png Graphic file (type bmp)
 File: figures/module4/fig-18.png Graphic file (type bmp)
 <figures/module4/fig-18.png>
 
-LaTeX Warning: Reference `fig:fig11.jpeg' on page 64 undefined on input line 83
-7.
+LaTeX Warning: Reference `fig:fig11.jpeg' on page 64 undefined on input line 84
+0.
 
 File: figures/module4/fig-19.png Graphic file (type bmp)
 <figures/module4/fig-19.png>
@@ -1036,12 +1036,12 @@ MULATIONS OF HYDROTHERMAL SEAWATER-BASALT INTERACTION
 File: figures/module5/fig-2.png Graphic file (type bmp)
 <figures/module5/fig-2.png>
 
-Overfull \hbox (597.52303pt too wide) in paragraph at lines 894--894
+Overfull \hbox (597.52303pt too wide) in paragraph at lines 897--897
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 84.50523pt on input line 895.
+LaTeX Warning: Float too large for page by 84.50523pt on input line 898.
 
 [73]
 Overfull \hbox (286.40125pt too wide) has occurred while \output is active
@@ -1068,25 +1068,27 @@ ION (A) MODE \TU/lmr/m/n/10 77
  []
 
 [77]
-No file gems-mines-tutorial.bbl.
-
 Overfull \hbox (286.40125pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 78 \TU/lmr/m/sl/10 CHAPTER 5.  GEM2MT REACTIVE MASS TRANSPORT SI
 MULATIONS OF HYDROTHERMAL SEAWATER-BASALT INTERACTION
  []
 
-[78] (./gems-mines-tutorial.aux)
+[78]
+No file gems-mines-tutorial.bbl.
+[79
+
+] (./gems-mines-tutorial.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19209 strings out of 477299
- 340897 string characters out of 5838338
- 832266 words of memory out of 5000000
- 38534 multiletter control sequences out of 15000+600000
+ 19211 strings out of 477299
+ 340919 string characters out of 5838338
+ 832429 words of memory out of 5000000
+ 38536 multiletter control sequences out of 15000+600000
  409889 words of font info for 81 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  94i,6n,118p,976b,436s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gems-mines-tutorial.pdf (78 pages).
+Output written on gems-mines-tutorial.pdf (79 pages).

@@ -24,3 +24,4 @@
 \contentsline {section}{\numberline {5.1}``Sequential reactors chain'' S mode}{72}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Flow-through reactors chain (F) mode}{73}{section.5.2}%
 \contentsline {section}{\numberline {5.3}One-dimensional reactive transport with advection/dispersion (A) mode}{77}{section.5.3}%
+\contentsline {chapter}{Acknowledgment}{79}{chapter*.3}%
