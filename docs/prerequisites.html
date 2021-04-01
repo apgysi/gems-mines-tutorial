@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Prerequisites | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
+  <meta name="description" content="Prerequisites | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Prerequisites | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Prerequisites | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  
+  
+  
+
+<meta name="author" content="Alexander Gysi, New Mexico Tech, USA" />
+
+
+<meta name="date" content="2021-03-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="intro.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">GEMS tutorial</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Collaborators</a></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Create your first project in GEMS</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#installing-the-mines-thermodynamic-database"><i class="fa fa-check"></i><b>2.1</b> Installing the MINES thermodynamic database</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#creating-a-new-project-from-scratch"><i class="fa fa-check"></i><b>2.2</b> Creating a new project from scratch</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#your-first-fluid-rock-equilibrium-model"><i class="fa fa-check"></i><b>2.3</b> Your first fluid-rock equilibrium model</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#outcomes"><i class="fa fa-check"></i><b>2.4</b> Outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="module2.html"><a href="module2.html"><i class="fa fa-check"></i><b>3</b> Feldspar reaction path</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="module2.html"><a href="module2.html#compute-the-chemical-equilibrium-of-single-chemical-systems-syseq"><i class="fa fa-check"></i><b>3.1</b> Compute the chemical equilibrium of single chemical systems (SysEq)</a></li>
+<li class="chapter" data-level="3.2" data-path="module2.html"><a href="module2.html#compute-a-titration-model-process-s-mode"><i class="fa fa-check"></i><b>3.2</b> Compute a titration model (Process, S mode)</a></li>
+<li class="chapter" data-level="3.3" data-path="module2.html"><a href="module2.html#modify-p-t-of-the-feldspar-reaction-path"><i class="fa fa-check"></i><b>3.3</b> Modify P-T of the feldspar reaction path</a></li>
+<li class="chapter" data-level="3.4" data-path="module2.html"><a href="module2.html#tweak-and-plot-the-results"><i class="fa fa-check"></i><b>3.4</b> Tweak and plot the results</a></li>
+<li class="chapter" data-level="3.5" data-path="module2.html"><a href="module2.html#compute-a-cooling-model-process-p-mode"><i class="fa fa-check"></i><b>3.5</b> Compute a cooling model (Process, P mode)</a></li>
+<li class="chapter" data-level="3.6" data-path="module2.html"><a href="module2.html#outcomes-1"><i class="fa fa-check"></i><b>3.6</b> Outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="module3.html"><a href="module3.html"><i class="fa fa-check"></i><b>4</b> Greisenization Part (I)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="module3.html"><a href="module3.html#create-a-custom-rock-and-fluid"><i class="fa fa-check"></i><b>4.1</b> Create a custom rock and fluid</a></li>
+<li class="chapter" data-level="4.2" data-path="module3.html"><a href="module3.html#add-minerals-and-aqueous-species-to-database"><i class="fa fa-check"></i><b>4.2</b> Add minerals and aqueous species to database</a></li>
+<li class="chapter" data-level="4.3" data-path="module3.html"><a href="module3.html#titration-of-leucogranite-to-greisen-fluid"><i class="fa fa-check"></i><b>4.3</b> Titration of leucogranite to greisen fluid</a></li>
+<li class="chapter" data-level="4.4" data-path="module3.html"><a href="module3.html#outcomes-2"><i class="fa fa-check"></i><b>4.4</b> Outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="module4.html"><a href="module4.html"><i class="fa fa-check"></i><b>5</b> Greisenization Part (II)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="module4.html"><a href="module4.html#multi-pass-leaching-model"><i class="fa fa-check"></i><b>5.1</b> Multi-pass (leaching) model</a></li>
+<li class="chapter" data-level="5.2" data-path="module4.html"><a href="module4.html#modify-p-t-of-the-leaching-model"><i class="fa fa-check"></i><b>5.2</b> Modify P-T of the leaching model</a></li>
+<li class="chapter" data-level="5.3" data-path="module4.html"><a href="module4.html#single-pass-flushing-and-cooling-model"><i class="fa fa-check"></i><b>5.3</b> Single-pass flushing and cooling model</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="module5.html"><a href="module5.html"><i class="fa fa-check"></i><b>6</b> GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="module5.html"><a href="module5.html#sequential-reactors-chain-s-mode"><i class="fa fa-check"></i><b>6.1</b> “Sequential reactors chain” S mode</a></li>
+<li class="chapter" data-level="6.2" data-path="module5.html"><a href="module5.html#flow-through-reactors-chain-f-mode"><i class="fa fa-check"></i><b>6.2</b> Flow-through reactors chain (F) mode</a></li>
+<li class="chapter" data-level="6.3" data-path="module5.html"><a href="module5.html#one-dimensional-reactive-transport-with-advectiondispersion-a-mode"><i class="fa fa-check"></i><b>6.3</b> One-dimensional reactive transport with advection/dispersion (A) mode</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="prerequisites" class="section level1 unnumbered">
+<h1>Prerequisites</h1>
+<p>GEM-Selektor (GEMS), is a numerical modeling program with a graphical user interface based on Gibbs energy minimization and permits calculating and solving fluid-rock interaction problems of interest in geochemistry.</p>
+<ul>
+<li><p>Installation instructions for GEMS and more information about this modeling program can be found on the GEMS team webpage: <a href="http://gems.web.psi.ch/GEMS3/techinfo.html" class="uri">http://gems.web.psi.ch/GEMS3/techinfo.html</a>.</p></li>
+<li><p>Information about the MINES database and project files for the tutorials can be found under <a href="https://geoinfo.nmt.edu/mines-tdb" class="uri">https://geoinfo.nmt.edu/mines-tdb</a></p></li>
+</ul>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/apgysi/gems-mines-tutorial/edit/master/index.Rmd",
+"text": "Suggest an edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["gems-mines-tutorial.pdf", "gems-mines-tutorial.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
