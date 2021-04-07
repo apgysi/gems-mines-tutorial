@@ -24,7 +24,7 @@
 <meta name="author" content="Alexander Gysi, New Mexico Tech, USA" />
 
 
-<meta name="date" content="2021-03-31" />
+<meta name="date" content="2021-04-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -192,7 +192,7 @@ Figure 5.4: GEM2MT module Initial window page showing the steps to set up the fl
 </div>
 <p>After completing the wizard, we get to the GEM2MT module window “Initial” page. There we need to enter the names of rock and fluid initial systems, their temperature, pressure, masses, and the initial compositions of the fluid and the rock (already done in Example 1). For the rock composition we will add 10 kg H2O (unit G) as a user-defined formulae, which will be added (after unit conversions) to the bulk elemental compositions of initial systems of the rock. The rock should contain enough initial H2O to have the desired fluid/rock mass ratio (e.g. if normalized to 1 kg of rock, add 10 kg of H2O for a fluid/rock ratio of about 10). Also make sure to have all elements present in both the fluid and the rock, i.e. you can add a small amount (1e-9 moles) of C, Cl, and S to the rock and a small amount (1e-9 moles) of Al, Fe, Si and Ti to the fluid.</p>
 <ul>
-<li>The initialization script (visible in the lower part of the “Initial” page) should have been created by the wizard. In this script, we check that the Flux Rate (FDLf) is set to the desired value. This script will then assign a zero-order flux (0) from node 0 to 1 with a flux of 0.1, and assign a first-order flux (1) with a flux of 0.2 between all the other nodes (or boxes). A 1st order flux means that the mass (of fluid) transported per (time) step is proportional to the mass of fluid phase in the outgoing box.</li>
+<li>The initialization script (visible in the lower part of the “Initial” page) should have been created by the wizard. In this script, we check that the Flux Rate (FDLf) is set to the desired value. This script will then assign a zero-order flux (0) from node 0 to 1 with a flux of 1, and assign a first-order flux (1) with a flux of 0.2 between all the other nodes (or boxes). A 1st order flux means that the mass (of fluid) transported per (time) step is proportional to the mass of fluid phase in the outgoing box.</li>
 </ul>
 <p>The correspond script part that can be changed and initializes each node is the following:</p>
 <pre><code>$     flux order 1 (proportional to source MPG mass)

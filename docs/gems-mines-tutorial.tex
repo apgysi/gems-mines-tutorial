@@ -84,7 +84,7 @@
 
 \title{A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database}
 \author{Alexander Gysi, New Mexico Tech, USA}
-\date{2021-03-31}
+\date{2021-04-07}
 
 \begin{document}
 \maketitle
@@ -941,7 +941,7 @@ After completing the wizard, we get to the GEM2MT module window ``Initial'' page
 \begin{itemize}
 \tightlist
 \item
-  The initialization script (visible in the lower part of the ``Initial'' page) should have been created by the wizard. In this script, we check that the Flux Rate (FDLf) is set to the desired value. This script will then assign a zero-order flux (0) from node 0 to 1 with a flux of 0.1, and assign a first-order flux (1) with a flux of 0.2 between all the other nodes (or boxes). A 1st order flux means that the mass (of fluid) transported per (time) step is proportional to the mass of fluid phase in the outgoing box.
+  The initialization script (visible in the lower part of the ``Initial'' page) should have been created by the wizard. In this script, we check that the Flux Rate (FDLf) is set to the desired value. This script will then assign a zero-order flux (0) from node 0 to 1 with a flux of 1, and assign a first-order flux (1) with a flux of 0.2 between all the other nodes (or boxes). A 1st order flux means that the mass (of fluid) transported per (time) step is proportional to the mass of fluid phase in the outgoing box.
 \end{itemize}
 
 The correspond script part that can be changed and initializes each node is the following:
