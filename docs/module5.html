@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Module 5 GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
   <meta name="description" content="Module 5 GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Module 5 GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Alexander Gysi, New Mexico Tech, USA" />
 
 
-<meta name="date" content="2021-04-07" />
+<meta name="date" content="2021-06-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="module4.html"/>
 <link rel="next" href="acknowledgment.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,9 @@
 
 
 
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 
@@ -210,12 +213,12 @@ FDLf[qf][1] =: ( qf=0? 1: 0.2);</code></pre>
 <li><p>Under GEM2MT, we create a new record selecting the parent system containing the rock and fluid created in SysEq (“SWB_gem2mt”).</p></li>
 <li><p>In Step 1 of the wizard, we select the A mode.</p></li>
 <li><p>In Step 2 of the wizard, we set the number of nodes (e.g. nC= 101) and a maximum number of (time mTau) steps (e.g. 1000). Enter 1 for the number of user-defined formula units (to add at least H2O to the rock initial composition).</p></li>
-<li><p>In Step 4, in addition to default options in S and F modes, we choose Initial node volume, Advection veolocity, Init. node porosity, Init. eff. permeability, Init. media dispersivity.</p></li>
+<li><p>In Step 4, in addition to default options in S and F modes, we choose Initial node volume, Advection velocity, Init. node porosity, Init. eff. permeability, Init. media dispersivity.</p></li>
 <li><p>In Step 5, we select the output variables you want to plot in each nodes.</p></li>
 </ul>
 <p>– After completing the wizard, we get to the GEM2MT module window “Initial” page. There we need to enter the names of rock and fluid initial systems, their temperature, pressure, masses, and the initial compositions of the fluid and the rock (similar to Example 2). For the mass of rock choose 1 kg.</p>
 <ul>
-<li><p>The initialization script (visible in the lower part of the “Initial” page) should have been created by the wizard. Instead of defining fluxes, we will define advection velocity, porosity etc. To do this we switch to the “Nodes” tab and choose spatial dimension x (e.g. 0.2 m), time step reduction factor 1,for initial node volume 1 m3, advection velocity 1e-07 m/s, porosity 0.3, permeability 1e-14, dispersivity 0.001 initial dispersivity 2e-9 m.</p></li>
+<li><p>The initialization script (visible in the lower part of the “Initial” page) should have been created by the wizard. Instead of defining fluxes, we will define advection velocity, porosity etc. To do this we switch to the “Nodes” tab and choose spatial dimension x (e.g. 0.2 m), time step reduction factor 1,for initial node volume 1 m3, advection velocity 1e-07 m/s, porosity 0.3, permeability 1e-14 m2, dispersivity 0.001 m.</p></li>
 <li><p>Switch to tab “Setup,” choose 1,000,000 for total time mTau and a step of 100.</p></li>
 </ul>
 <p>– Click the “Calculate” toolbar button and (at the very first time) do not plot the nodes. Stop calculation after a few “steps,” then start it again with plotting.</p>
@@ -251,6 +254,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

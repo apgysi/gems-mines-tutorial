@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {3.4}Outcomes}{47}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Greisenization Part (II)}{53}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Multi-pass (leaching) model}{54}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Modify P-T of the leaching model}{58}{section.4.2}%
+\contentsline {section}{\numberline {4.2}Modify P-T of the leaching model}{61}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Single-pass flushing and cooling model}{61}{section.4.3}%
 \contentsline {chapter}{\numberline {5}GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction}{71}{chapter.5}%
 \contentsline {section}{\numberline {5.1}``Sequential reactors chain'' S mode}{72}{section.5.1}%
