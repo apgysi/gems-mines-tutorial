@@ -14,14 +14,14 @@
 \contentsline {chapter}{\numberline {3}Greisenization Part (I)}{35}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Create a custom rock and fluid}{35}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Add minerals and aqueous species to database}{39}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Titration of leucogranite to greisen fluid}{43}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Outcomes}{47}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Greisenization Part (II)}{53}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Multi-pass (leaching) model}{54}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Modify P-T of the leaching model}{61}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Single-pass flushing and cooling model}{61}{section.4.3}%
-\contentsline {chapter}{\numberline {5}GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction}{71}{chapter.5}%
-\contentsline {section}{\numberline {5.1}``Sequential reactors chain'' S mode}{72}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Flow-through reactors chain (F) mode}{73}{section.5.2}%
-\contentsline {section}{\numberline {5.3}One-dimensional reactive transport with advection/dispersion (A) mode}{77}{section.5.3}%
-\contentsline {chapter}{Acknowledgment}{79}{chapter*.3}%
+\contentsline {section}{\numberline {3.3}Titration of leucogranite to greisen fluid}{44}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Outcomes}{53}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Greisenization Part (II)}{55}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Multi-pass (leaching) model}{56}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Modify P-T of the leaching model}{63}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Single-pass flushing and cooling model}{63}{section.4.3}%
+\contentsline {chapter}{\numberline {5}GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction}{73}{chapter.5}%
+\contentsline {section}{\numberline {5.1}``Sequential reactors chain'' S mode}{74}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Flow-through reactors chain (F) mode}{75}{section.5.2}%
+\contentsline {section}{\numberline {5.3}One-dimensional reactive transport with advection/dispersion (A) mode}{79}{section.5.3}%
+\contentsline {chapter}{Acknowledgment}{81}{chapter*.3}%

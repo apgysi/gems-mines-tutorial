@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2021.6.27)  27 JUN 2021 18:22
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2021.6.27)  27 JUN 2021 19:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -951,24 +951,31 @@ File: figures/module3/fig-11.png Graphic file (type bmp)
 <figures/module3/fig-11.png>
 File: figures/module3/fig-12.png Graphic file (type bmp)
 <figures/module3/fig-12.png>
-[41] [42]
+
+Overfull \hbox (386.00455pt too wide) in paragraph at lines 572--572
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 46.12215pt on input line 573.
+
+[41] [42] [43]
 File: figures/module3/fig-13.png Graphic file (type bmp)
 <figures/module3/fig-13.png>
 File: figures/module3/fig-14.png Graphic file (type bmp)
 <figures/module3/fig-14.png>
-[43]
+[44]
 File: figures/module3/fig-15.png Graphic file (type bmp)
 <figures/module3/fig-15.png>
 File: figures/module3/fig-16.png Graphic file (type bmp)
 <figures/module3/fig-16.png>
 File: figures/module3/fig-17.png Graphic file (type bmp)
 <figures/module3/fig-17.png>
-[44] [45]
 File: figures/module3/fig-18.png Graphic file (type bmp)
 <figures/module3/fig-18.png>
 File: figures/module3/fig-19.png Graphic file (type bmp)
 <figures/module3/fig-19.png>
-[46]
+[45] [46] [47]
 File: figures/module3/fig-20.png Graphic file (type bmp)
 <figures/module3/fig-20.png>
 File: figures/module3/fig-21.png Graphic file (type bmp)
@@ -977,16 +984,19 @@ File: figures/module3/fig-22.png Graphic file (type bmp)
 <figures/module3/fig-22.png>
 File: figures/module3/fig-23.png Graphic file (type bmp)
 <figures/module3/fig-23.png>
-[47] [48] [49] [50] [51] [52]
+
+Underfull \vbox (badness 3803) has occurred while \output is active []
+
+[48] [49] [50] [51] [52] [53] [54
+
+]
 Chapter 4.
 File: figures/module4/fig-1.jpg Graphic file (type bmp)
 <figures/module4/fig-1.jpg>
-[53
-
-]
+[55]
 File: figures/module4/fig-2.png Graphic file (type bmp)
 <figures/module4/fig-2.png>
-[54]
+[56]
 File: figures/module4/fig-3.png Graphic file (type bmp)
 <figures/module4/fig-3.png>
 File: figures/module4/fig-4.png Graphic file (type bmp)
@@ -1003,7 +1013,7 @@ Overfull \hbox (64.32968pt too wide) in paragraph at lines 736--739
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[55] [56] [57]
+[57] [58] [59]
 File: figures/module4/fig-7.png Graphic file (type bmp)
 <figures/module4/fig-7.png>
 File: figures/module4/fig-8.png Graphic file (type bmp)
@@ -1013,7 +1023,7 @@ File: figures/module4/fig-9.png Graphic file (type bmp)
 
 Underfull \vbox (badness 3302) has occurred while \output is active []
 
-[58] [59] [60]
+[60] [61] [62]
 File: figures/module4/fig-10.png Graphic file (type bmp)
 <figures/module4/fig-10.png>
 File: figures/module4/fig-11.png Graphic file (type bmp)
@@ -1024,7 +1034,7 @@ File: figures/module4/fig-13.png Graphic file (type bmp)
 <figures/module4/fig-13.png>
 File: figures/module4/fig-14.png Graphic file (type bmp)
 <figures/module4/fig-14.png>
-[61] [62] [63] [64]
+[63] [64] [65] [66]
 File: figures/module4/fig-15.png Graphic file (type bmp)
 <figures/module4/fig-15.png>
 File: figures/module4/fig-16.png Graphic file (type bmp)
@@ -1034,7 +1044,7 @@ File: figures/module4/fig-17.png Graphic file (type bmp)
 File: figures/module4/fig-18.png Graphic file (type bmp)
 <figures/module4/fig-18.png>
 
-LaTeX Warning: Reference `fig:fig11.jpeg' on page 65 undefined on input line 84
+LaTeX Warning: Reference `fig:fig11.jpeg' on page 67 undefined on input line 84
 3.
 
 File: figures/module4/fig-19.png Graphic file (type bmp)
@@ -1043,20 +1053,20 @@ File: figures/module4/fig-20.png Graphic file (type bmp)
 <figures/module4/fig-20.png>
 File: figures/module4/fig-21.png Graphic file (type bmp)
 <figures/module4/fig-21.png>
-[65] [66] [67] [68] [69] [70
+[67] [68] [69] [70] [71] [72
 
 ]
 Chapter 5.
-[71]
+[73]
 File: figures/module5/fig-1.png Graphic file (type bmp)
 <figures/module5/fig-1.png>
 
 Overfull \hbox (286.40125pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 72 \TU/lmr/m/sl/10 CHAPTER 5.  GEM2MT REACTIVE MASS TRANSPORT SI
+\TU/lmr/m/n/10 74 \TU/lmr/m/sl/10 CHAPTER 5.  GEM2MT REACTIVE MASS TRANSPORT SI
 MULATIONS OF HYDROTHERMAL SEAWATER-BASALT INTERACTION
  []
 
-[72]
+[74]
 File: figures/module5/fig-2.png Graphic file (type bmp)
 <figures/module5/fig-2.png>
 
@@ -1067,39 +1077,39 @@ Overfull \hbox (597.52303pt too wide) in paragraph at lines 900--900
 
 LaTeX Warning: Float too large for page by 84.50523pt on input line 901.
 
-[73]
-Overfull \hbox (286.40125pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 74 \TU/lmr/m/sl/10 CHAPTER 5.  GEM2MT REACTIVE MASS TRANSPORT SI
-MULATIONS OF HYDROTHERMAL SEAWATER-BASALT INTERACTION
- []
-
-[74]
-File: figures/module5/fig-3.png Graphic file (type bmp)
-<figures/module5/fig-3.png>
 [75]
-File: figures/module5/fig-4.png Graphic file (type bmp)
-<figures/module5/fig-4.png>
-
 Overfull \hbox (286.40125pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 76 \TU/lmr/m/sl/10 CHAPTER 5.  GEM2MT REACTIVE MASS TRANSPORT SI
 MULATIONS OF HYDROTHERMAL SEAWATER-BASALT INTERACTION
  []
 
 [76]
-Overfull \hbox (120.77342pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 5.3.  ONE-DIMENSIONAL REACTIVE TRANSPORT WITH ADVECTION/DISPERS
-ION (A) MODE \TU/lmr/m/n/10 77
- []
-
+File: figures/module5/fig-3.png Graphic file (type bmp)
+<figures/module5/fig-3.png>
 [77]
+File: figures/module5/fig-4.png Graphic file (type bmp)
+<figures/module5/fig-4.png>
+
 Overfull \hbox (286.40125pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 78 \TU/lmr/m/sl/10 CHAPTER 5.  GEM2MT REACTIVE MASS TRANSPORT SI
 MULATIONS OF HYDROTHERMAL SEAWATER-BASALT INTERACTION
  []
 
 [78]
+Overfull \hbox (120.77342pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 5.3.  ONE-DIMENSIONAL REACTIVE TRANSPORT WITH ADVECTION/DISPERS
+ION (A) MODE \TU/lmr/m/n/10 79
+ []
+
+[79]
+Overfull \hbox (286.40125pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 80 \TU/lmr/m/sl/10 CHAPTER 5.  GEM2MT REACTIVE MASS TRANSPORT SI
+MULATIONS OF HYDROTHERMAL SEAWATER-BASALT INTERACTION
+ []
+
+[80]
 No file gems-mines-tutorial.bbl.
-[79
+[81
 
 ] (./gems-mines-tutorial.aux)
 
@@ -1109,10 +1119,10 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  19350 strings out of 479139
  345178 string characters out of 5872646
- 834301 words of memory out of 5000000
+ 834491 words of memory out of 5000000
  38630 multiletter control sequences out of 15000+600000
  409889 words of font info for 81 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  98i,6n,122p,1099b,436s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gems-mines-tutorial.pdf (79 pages).
+Output written on gems-mines-tutorial.pdf (81 pages).

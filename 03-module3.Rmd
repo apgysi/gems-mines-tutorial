@@ -91,7 +91,7 @@ knitr::include_graphics("figures/module3/fig-10.png")
 knitr::include_graphics("figures/module3/fig-11.png")
 ```
 
-```{r,fig-12c, echo = FALSE, out.width="70%", fig.cap="Selection of phase or phase endmembers for solid solutions. For a Topaz solid solution we select the OH and F endmembers"} 
+```{r,fig-12c, echo = FALSE, out.width="850%", fig.cap="Selection of phase or phase endmembers for solid solutions. For a Topaz solid solution we select the OH and F endmembers. Tick Full-list selection to see the list of available records."} 
 knitr::include_graphics("figures/module3/fig-12.png")
 ```
 
@@ -99,7 +99,7 @@ knitr::include_graphics("figures/module3/fig-12.png")
 
 - Select the Topaz-OH record and click `Clone a new record` in Panel 1. Fill the parameters listed in Figure \@ref(fig:fig-11c). 
 
-- Click next and select the mineral(s) for which you want to create a new phase. Here we select both Topaz-OH and Topaz-F for a binary solid solution (Fig. \@ref(fig:fig-12c)). Note that if we would like to only add a pure phase we select only one mineral in this menu. The resulting phase record should be similar to  Figure \@ref(fig:fig-10c).
+- Click next, tick "Full-list selection" and select the mineral(s) for which you want to create a new phase. Here we select both Topaz-OH and Topaz-F for a binary solid solution (Fig. \@ref(fig:fig-12c)). Note that if we would like to only add a pure phase we select only one mineral in this menu. The resulting phase record should be similar to  Figure \@ref(fig:fig-10c).
 
 - The last step is to switch to the `Equilibria Calculation Mode`, accept addition of the newly created phase and re-calculate the equilibrium of your two records created previously at 250 and 450 $^\circ$C and 4000 bar. Now expand the Topaz solid solution, congratulation you just formed topaz! See also Figure \@ref(fig:fig-13c).
 
@@ -129,7 +129,7 @@ knitr::include_graphics("figures/module3/fig-15.png")
 knitr::include_graphics("figures/module3/fig-16.png")
 ```
 
-```{r,fig-17c, echo = FALSE, out.width="100%", fig.cap="Choose the results to be plotted. Here we choose the mass minerals (in gram) using phM."} 
+```{r,fig-17c, echo = FALSE, out.width="100%", fig.cap="Choose the results to be plotted. Here we choose the mass minerals (in gram) using phM. Note that you can already select cNu for the x-axis, by switching to scalar and righ-clicking on cNu, then select abscissa."} 
 knitr::include_graphics("figures/module3/fig-17.png")
 ```
 
