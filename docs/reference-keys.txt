@@ -76,6 +76,11 @@ fig:fig-1e
 fig:fig-2e
 fig:fig-3e
 fig:fig-4e
+fig:fig-1f
+fig:fig-2f
+fig:fig-3f
+fig:fig-4f
+fig:fig-5f
 intro
 installing-the-mines-thermodynamic-database
 creating-a-new-project-from-scratch
@@ -101,3 +106,6 @@ module5
 sequential-reactors-chain-s-mode
 flow-through-reactors-chain-f-mode
 one-dimensional-reactive-transport-with-advectiondispersion-a-mode
+module6
+create-a-parent-record
+setting-up-an-acidbase-titration

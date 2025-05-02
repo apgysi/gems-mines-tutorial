@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Module 5 GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
   <meta name="description" content="Module 5 GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Module 5 GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Alexander Gysi, New Mexico Tech, USA" />
 
 
-<meta name="date" content="2021-06-27" />
+<meta name="date" content="2025-05-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,9 +31,9 @@
   
   
 <link rel="prev" href="module4.html"/>
-<link rel="next" href="acknowledgment.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link rel="next" href="module6.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,12 +49,16 @@
 
 
 
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
-
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -109,6 +112,11 @@
 <li class="chapter" data-level="5.2" data-path="module5.html"><a href="module5.html#flow-through-reactors-chain-f-mode"><i class="fa fa-check"></i><b>5.2</b> Flow-through reactors chain (F) mode</a></li>
 <li class="chapter" data-level="5.3" data-path="module5.html"><a href="module5.html#one-dimensional-reactive-transport-with-advectiondispersion-a-mode"><i class="fa fa-check"></i><b>5.3</b> One-dimensional reactive transport with advection/dispersion (A) mode</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="module6.html"><a href="module6.html"><i class="fa fa-check"></i><b>6</b> pH-activity diagrams: REE aqueous speciation</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="module6.html"><a href="module6.html#create-a-parent-record"><i class="fa fa-check"></i><b>6.1</b> Create a parent record</a></li>
+<li class="chapter" data-level="6.2" data-path="module6.html"><a href="module6.html#setting-up-an-acidbase-titration"><i class="fa fa-check"></i><b>6.2</b> Setting up an acid/base titration</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="acknowledgment.html"><a href="acknowledgment.html"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -130,8 +138,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="module5" class="section level1" number="5">
-<h1><span class="header-section-number">Module 5</span> GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction</h1>
+<div id="module5" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Module 5</span> GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction<a href="module5.html#module5" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The GEM2MT module is a tool for automation of one-dimensional (1-D) reactive mass transport simulations coupled with GEM calculation of equilibrium states in spatially distributed nodes (boxes, volumes) over time steps. GEM2MT can be used to simulate the open system evolution and fluid-rock reactions occurring along a fluid flow path (e.g. vein, fracture, porous media, etc.). This type of simulation solves simple reactive mass transport problems, which requires the definition of fluxes between boxes of certain fluid/rock mass or volume ratios (or alternatively porosity and permeability) where fluid is moved sequentially or simultaneously from one box to the other. The GEM2MT module can simulate reactive transport in three main modes (see help file for more info):</p>
 <ul>
 <li>Sequential reactor chain and waves (S)</li>
@@ -139,10 +147,10 @@
 <li>One-dimensional reactive transport with advection/dispersion/diffusion (A,D,W)</li>
 </ul>
 <p>To prepare for such simulations, two Compos (PCO) records are usually created in thermodynamic database mode. These two system compositions can then be copy/pasted and added later to GEM2MT, either using individual elements (Independent Components) and/or user-defined formulae units. In this example we use for Rock “R_Basalt” and for Fluid “F_Seawater” (already prepared in Module 5) and an example “SWB-reactor” was created in SysEq at 250 <span class="math inline">\(^{\circ}\)</span>C and 500 bar.</p>
-<div id="sequential-reactors-chain-s-mode" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> “Sequential reactors chain” S mode</h2>
+<div id="sequential-reactors-chain-s-mode" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> “Sequential reactors chain” S mode<a href="module5.html#sequential-reactors-chain-s-mode" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this mode, we can simulate a “wave” of a fluid that will pass through a series of 100 rock nodes once per step (i.e., a wave consists of ca. 100 substeps) with an initial fluid/rock ratio of 10. A schematic of the sequential reactors chain is shown in Figure <a href="module5.html#fig:fig-1e">5.1</a>.</p>
-<div class="figure"><span id="fig:fig-1e"></span>
+<div class="figure"><span style="display:block;" id="fig:fig-1e"></span>
 <img src="figures/module5/fig-1.png" alt="Schematic showing the sequential reactors chain (S mode). A sequence of steps forms a wave where the fluid passes and equilibrates sequentially through all of the reactors in the chain until the fluid reaches the last reactor, at which point another wave starts in the first reactor." width="70%" />
 <p class="caption">
 Figure 5.1: Schematic showing the sequential reactors chain (S mode). A sequence of steps forms a wave where the fluid passes and equilibrates sequentially through all of the reactors in the chain until the fluid reaches the last reactor, at which point another wave starts in the first reactor.
@@ -157,7 +165,7 @@ Figure 5.1: Schematic showing the sequential reactors chain (S mode). A sequence
 <li><p>In Step 4, we select P, T, V, Initial system, Node type, MPG flux, and Initial mass.</p></li>
 <li><p>In Step 5, we select the variables you want to plot in each node after each “wave.” Under n1vPH (volumes of minerals) select Cpx, Chlorite, Epidote, Calcite, Albite, Quartz, Prehnite, Wairakite, Anhydrite, Pyrite.</p></li>
 </ul>
-<div class="figure"><span id="fig:fig-2e"></span>
+<div class="figure"><span style="display:block;" id="fig:fig-2e"></span>
 <img src="figures/module5/fig-2.png" alt="GEM2MT module Initial window page showing the steps to set up 1) the initial name of rock and fluid, 2) pressure and temperature, 3) input quantity of rock and fluid in kg, 4) compositions of rock and fluid (i.e., row index 0 corresponds to the fluid and row index 1 to rock), and 5) input of additional user-defined formulae and units (these fields can be added/selected in the wizard window)." width="900%" />
 <p class="caption">
 Figure 5.2: GEM2MT module Initial window page showing the steps to set up 1) the initial name of rock and fluid, 2) pressure and temperature, 3) input quantity of rock and fluid in kg, 4) compositions of rock and fluid (i.e., row index 0 corresponds to the fluid and row index 1 to rock), and 5) input of additional user-defined formulae and units (these fields can be added/selected in the wizard window).
@@ -170,10 +178,10 @@ Figure 5.2: GEM2MT module Initial window page showing the steps to set up 1) the
 </ul>
 <p>The initialization script (visible in the lower part of the “Initial” page) should have been created by the wizard and normally does not need editing in the S mode. Click the “Calculate” toolbar button and (at the very first time) do not plot the nodes. Stop calculation after a few “waves” and start it again with graph plotting to inspect the results.</p>
 </div>
-<div id="flow-through-reactors-chain-f-mode" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Flow-through reactors chain (F) mode</h2>
+<div id="flow-through-reactors-chain-f-mode" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Flow-through reactors chain (F) mode<a href="module5.html#flow-through-reactors-chain-f-mode" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this mode, we can simulate the simultaneous transport of (reacted) fluid in one direction through all nodes from one node to the next. This mode requires the definition of equal zero- and/or first-order fluxes of fluid connecting each node with the next one; equal rates of the fluid flux should be specified (in mass/time (step) units). In this example we will transport about 20 g fluid/step through each node simultaneously. The very first box in the chain is declared a “constant-flux source” and it contains only “fresh” fluid but no rock; the very last box is declared a “constant-flux sink.”</p>
-<div class="figure"><span id="fig:fig-3e"></span>
+<div class="figure"><span style="display:block;" id="fig:fig-3e"></span>
 <img src="figures/module5/fig-3.png" alt="Schematic showing the flow-through reactors chain (F mode). At each step a defined flux of fluid is pumped into the first reactor and the same amount of fluid out of the last reactor. In this simulation mode the same amount of fluid passes simultanously from one reactor to another with a flux/step corresponding to the fluid in/output flux." width="70%" />
 <p class="caption">
 Figure 5.3: Schematic showing the flow-through reactors chain (F mode). At each step a defined flux of fluid is pumped into the first reactor and the same amount of fluid out of the last reactor. In this simulation mode the same amount of fluid passes simultanously from one reactor to another with a flux/step corresponding to the fluid in/output flux.
@@ -187,7 +195,7 @@ Figure 5.3: Schematic showing the flow-through reactors chain (F mode). At each 
 <li><p>In Step 4, we set P, T, V, Initial system, Node type, MPG flux, and Initial mass.</p></li>
 <li><p>In Step 5, we select the output variables you want to plot in each nodes. Under n1vPH (volumes of minerals) select Cpx, Chlorite, Epidote, Calcite, Albite, Quartz, Prehnite, Wairakite, Anhydrite, Pyrite.</p></li>
 </ul>
-<div class="figure"><span id="fig:fig-4e"></span>
+<div class="figure"><span style="display:block;" id="fig:fig-4e"></span>
 <img src="figures/module5/fig-4.png" alt="GEM2MT module Initial window page showing the steps to set up the flow-through reactor mode. Note we added 10 kg of H2O (User-defined formula) to the 1 kg of rock, and normalized the input weight of the rock to 0.110 kg (i.e. 100 g of fluid and 10 g of rock). It is also necessary to add all IC elements in the rock and fluids, which is achieved by adding a small arbitrary amount (1e-9 M). The flux can be adjusted in the script window." width="90%" />
 <p class="caption">
 Figure 5.4: GEM2MT module Initial window page showing the steps to set up the flow-through reactor mode. Note we added 10 kg of H2O (User-defined formula) to the 1 kg of rock, and normalized the input weight of the rock to 0.110 kg (i.e. 100 g of fluid and 10 g of rock). It is also necessary to add all IC elements in the rock and fluids, which is achieved by adding a small arbitrary amount (1e-9 M). The flux can be adjusted in the script window.
@@ -207,8 +215,8 @@ FDLf[qf][1] =: ( qf=0? 1: 0.2);</code></pre>
 </ul>
 <p>Click the “Calculate” toolbar button and (at the very first time) do not plot the nodes. Stop calculation after a few “steps,” then start it again with plotting.</p>
 </div>
-<div id="one-dimensional-reactive-transport-with-advectiondispersion-a-mode" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> One-dimensional reactive transport with advection/dispersion (A) mode</h2>
+<div id="one-dimensional-reactive-transport-with-advectiondispersion-a-mode" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> One-dimensional reactive transport with advection/dispersion (A) mode<a href="module5.html#one-dimensional-reactive-transport-with-advectiondispersion-a-mode" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>Under GEM2MT, we create a new record selecting the parent system containing the rock and fluid created in SysEq (“SWB_gem2mt”).</p></li>
 <li><p>In Step 1 of the wizard, we select the A mode.</p></li>
@@ -231,11 +239,10 @@ FDLf[qf][1] =: ( qf=0? 1: 0.2);</code></pre>
         </div>
       </div>
 <a href="module4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="acknowledgment.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="module6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -246,38 +253,42 @@ FDLf[qf][1] =: ( qf=0? 1: 0.2);</code></pre>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/apgysi/gems-mines-tutorial/edit/master/05-module5.Rmd",
-"text": "Suggest an edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["gems-mines-tutorial.pdf", "gems-mines-tutorial.epub"],
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/apgysi/gems-mines-tutorial/edit/master/05-module5.Rmd",
+    "text": "Suggest an edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["gems-mines-tutorial.pdf", "gems-mines-tutorial.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>
@@ -288,7 +299,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

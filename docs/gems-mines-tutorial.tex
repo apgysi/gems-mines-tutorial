@@ -6,8 +6,8 @@
 ]{book}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -76,7 +76,7 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
@@ -84,7 +84,7 @@
 
 \title{A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database}
 \author{Alexander Gysi, New Mexico Tech, USA}
-\date{2021-06-27}
+\date{2025-05-02}
 
 \begin{document}
 \maketitle
@@ -96,6 +96,8 @@
 \hypertarget{prerequisites}{%
 \chapter*{Prerequisites}\label{prerequisites}}
 \addcontentsline{toc}{chapter}{Prerequisites}
+
+\includegraphics[width=0.5\linewidth]{figures/top-pic}
 
 GEM-Selektor (GEMS), is a numerical modeling program with a graphical user interface based on Gibbs energy minimization and permits calculating and solving fluid-rock interaction problems of interest in geochemistry.
 
@@ -990,6 +992,18 @@ Click the ``Calculate'' toolbar button and (at the very first time) do not plot 
 \end{itemize}
 
 -- Click the ``Calculate'' toolbar button and (at the very first time) do not plot the nodes. Stop calculation after a few ``steps'', then start it again with plotting.
+
+\hypertarget{module6}{%
+\chapter{pH-activity diagrams: REE aqueous speciation}\label{module6}}
+
+In this chapter we will learn how to build a pH-activity diagram for the speciation of rare earth elements (REE).
+
+\hypertarget{test}{%
+\section{test}\label{test}}
+
+In this mode, we can simulate a ``wave'' of a fluid that will pass through a series of 100 rock nodes once per step (i.e., a wave consists of ca. 100 substeps) with an initial fluid/rock ratio of 10.
+
+A schematic of the sequential reactors chain is shown in Figure \ref{fig:fig-1e}.
 
 \hypertarget{acknowledgment}{%
 \chapter*{Acknowledgment}\label{acknowledgment}}

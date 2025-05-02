@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Module 6 pH-activity diagrams: REE aqueous speciation | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
+  <meta name="description" content="Module 6 pH-activity diagrams: REE aqueous speciation | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Module 6 pH-activity diagrams: REE aqueous speciation | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Module 6 pH-activity diagrams: REE aqueous speciation | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  
+  
+  
+
+<meta name="author" content="Alexander Gysi, New Mexico Tech, USA" />
+
+
+<meta name="date" content="2025-05-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="module5.html"/>
+<link rel="next" href="acknowledgment.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">GEMS tutorial</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Create your first project in GEMS</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#installing-the-mines-thermodynamic-database"><i class="fa fa-check"></i><b>1.1</b> Installing the MINES thermodynamic database</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#creating-a-new-project-from-scratch"><i class="fa fa-check"></i><b>1.2</b> Creating a new project from scratch</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#your-first-fluid-rock-equilibrium-model"><i class="fa fa-check"></i><b>1.3</b> Your first fluid-rock equilibrium model</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#outcomes"><i class="fa fa-check"></i><b>1.4</b> Outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="module2.html"><a href="module2.html"><i class="fa fa-check"></i><b>2</b> Feldspar reaction path</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="module2.html"><a href="module2.html#compute-the-chemical-equilibrium-of-single-chemical-systems-syseq"><i class="fa fa-check"></i><b>2.1</b> Compute the chemical equilibrium of single chemical systems (SysEq)</a></li>
+<li class="chapter" data-level="2.2" data-path="module2.html"><a href="module2.html#compute-a-titration-model-process-s-mode"><i class="fa fa-check"></i><b>2.2</b> Compute a titration model (Process, S mode)</a></li>
+<li class="chapter" data-level="2.3" data-path="module2.html"><a href="module2.html#modify-p-t-of-the-feldspar-reaction-path"><i class="fa fa-check"></i><b>2.3</b> Modify P-T of the feldspar reaction path</a></li>
+<li class="chapter" data-level="2.4" data-path="module2.html"><a href="module2.html#tweak-and-plot-the-results"><i class="fa fa-check"></i><b>2.4</b> Tweak and plot the results</a></li>
+<li class="chapter" data-level="2.5" data-path="module2.html"><a href="module2.html#compute-a-cooling-model-process-p-mode"><i class="fa fa-check"></i><b>2.5</b> Compute a cooling model (Process, P mode)</a></li>
+<li class="chapter" data-level="2.6" data-path="module2.html"><a href="module2.html#outcomes-1"><i class="fa fa-check"></i><b>2.6</b> Outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="module3.html"><a href="module3.html"><i class="fa fa-check"></i><b>3</b> Greisenization Part (I)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="module3.html"><a href="module3.html#create-a-custom-rock-and-fluid"><i class="fa fa-check"></i><b>3.1</b> Create a custom rock and fluid</a></li>
+<li class="chapter" data-level="3.2" data-path="module3.html"><a href="module3.html#add-minerals-and-aqueous-species-to-database"><i class="fa fa-check"></i><b>3.2</b> Add minerals and aqueous species to database</a></li>
+<li class="chapter" data-level="3.3" data-path="module3.html"><a href="module3.html#titration-of-leucogranite-to-greisen-fluid"><i class="fa fa-check"></i><b>3.3</b> Titration of leucogranite to greisen fluid</a></li>
+<li class="chapter" data-level="3.4" data-path="module3.html"><a href="module3.html#outcomes-2"><i class="fa fa-check"></i><b>3.4</b> Outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="module4.html"><a href="module4.html"><i class="fa fa-check"></i><b>4</b> Greisenization Part (II)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="module4.html"><a href="module4.html#multi-pass-leaching-model"><i class="fa fa-check"></i><b>4.1</b> Multi-pass (leaching) model</a></li>
+<li class="chapter" data-level="4.2" data-path="module4.html"><a href="module4.html#modify-p-t-of-the-leaching-model"><i class="fa fa-check"></i><b>4.2</b> Modify P-T of the leaching model</a></li>
+<li class="chapter" data-level="4.3" data-path="module4.html"><a href="module4.html#single-pass-flushing-and-cooling-model"><i class="fa fa-check"></i><b>4.3</b> Single-pass flushing and cooling model</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="module5.html"><a href="module5.html"><i class="fa fa-check"></i><b>5</b> GEM2MT reactive mass transport simulations of hydrothermal seawater-basalt interaction</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="module5.html"><a href="module5.html#sequential-reactors-chain-s-mode"><i class="fa fa-check"></i><b>5.1</b> “Sequential reactors chain” S mode</a></li>
+<li class="chapter" data-level="5.2" data-path="module5.html"><a href="module5.html#flow-through-reactors-chain-f-mode"><i class="fa fa-check"></i><b>5.2</b> Flow-through reactors chain (F) mode</a></li>
+<li class="chapter" data-level="5.3" data-path="module5.html"><a href="module5.html#one-dimensional-reactive-transport-with-advectiondispersion-a-mode"><i class="fa fa-check"></i><b>5.3</b> One-dimensional reactive transport with advection/dispersion (A) mode</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="module6.html"><a href="module6.html"><i class="fa fa-check"></i><b>6</b> pH-activity diagrams: REE aqueous speciation</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="module6.html"><a href="module6.html#create-a-parent-record"><i class="fa fa-check"></i><b>6.1</b> Create a parent record</a></li>
+<li class="chapter" data-level="6.2" data-path="module6.html"><a href="module6.html#setting-up-an-acidbase-titration"><i class="fa fa-check"></i><b>6.2</b> Setting up an acid/base titration</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="acknowledgment.html"><a href="acknowledgment.html"><i class="fa fa-check"></i>Acknowledgment</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="module6" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Module 6</span> pH-activity diagrams: REE aqueous speciation<a href="module6.html#module6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this chapter we will learn how to build a pH-activity diagram for the speciation of rare earth elements (REE). First we create the parent system in <code>SysEq</code> and use the ‘G mode’ in <code>Process</code> simulations to compute an inverse titration model. The latter is an inverse model problem because we give an initial and final pH value and ask GEMS to calculate the amount of acid/base to titrate to the system in order to reach the prescribed pH values and plot our speciation diagram.</p>
+<p>The case study involves calculation of the solubility of monazite (NdPO4), and the speciation of Nd chloride and hydroxyl complexes as a function of pH to investigate which species control solubility.</p>
+<div id="create-a-parent-record" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Create a parent record<a href="module6.html#create-a-parent-record" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The first step is to setup a parent system record in <code>SysEq</code>.</p>
+<ul>
+<li><p>Select the <code>SysEq</code> option in the left panel and create and select ‘Create a new record from scratch.’</p></li>
+<li><p>We will create a new record NdPO4, using a temperature of 100 <span class="math inline">\(^\circ\)</span>C and a pressure of 0 (psat).</p></li>
+<li><p>For the input recipe we need to add our acid (HCl) and base (NaOH), which will be adjusted later in the <code>Process</code> simulations for the inverse pH titration. Figure <a href="module6.html#fig:fig-1f">6.1</a> shows the composition of the system. Make sure to use the unit ‘M’ for moles acid/base.</p></li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:fig-1f"></span>
+<img src="figures/module6/fig-1.png" alt="Input recipe in 'SysEq' which we need to add our acid (HCl) and base (NaOH) to setup our parent system record to setup an inverse titration problem" width="90%" />
+<p class="caption">
+Figure 6.1: Input recipe in ‘SysEq’ which we need to add our acid (HCl) and base (NaOH) to setup our parent system record to setup an inverse titration problem
+</p>
+</div>
+</div>
+<div id="setting-up-an-acidbase-titration" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Setting up an acid/base titration<a href="module6.html#setting-up-an-acidbase-titration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Now we switch on the left panel and select the <code>Process</code> simulation mode and ‘Create a new record from scratch.’ We can call it pH-activity and select the <code>Process simulation code</code> (G) for the type of process to simulate as shown in Figures <a href="module6.html#fig:fig-2f">6.2</a>.</p></li>
+<li><p>In the next window, first choose a model (<code>Property-vs-pH diagram</code>), and in sequence select first the acid (HCl) then the base (NaOH), which should replace the code in the right window. Make sure to select a temperature (e.g. 100 <span class="math inline">\(^\circ\)</span>C) and pressure (0 for psat).</p></li>
+<li><p>In the column with ‘ipXi’ we select the maximum amount of acid (i.e. ‘ipXi[0]’ -0.1 corresponds to 0.1 mol HCl) and based (i.e. ‘ipXi[1]’ 0.1 corresponds to 0.1 mol NaOH). ‘ipXi[2]’ indicate the minimum amount of titrant (usually 1e-10 to 1e-11 mol). The cell ‘iNu[1]’ indicates the required precision for the inverse titration (i.e., 0.01 pH unit). Finally the fields for ‘ipH’ indicate in sequence the starting and final pH, and pH steps required for the calucations. In our example we chose pH from 2 to 9 in 0.25 steps. Figures <a href="module6.html#fig:fig-3f">6.3</a> shows the overall setup. Once everything is setup click next.</p></li>
+<li><p>Select items to be plotted (<code>Scalars</code>: pH; <code>lga</code>: aqueous Nd species; ‘lgm_t’ dissolved Nd, as shown in Figure <a href="module6.html#fig:fig-4f">6.4</a>.</p></li>
+<li><p>Accept all the following dialogues. Then click on <code>Save this record to database</code>, which creates your new process simulation record.</p></li>
+<li><p>In the “Controls” tab make sure your setup is correct, including temperature, pressure, amounts of titrants, pH ranges and steps, and have enough records under ‘iTm’ (i.e. each record will be assigned a new number, from 1000-1200 in 1 steps means a maximum of 200 records will be generated starting with 1000, 1001, and so forth). Not that error messages during the calculations commonly stem from to little amounts added for maximum acid/bases in the ‘ipXi’ field. If that is the case you can try to increase the mole amounts from 0.1 to 1 mol. The amount of acid/based required to reach a certain pH depends on the initial fluid composition, minerals used, temperature etc.</p></li>
+</ul>
+<p>Congratulations, you know now how to make a REE speciation diagram in GEMS using the MINES thermodynamic database!</p>
+<ul>
+<li>Then click on the calculator icon <code>Re-calculate and check record data</code> to display the graph. Figure <a href="module6.html#fig:fig-5f">6.5</a> shows the resulting pH-activity diagram for Nd speciation.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:fig-2f"></span>
+<img src="figures/module6/fig-2.png" alt="In `Process` we create a new record from scratch and select the `Process simulation code` (G) for inverse titration." width="90%" />
+<p class="caption">
+Figure 6.2: In <code>Process</code> we create a new record from scratch and select the <code>Process simulation code</code> (G) for inverse titration.
+</p>
+</div>
+<div class="figure"><span style="display:block;" id="fig:fig-3f"></span>
+<img src="figures/module6/fig-3.png" alt="In this wizard step we select the properties of the model." width="90%" />
+<p class="caption">
+Figure 6.3: In this wizard step we select the properties of the model.
+</p>
+</div>
+<div class="figure"><span style="display:block;" id="fig:fig-4f"></span>
+<img src="figures/module6/fig-4.png" alt="In this wizard step we select the variables to be plotted. pH is found under 'Scalars', log activity of Nd species und 'lga' and total dissolved log molality Nd under 'lgm'. Note to select pH for the x-axis, right click on it first, then select 'Abscissa', then select the variables to plot on the y-axis." width="90%" />
+<p class="caption">
+Figure 6.4: In this wizard step we select the variables to be plotted. pH is found under ‘Scalars,’ log activity of Nd species und ‘lga’ and total dissolved log molality Nd under ‘lgm.’ Note to select pH for the x-axis, right click on it first, then select ‘Abscissa,’ then select the variables to plot on the y-axis.
+</p>
+</div>
+<div class="figure"><span style="display:block;" id="fig:fig-5f"></span>
+<img src="figures/module6/fig-5.png" alt="pH-acitivty plot showing the total dissolved molality of Nd as a function of pH and the log activity of acqueous Nd species. In this example Nd3+ and Nd chloride species are predominant at acidic pH and Nd hydroxyl species at higher pH. Note that the Nd hydroxyl species originate from the Supcrt92 database, and need to be updated in the future. The species are represented as anhydrous compounds but can be related to the more common stoichiometric formula, for e.g. NdO2H0 + H2O = Nd(OH)30." width="90%" />
+<p class="caption">
+Figure 6.5: pH-acitivty plot showing the total dissolved molality of Nd as a function of pH and the log activity of acqueous Nd species. In this example Nd3+ and Nd chloride species are predominant at acidic pH and Nd hydroxyl species at higher pH. Note that the Nd hydroxyl species originate from the Supcrt92 database, and need to be updated in the future. The species are represented as anhydrous compounds but can be related to the more common stoichiometric formula, for e.g. NdO2H0 + H2O = Nd(OH)30.
+</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="module5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="acknowledgment.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/apgysi/gems-mines-tutorial/edit/master/06-module6.Rmd",
+    "text": "Suggest an edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["gems-mines-tutorial.pdf", "gems-mines-tutorial.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

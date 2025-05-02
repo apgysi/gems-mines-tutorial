@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
   <meta name="description" content="A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
   <meta property="og:type" content="book" />
-  
   
   
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Alexander Gysi, New Mexico Tech, USA" />
 
 
-<meta name="date" content="2021-06-27" />
+<meta name="date" content="2025-05-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 
 <link rel="next" href="intro.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,12 +49,16 @@
 
 
 
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
-
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -109,6 +112,11 @@
 <li class="chapter" data-level="5.2" data-path="module5.html"><a href="module5.html#flow-through-reactors-chain-f-mode"><i class="fa fa-check"></i><b>5.2</b> Flow-through reactors chain (F) mode</a></li>
 <li class="chapter" data-level="5.3" data-path="module5.html"><a href="module5.html#one-dimensional-reactive-transport-with-advectiondispersion-a-mode"><i class="fa fa-check"></i><b>5.3</b> One-dimensional reactive transport with advection/dispersion (A) mode</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="module6.html"><a href="module6.html"><i class="fa fa-check"></i><b>6</b> pH-activity diagrams: REE aqueous speciation</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="module6.html"><a href="module6.html#create-a-parent-record"><i class="fa fa-check"></i><b>6.1</b> Create a parent record</a></li>
+<li class="chapter" data-level="6.2" data-path="module6.html"><a href="module6.html#setting-up-an-acidbase-titration"><i class="fa fa-check"></i><b>6.2</b> Setting up an acid/base titration</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="acknowledgment.html"><a href="acknowledgment.html"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -133,10 +141,11 @@
 <div id="header">
 <h1 class="title">A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</h1>
 <p class="author"><em>Alexander Gysi, New Mexico Tech, USA</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-06-27</em></p>
+<p class="date"><em>2025-05-02</em></p>
 </div>
-<div id="prerequisites" class="section level1 unnumbered">
-<h1>Prerequisites</h1>
+<div id="prerequisites" class="section level1 unnumbered hasAnchor">
+<h1>Prerequisites<a href="index.html#prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><img src="figures/top-pic.png" width="50%" /></p>
 <p>GEM-Selektor (GEMS), is a numerical modeling program with a graphical user interface based on Gibbs energy minimization and permits calculating and solving fluid-rock interaction problems of interest in geochemistry.</p>
 <ul>
 <li><p>Installation instructions for GEMS and more information about this modeling program can be found on the GEMS team webpage: <a href="http://gems.web.psi.ch/GEMS3/techinfo.html" class="uri">http://gems.web.psi.ch/GEMS3/techinfo.html</a>.</p></li>
@@ -156,7 +165,6 @@ Dmitrii Kulik (Paul Scherrer Institute), Dan Miron (Paul Scherrer Institute), an
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -167,38 +175,42 @@ Dmitrii Kulik (Paul Scherrer Institute), Dan Miron (Paul Scherrer Institute), an
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/apgysi/gems-mines-tutorial/edit/master/index.Rmd",
-"text": "Suggest an edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["gems-mines-tutorial.pdf", "gems-mines-tutorial.epub"],
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/apgysi/gems-mines-tutorial/edit/master/index.Rmd",
+    "text": "Suggest an edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["gems-mines-tutorial.pdf", "gems-mines-tutorial.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>
@@ -209,7 +221,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

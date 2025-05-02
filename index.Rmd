@@ -10,7 +10,11 @@ biblio-style: apalike
 link-citations: yes
 ---
 
+
 # Prerequisites {-#prerequisites}
+```{r, echo = FALSE, out.width="50%"} 
+knitr::include_graphics("figures/top-pic.png")
+```
 
  GEM-Selektor (GEMS), is a numerical modeling program with a graphical user interface based on Gibbs energy minimization and permits calculating and solving fluid-rock interaction problems of interest in geochemistry. 
  
@@ -20,3 +24,5 @@ link-citations: yes
 
 Collaborators:
 Dmitrii Kulik (Paul Scherrer Institute), Dan Miron (Paul Scherrer Institute), and Nicole Hurtig (New Mexico Tech)
+
+
