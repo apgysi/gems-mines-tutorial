@@ -34,7 +34,7 @@ knitr::include_graphics("figures/module5/fig-1.png")
 
 
 
-```{r,fig-2e, echo = FALSE, out.width="900%", fig.cap="GEM2MT module Initial window page showing the steps to set up 1) the initial name of rock and fluid, 2) pressure and temperature, 3) input quantity of rock and fluid in kg, 4) compositions of rock and fluid (i.e., row index 0 corresponds to the fluid and row index 1 to rock), and 5) input of additional user-defined formulae and units (these fields can be added/selected in the wizard window)."}
+```{r,fig-2e, echo = FALSE, out.width="90%", fig.cap="GEM2MT module Initial window page showing the steps to set up 1) the initial name of rock and fluid, 2) pressure and temperature, 3) input quantity of rock and fluid in kg, 4) compositions of rock and fluid (i.e., row index 0 corresponds to the fluid and row index 1 to rock), and 5) input of additional user-defined formulae and units (these fields can be added/selected in the wizard window)."}
 knitr::include_graphics("figures/module5/fig-2.png")
 ```
 
