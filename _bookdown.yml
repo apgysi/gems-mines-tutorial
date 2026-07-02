@@ -1,6 +1,13 @@
 book_filename: "gems-mines-tutorial"
-language:
-  ui:
-    chapter_name: "Module "
+rmd_files: [
+  "index.Rmd",
+  "01-intro.Rmd",
+  "02-module2.Rmd",
+  "03-module3.Rmd",
+  "04-module4.Rmd",
+  "05-module5.Rmd",
+  "06-module6.Rmd",
+  "acknowledgment.Rmd"
+]
 delete_merged_file: true
 output_dir: "docs"

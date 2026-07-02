@@ -1,3 +1,4 @@
+# (PART) Examples & Applications {-}
 # pH-activity diagrams: REE aqueous speciation {#module6}
 
 In this chapter we will learn how to build a pH-activity diagram for the speciation of rare earth elements (REE). First we create the parent system in `SysEq` and use the 'G mode' in `Process` simulations to compute an inverse titration model. The latter is an inverse model problem because we give an initial and final pH value and ask GEMS to calculate the amount of acid/base to titrate to the system in order to reach the prescribed pH values and plot our speciation diagram.

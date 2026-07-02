@@ -1,8 +1,12 @@
 bookdown::gitbook:
   highlight: tango
   css: style.css
+  chapter_name: ["Module ", "Part "]
+  includes:
+    in_header: progress.html
   config:
     toc:
+      collapse: section 
       before: |
         <li><a href="./">GEMS tutorial</a></li>
       after: |
@@ -18,4 +22,3 @@ bookdown::pdf_book:
   citation_package: natbib
   keep_tex: yes
 bookdown::epub_book: default
-

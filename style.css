@@ -12,3 +12,17 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+/* Custom color for the progress checkboxes */
+.nav-progress-checkbox {
+  cursor: pointer;
+  vertical-align: middle;
+  accent-color: #2e7d32; /* A clean, professional green */
+}
+
+/* Visually dim and cross out the section name when completed */
+.summary li.completed-section a {
+  color: #888888 !important;
+  text-decoration: line-through;
+  transition: color 0.3s ease;
+}

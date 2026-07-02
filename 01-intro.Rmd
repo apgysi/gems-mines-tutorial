@@ -1,3 +1,4 @@
+# (PART) Core Tutorials {-}
 # Create your first project in GEMS {#intro}
 
  Here we will learn how to create a new Project, the selection of thermodynamic databases, components and equations of state for your modeling project. We will also explain the project folder structure and how to install the [MINES thermodynamic database](https://geoinfo.nmt.edu/mines-tdb) for modeling hydrothermal fluid-rock interaction and ore-forming processes . You will also learn how to interact basalt with water in your first equilibrium calculations.
@@ -30,7 +31,7 @@ The folder structure of the GEMS program, independent of the operating system us
 - Library/Gems3/projects
     + The projects folder will contain all the projects you create and work on, and will also be the folder in which you can copy the tutorial folders. 
  	
- ```{r,fig-2, echo = FALSE, out.width="70%", fig.cap="Unzipped DB19.default folder and database files to copy."} 
+```{r,fig-2, echo = FALSE, out.width="70%", fig.cap="Unzipped DB19.default folder and database files to copy."} 
 knitr::include_graphics("figures/module1/fig-2.png")
 ```
 

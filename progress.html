@@ -1,0 +1,41 @@
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const sidebarLinks = document.querySelectorAll('.book-summary ul.summary li a, .summary li a');
+
+  sidebarLinks.forEach((link) => {
+    const listItem = link.parentElement;
+    
+    if (!link.getAttribute('href')) return;
+    if (listItem.classList.contains('header')) return; 
+    
+    const dataLevel = listItem.getAttribute('data-level');
+    if (!dataLevel) return;
+    if (!dataLevel.includes('.')) return; 
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'nav-progress-checkbox';
+    checkbox.style.marginRight = '8px';
+    checkbox.style.cursor = 'pointer';
+    
+    const storageKey = 'gems_progress_' + link.getAttribute('href');
+
+    if (localStorage.getItem(storageKey) === 'true') {
+      checkbox.checked = true;
+      listItem.classList.add('completed-section');
+    }
+
+    checkbox.addEventListener('change', function(e) {
+      e.stopPropagation(); 
+      localStorage.setItem(storageKey, checkbox.checked);
+      if (checkbox.checked) {
+        listItem.classList.add('completed-section');
+      } else {
+        listItem.classList.remove('completed-section');
+      }
+    });
+
+    listItem.insertBefore(checkbox, link);
+  });
+});
+</script>

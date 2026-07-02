@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Module 6 pH-activity diagrams: REE aqueous speciation | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
-  <meta name="description" content="Module 6 pH-activity diagrams: REE aqueous speciation | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <title>6 pH-activity diagrams: REE aqueous speciation | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
+  <meta name="description" content="6 pH-activity diagrams: REE aqueous speciation | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Module 6 pH-activity diagrams: REE aqueous speciation | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta property="og:title" content="6 pH-activity diagrams: REE aqueous speciation | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Module 6 pH-activity diagrams: REE aqueous speciation | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta name="twitter:title" content="6 pH-activity diagrams: REE aqueous speciation | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
   
   
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Alexander Gysi, New Mexico Tech, USA" />
 
 
-<meta name="date" content="2025-05-02" />
+<meta name="date" content="2026-07-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,47 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const sidebarLinks = document.querySelectorAll('.book-summary ul.summary li a, .summary li a');
+
+  sidebarLinks.forEach((link) => {
+    const listItem = link.parentElement;
+    
+    if (!link.getAttribute('href')) return;
+    if (listItem.classList.contains('header')) return; 
+    
+    const dataLevel = listItem.getAttribute('data-level');
+    if (!dataLevel) return;
+    if (!dataLevel.includes('.')) return; 
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'nav-progress-checkbox';
+    checkbox.style.marginRight = '8px';
+    checkbox.style.cursor = 'pointer';
+    
+    const storageKey = 'gems_progress_' + link.getAttribute('href');
+
+    if (localStorage.getItem(storageKey) === 'true') {
+      checkbox.checked = true;
+      listItem.classList.add('completed-section');
+    }
+
+    checkbox.addEventListener('change', function(e) {
+      e.stopPropagation(); 
+      localStorage.setItem(storageKey, checkbox.checked);
+      if (checkbox.checked) {
+        listItem.classList.add('completed-section');
+      } else {
+        listItem.classList.remove('completed-section');
+      }
+    });
+
+    listItem.insertBefore(checkbox, link);
+  });
+});
+</script>
 
 
 
@@ -77,6 +118,7 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="part"><span><b>I Core Tutorials</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Create your first project in GEMS</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#installing-the-mines-thermodynamic-database"><i class="fa fa-check"></i><b>1.1</b> Installing the MINES thermodynamic database</a></li>
@@ -112,6 +154,7 @@
 <li class="chapter" data-level="5.2" data-path="module5.html"><a href="module5.html#flow-through-reactors-chain-f-mode"><i class="fa fa-check"></i><b>5.2</b> Flow-through reactors chain (F) mode</a></li>
 <li class="chapter" data-level="5.3" data-path="module5.html"><a href="module5.html#one-dimensional-reactive-transport-with-advectiondispersion-a-mode"><i class="fa fa-check"></i><b>5.3</b> One-dimensional reactive transport with advection/dispersion (A) mode</a></li>
 </ul></li>
+<li class="part"><span><b>II Examples &amp; Applications</b></span></li>
 <li class="chapter" data-level="6" data-path="module6.html"><a href="module6.html"><i class="fa fa-check"></i><b>6</b> pH-activity diagrams: REE aqueous speciation</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="module6.html"><a href="module6.html#create-a-parent-record"><i class="fa fa-check"></i><b>6.1</b> Create a parent record</a></li>
@@ -139,14 +182,14 @@
 
             <section class="normal" id="section-">
 <div id="module6" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Module 6</span> pH-activity diagrams: REE aqueous speciation<a href="module6.html#module6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">6</span> pH-activity diagrams: REE aqueous speciation<a href="module6.html#module6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this chapter we will learn how to build a pH-activity diagram for the speciation of rare earth elements (REE). First we create the parent system in <code>SysEq</code> and use the ‘G mode’ in <code>Process</code> simulations to compute an inverse titration model. The latter is an inverse model problem because we give an initial and final pH value and ask GEMS to calculate the amount of acid/base to titrate to the system in order to reach the prescribed pH values and plot our speciation diagram.</p>
 <p>The case study involves calculation of the solubility of monazite (NdPO4), and the speciation of Nd chloride and hydroxyl complexes as a function of pH to investigate which species control solubility.</p>
 <div id="create-a-parent-record" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Create a parent record<a href="module6.html#create-a-parent-record" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The first step is to setup a parent system record in <code>SysEq</code>.</p>
 <ul>
-<li><p>Select the <code>SysEq</code> option in the left panel and create and select ‘Create a new record from scratch.’</p></li>
+<li><p>Select the <code>SysEq</code> option in the left panel and create and select ‘Create a new record from scratch’.</p></li>
 <li><p>We will create a new record NdPO4, using a temperature of 100 <span class="math inline">\(^\circ\)</span>C and a pressure of 0 (psat).</p></li>
 <li><p>For the input recipe we need to add our acid (HCl) and base (NaOH), which will be adjusted later in the <code>Process</code> simulations for the inverse pH titration. Figure <a href="module6.html#fig:fig-1f">6.1</a> shows the composition of the system. Make sure to use the unit ‘M’ for moles acid/base.</p></li>
 </ul>
@@ -160,7 +203,7 @@ Figure 6.1: Input recipe in ‘SysEq’ which we need to add our acid (HCl) and 
 <div id="setting-up-an-acidbase-titration" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Setting up an acid/base titration<a href="module6.html#setting-up-an-acidbase-titration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><p>Now we switch on the left panel and select the <code>Process</code> simulation mode and ‘Create a new record from scratch.’ We can call it pH-activity and select the <code>Process simulation code</code> (G) for the type of process to simulate as shown in Figures <a href="module6.html#fig:fig-2f">6.2</a>.</p></li>
+<li><p>Now we switch on the left panel and select the <code>Process</code> simulation mode and ‘Create a new record from scratch’. We can call it pH-activity and select the <code>Process simulation code</code> (G) for the type of process to simulate as shown in Figures <a href="module6.html#fig:fig-2f">6.2</a>.</p></li>
 <li><p>In the next window, first choose a model (<code>Property-vs-pH diagram</code>), and in sequence select first the acid (HCl) then the base (NaOH), which should replace the code in the right window. Make sure to select a temperature (e.g. 100 <span class="math inline">\(^\circ\)</span>C) and pressure (0 for psat).</p></li>
 <li><p>In the column with ‘ipXi’ we select the maximum amount of acid (i.e. ‘ipXi[0]’ -0.1 corresponds to 0.1 mol HCl) and based (i.e. ‘ipXi[1]’ 0.1 corresponds to 0.1 mol NaOH). ‘ipXi[2]’ indicate the minimum amount of titrant (usually 1e-10 to 1e-11 mol). The cell ‘iNu[1]’ indicates the required precision for the inverse titration (i.e., 0.01 pH unit). Finally the fields for ‘ipH’ indicate in sequence the starting and final pH, and pH steps required for the calucations. In our example we chose pH from 2 to 9 in 0.25 steps. Figures <a href="module6.html#fig:fig-3f">6.3</a> shows the overall setup. Once everything is setup click next.</p></li>
 <li><p>Select items to be plotted (<code>Scalars</code>: pH; <code>lga</code>: aqueous Nd species; ‘lgm_t’ dissolved Nd, as shown in Figure <a href="module6.html#fig:fig-4f">6.4</a>.</p></li>
@@ -186,7 +229,7 @@ Figure 6.3: In this wizard step we select the properties of the model.
 <div class="figure"><span style="display:block;" id="fig:fig-4f"></span>
 <img src="figures/module6/fig-4.png" alt="In this wizard step we select the variables to be plotted. pH is found under 'Scalars', log activity of Nd species und 'lga' and total dissolved log molality Nd under 'lgm'. Note to select pH for the x-axis, right click on it first, then select 'Abscissa', then select the variables to plot on the y-axis." width="90%" />
 <p class="caption">
-Figure 6.4: In this wizard step we select the variables to be plotted. pH is found under ‘Scalars,’ log activity of Nd species und ‘lga’ and total dissolved log molality Nd under ‘lgm.’ Note to select pH for the x-axis, right click on it first, then select ‘Abscissa,’ then select the variables to plot on the y-axis.
+Figure 6.4: In this wizard step we select the variables to be plotted. pH is found under ‘Scalars’, log activity of Nd species und ‘lga’ and total dissolved log molality Nd under ‘lgm’. Note to select pH for the x-axis, right click on it first, then select ‘Abscissa’, then select the variables to plot on the y-axis.
 </p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:fig-5f"></span>
@@ -252,7 +295,7 @@ gitbook.start({
     "options": null
   },
   "toc": {
-    "collapse": "subsection"
+    "collapse": "section"
   }
 });
 });

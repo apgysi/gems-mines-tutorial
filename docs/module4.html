@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Module 4 Greisenization Part (II) | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
-  <meta name="description" content="Module 4 Greisenization Part (II) | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <title>4 Greisenization Part (II) | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
+  <meta name="description" content="4 Greisenization Part (II) | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Module 4 Greisenization Part (II) | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta property="og:title" content="4 Greisenization Part (II) | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Module 4 Greisenization Part (II) | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta name="twitter:title" content="4 Greisenization Part (II) | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
   
   
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Alexander Gysi, New Mexico Tech, USA" />
 
 
-<meta name="date" content="2025-05-02" />
+<meta name="date" content="2026-07-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,47 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const sidebarLinks = document.querySelectorAll('.book-summary ul.summary li a, .summary li a');
+
+  sidebarLinks.forEach((link) => {
+    const listItem = link.parentElement;
+    
+    if (!link.getAttribute('href')) return;
+    if (listItem.classList.contains('header')) return; 
+    
+    const dataLevel = listItem.getAttribute('data-level');
+    if (!dataLevel) return;
+    if (!dataLevel.includes('.')) return; 
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'nav-progress-checkbox';
+    checkbox.style.marginRight = '8px';
+    checkbox.style.cursor = 'pointer';
+    
+    const storageKey = 'gems_progress_' + link.getAttribute('href');
+
+    if (localStorage.getItem(storageKey) === 'true') {
+      checkbox.checked = true;
+      listItem.classList.add('completed-section');
+    }
+
+    checkbox.addEventListener('change', function(e) {
+      e.stopPropagation(); 
+      localStorage.setItem(storageKey, checkbox.checked);
+      if (checkbox.checked) {
+        listItem.classList.add('completed-section');
+      } else {
+        listItem.classList.remove('completed-section');
+      }
+    });
+
+    listItem.insertBefore(checkbox, link);
+  });
+});
+</script>
 
 
 
@@ -77,6 +118,7 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="part"><span><b>I Core Tutorials</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Create your first project in GEMS</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#installing-the-mines-thermodynamic-database"><i class="fa fa-check"></i><b>1.1</b> Installing the MINES thermodynamic database</a></li>
@@ -112,6 +154,7 @@
 <li class="chapter" data-level="5.2" data-path="module5.html"><a href="module5.html#flow-through-reactors-chain-f-mode"><i class="fa fa-check"></i><b>5.2</b> Flow-through reactors chain (F) mode</a></li>
 <li class="chapter" data-level="5.3" data-path="module5.html"><a href="module5.html#one-dimensional-reactive-transport-with-advectiondispersion-a-mode"><i class="fa fa-check"></i><b>5.3</b> One-dimensional reactive transport with advection/dispersion (A) mode</a></li>
 </ul></li>
+<li class="part"><span><b>II Examples &amp; Applications</b></span></li>
 <li class="chapter" data-level="6" data-path="module6.html"><a href="module6.html"><i class="fa fa-check"></i><b>6</b> pH-activity diagrams: REE aqueous speciation</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="module6.html"><a href="module6.html#create-a-parent-record"><i class="fa fa-check"></i><b>6.1</b> Create a parent record</a></li>
@@ -139,7 +182,7 @@
 
             <section class="normal" id="section-">
 <div id="module4" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Module 4</span> Greisenization Part (II)<a href="module4.html#module4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">4</span> Greisenization Part (II)<a href="module4.html#module4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this module we will continue simulating the alteration of leucogranite during greisenization and Sn mobility. You will learn how to set up an open system <code>Process</code> simulation using the single flow-through reactor (R) mode. This mode is the simplest implementation of reactive transport in one box or cell. This is generally a good start before starting more complex 1-D reactive transport simulations using sequential reactors (multiple boxes or cells) such at those implemented in the GEMS2MT module.</p>
 <div class="figure"><span style="display:block;" id="fig:fig-1d"></span>
 <img src="figures/module4/fig-1.jpg" alt="Conceptual models showing the two Process simulation types Leaching and Flushing in the single flow-through reactor (R) mode. " width="100%" />
@@ -158,7 +201,7 @@ Figure 4.1: Conceptual models showing the two Process simulation types Leaching 
 <p>A multi-pass model consists of consecutive batches of fresh (unreacted) greisen fluids (Fluid 1) reacting with a leucogranite (Rock 1) to simulate the alteration mineralogy during the formation of a hydrothermal quartz vein and alteration halo in the granite. This model can be set up using the R mode in <code>Process</code> simulation and choosing the leaching modeling scenario (Fig. <a href="module4.html#fig:fig-1d">4.1</a>).</p>
 <p>To set up such a model, we need a PCO for the rock (R_leucogranite) and fluid (Fluid_greisen), which were already prepared in Module 3, and we need to create a parent system equilibrium record.</p>
 <ul>
-<li>Create the parent system records in <code>SysEq</code> by cloning the two records you already created in Module 3; Greisen_Fl records at 250 and 450 <span class="math inline">\(^\circ\)</span>C and 4 kbar. Rename these system records to “Rock_leach,” and leave all the other parameters. For the input take for now 100 g of fluid and 1000 g of rock using the <code>Open recipe dialog</code> (Fig. <a href="module4.html#fig:fig-2d">4.2</a>). Calculate the equilibrium. Save.</li>
+<li>Create the parent system records in <code>SysEq</code> by cloning the two records you already created in Module 3; Greisen_Fl records at 250 and 450 <span class="math inline">\(^\circ\)</span>C and 4 kbar. Rename these system records to “Rock_leach”, and leave all the other parameters. For the input take for now 100 g of fluid and 1000 g of rock using the <code>Open recipe dialog</code> (Fig. <a href="module4.html#fig:fig-2d">4.2</a>). Calculate the equilibrium. Save.</li>
 </ul>
 <div class="figure"><span style="display:block;" id="fig:fig-2d"></span>
 <img src="figures/module4/fig-2.png" alt="Create two new parent equilibrium systems containing the fluid (F-greisen 100 g) and rock (R\_leucogranite 1000 g) by cloning the Greisen\_Fl records." width="100%" />
@@ -167,9 +210,9 @@ Figure 4.2: Create two new parent equilibrium systems containing the fluid (F-gr
 </p>
 </div>
 <ul>
-<li><p>Switch to <code>Process</code> simulation and clone your record built for the titration model in Module 3. Select your parent chemical system equilibria record "Rock\_leach" at 450 <span class="math inline">\(^\circ\)</span>C (Figs. <a href="module4.html#fig:fig-3d">4.3</a>).</p></li>
-<li><p>Name the simulation task "Rock-leaching\_450C" and use as simulation code R this time instead of S (Figs. <a href="module4.html#fig:fig-4d">4.4</a> and <a href="module4.html#fig:fig-5d">4.5</a>).</p></li>
-<li><p>In the next window tick the option “Leaching: Compos source,” select the fluid (Fluid\_greisen), then select the rock (R\_leucogranite) as illustrated in Figure <a href="module4.html#fig:fig-6d">4.6</a>. Make sure to the follow the exact sequence shown in Figure <a href="module4.html#fig:fig-6d">4.6</a> so the script generated by the wizard will work automatically.</p></li>
+<li><p>Switch to <code>Process</code> simulation and clone your record built for the titration model in Module 3. Select your parent chemical system equilibria record “Rock\_leach” at 450 <span class="math inline">\(^\circ\)</span>C (Figs. <a href="module4.html#fig:fig-3d">4.3</a>).</p></li>
+<li><p>Name the simulation task “Rock-leaching\_450C” and use as simulation code R this time instead of S (Figs. <a href="module4.html#fig:fig-4d">4.4</a> and <a href="module4.html#fig:fig-5d">4.5</a>).</p></li>
+<li><p>In the next window tick the option “Leaching: Compos source”, select the fluid (Fluid\_greisen), then select the rock (R\_leucogranite) as illustrated in Figure <a href="module4.html#fig:fig-6d">4.6</a>. Make sure to the follow the exact sequence shown in Figure <a href="module4.html#fig:fig-6d">4.6</a> so the script generated by the wizard will work automatically.</p></li>
 <li><p>Click Next… Finish.</p></li>
 </ul>
 <div class="figure"><span style="display:block;" id="fig:fig-3d"></span>
@@ -191,7 +234,7 @@ Figure 4.5: Select the simulation in R mode for setting up either a leaching or 
 </p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:fig-6d"></span>
-<img src="figures/module4/fig-6.png" alt="The Process dialogue for a multipass leaching model (mode R). To set up this system select Leaching (1), then the fluid (F\_greisen) (2) and the rock (R\_leucogranite) (3). Check that the definitions of your rock and fluid look similar to the script window (4). Select P-T conditions (5) and the number of fluid aliquots (6), i.e. 200 fluid aliquots (iTm: from 1000 to 1200 in steps of 1). Finally, add the starting mass of the rock (i.e., 1000 g). Note if we want to increase the number of fluid aliquots passing through the rock, we need to increase iTm for example from 1000 to 1400 in steps of 1 to create 400 aliquots. Also note that the fluid to rock ratio was set and can be changed in the parent SysEq record. Alternatively, the solid/fluid ratio can be set in the ipe iterator, and uncomment the following script in the Controls tab $cpe =: (J>0? cpe: cNu/phM[{aq_gen}]); (only recommended for advanced users)" width=“100%” /&gt;
+<img src="figures/module4/fig-6.png" alt="The Process dialogue for a multipass leaching model (mode R). To set up this system select Leaching (1), then the fluid (F\_greisen) (2) and the rock (R\_leucogranite) (3). Check that the definitions of your rock and fluid look similar to the script window (4). Select P-T conditions (5) and the number of fluid aliquots (6), i.e. 200 fluid aliquots (iTm: from 1000 to 1200 in steps of 1). Finally, add the starting mass of the rock (i.e., 1000 g). Note if we want to increase the number of fluid aliquots passing through the rock, we need to increase iTm for example from 1000 to 1400 in steps of 1 to create 400 aliquots. Also note that the fluid to rock ratio was set and can be changed in the parent SysEq record. Alternatively, the solid/fluid ratio can be set in the ipe iterator, and uncomment the following script in the Controls tab $cpe =: (J&gt;0? cpe: cNu/phM[{aq_gen}]); (only recommended for advanced users)" width="100%" />
 <p class="caption">
 Figure 4.6: The Process dialogue for a multipass leaching model (mode R). To set up this system select Leaching (1), then the fluid (F_greisen) (2) and the rock (R_leucogranite) (3). Check that the definitions of your rock and fluid look similar to the script window (4). Select P-T conditions (5) and the number of fluid aliquots (6), i.e. 200 fluid aliquots (iTm: from 1000 to 1200 in steps of 1). Finally, add the starting mass of the rock (i.e., 1000 g). Note if we want to increase the number of fluid aliquots passing through the rock, we need to increase iTm for example from 1000 to 1400 in steps of 1 to create 400 aliquots. Also note that the fluid to rock ratio was set and can be changed in the parent SysEq record. Alternatively, the solid/fluid ratio can be set in the ipe iterator, and uncomment the following script in the Controls tab $cpe =: (J&gt;0? cpe: cNu/phM[{aq_gen}]); (only recommended for advanced users)
 </p>
@@ -260,7 +303,7 @@ Figure 4.13: Inset view showing the simulated leucogranite multipass leaching mo
 <p>This time we simulate the evolution of a single batch of fluid reacting progressively with more granite upon cooling and look at the evolution of the fluid composition. The conceptual model is represented by a single-pass of a fluid interacting at each step with fresh granite.</p>
 <p>This model can also be set up using the R mode in <code>Process</code> simulation and choosing the flushing modeling scenario (Fig. <a href="module4.html#fig:fig-1d">4.1</a>).</p>
 <ul>
-<li><p>Create the parent system records in <code>SysEq</code> by cloning the Rock_leach model created earlier at 450 °C and 4 kbar. Rename this system records to “Rock_flush,” and leave all the other parameters (Fig. <a href="module4.html#fig:fig-14d">4.14</a>).</p></li>
+<li><p>Create the parent system records in <code>SysEq</code> by cloning the Rock_leach model created earlier at 450 °C and 4 kbar. Rename this system records to “Rock_flush”, and leave all the other parameters (Fig. <a href="module4.html#fig:fig-14d">4.14</a>).</p></li>
 <li><p>Calculate the equilibrium. Save.</p></li>
 </ul>
 <div class="figure"><span style="display:block;" id="fig:fig-14d"></span>
@@ -300,7 +343,7 @@ Figure 4.18: Sampling dialog in the Process wizard for selecting the Sn species 
 </p>
 </div>
 <ul>
-<li><p>Check the “Sampling” tab, if not the same use  to select the dissolved aqueous species to plot. Note for the x-axis we chose the temperature in <span class="math inline">\(^\circ\)</span>C (cTC).</p></li>
+<li><p>Check the “Sampling” tab, if not the same use to select the dissolved aqueous species to plot. Note for the x-axis we chose the temperature in <span class="math inline">\(^\circ\)</span>C (cTC).</p></li>
 <li><p>Finally, click . The results should look similar to </p></li>
 </ul>
 <div class="figure"><span style="display:block;" id="fig:fig-19d"></span>
@@ -378,7 +421,7 @@ gitbook.start({
     "options": null
   },
   "toc": {
-    "collapse": "subsection"
+    "collapse": "section"
   }
 });
 });

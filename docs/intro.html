@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Module 1 Create your first project in GEMS | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
-  <meta name="description" content="Module 1 Create your first project in GEMS | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
-  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+  <title>1 Create your first project in GEMS | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
+  <meta name="description" content="1 Create your first project in GEMS | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Module 1 Create your first project in GEMS | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta property="og:title" content="1 Create your first project in GEMS | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Module 1 Create your first project in GEMS | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta name="twitter:title" content="1 Create your first project in GEMS | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
   
   
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Alexander Gysi, New Mexico Tech, USA" />
 
 
-<meta name="date" content="2025-05-02" />
+<meta name="date" content="2026-07-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,47 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const sidebarLinks = document.querySelectorAll('.book-summary ul.summary li a, .summary li a');
+
+  sidebarLinks.forEach((link) => {
+    const listItem = link.parentElement;
+    
+    if (!link.getAttribute('href')) return;
+    if (listItem.classList.contains('header')) return; 
+    
+    const dataLevel = listItem.getAttribute('data-level');
+    if (!dataLevel) return;
+    if (!dataLevel.includes('.')) return; 
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'nav-progress-checkbox';
+    checkbox.style.marginRight = '8px';
+    checkbox.style.cursor = 'pointer';
+    
+    const storageKey = 'gems_progress_' + link.getAttribute('href');
+
+    if (localStorage.getItem(storageKey) === 'true') {
+      checkbox.checked = true;
+      listItem.classList.add('completed-section');
+    }
+
+    checkbox.addEventListener('change', function(e) {
+      e.stopPropagation(); 
+      localStorage.setItem(storageKey, checkbox.checked);
+      if (checkbox.checked) {
+        listItem.classList.add('completed-section');
+      } else {
+        listItem.classList.remove('completed-section');
+      }
+    });
+
+    listItem.insertBefore(checkbox, link);
+  });
+});
+</script>
 
 
 
@@ -77,6 +118,7 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="part"><span><b>I Core Tutorials</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Create your first project in GEMS</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#installing-the-mines-thermodynamic-database"><i class="fa fa-check"></i><b>1.1</b> Installing the MINES thermodynamic database</a></li>
@@ -112,6 +154,7 @@
 <li class="chapter" data-level="5.2" data-path="module5.html"><a href="module5.html#flow-through-reactors-chain-f-mode"><i class="fa fa-check"></i><b>5.2</b> Flow-through reactors chain (F) mode</a></li>
 <li class="chapter" data-level="5.3" data-path="module5.html"><a href="module5.html#one-dimensional-reactive-transport-with-advectiondispersion-a-mode"><i class="fa fa-check"></i><b>5.3</b> One-dimensional reactive transport with advection/dispersion (A) mode</a></li>
 </ul></li>
+<li class="part"><span><b>II Examples &amp; Applications</b></span></li>
 <li class="chapter" data-level="6" data-path="module6.html"><a href="module6.html"><i class="fa fa-check"></i><b>6</b> pH-activity diagrams: REE aqueous speciation</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="module6.html"><a href="module6.html#create-a-parent-record"><i class="fa fa-check"></i><b>6.1</b> Create a parent record</a></li>
@@ -139,7 +182,7 @@
 
             <section class="normal" id="section-">
 <div id="intro" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Module 1</span> Create your first project in GEMS<a href="intro.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">1</span> Create your first project in GEMS<a href="intro.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Here we will learn how to create a new Project, the selection of thermodynamic databases, components and equations of state for your modeling project. We will also explain the project folder structure and how to install the <a href="https://geoinfo.nmt.edu/mines-tdb">MINES thermodynamic database</a> for modeling hydrothermal fluid-rock interaction and ore-forming processes . You will also learn how to interact basalt with water in your first equilibrium calculations.</p>
 <div id="installing-the-mines-thermodynamic-database" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Installing the MINES thermodynamic database<a href="intro.html#installing-the-mines-thermodynamic-database" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -202,7 +245,7 @@ Figure 1.5: Select 3rdparty/mines and support, and for phases select only withou
 </div>
 <ul>
 <li><p>In the next window choose your system components: H-O-C-Cl-Na-K-Ca-Mg-Al-Fe-Si-Ti (Fig. <a href="intro.html#fig:fig-6">1.6</a>). Have you checked you got all of the elements selected? Check again please, then click <code>Next</code>…By doing so, GEMS will automatically look up all phases with these components in the MINES database and copy them into your modeling project! <em>Tip of the day: all your modeling projects you are working on are located under Library/Gems3/projects. Make sure to do regular backups…</em></p></li>
-<li><p>In the next window you will be able to choose the activity model for your aqueous speciation calculations (e.g. “Debye-Hückel,” Davies equation, …), and the EOS for gases. For now, follow Figure <a href="intro.html#fig:fig-7">1.7</a> using the extended “Debye-Hückel” equation (Helgeson), check the parameters and click <code>Check</code> for the aqueous speciation model. <em>This model is ideal for modeling H<span class="math inline">\(_2\)</span>O-NaCl aqueous solutions (with NaCl as background electrolyte) at hydrothermal conditions at relatively moderate salinities observed in many ore deposits.</em></p></li>
+<li><p>In the next window you will be able to choose the activity model for your aqueous speciation calculations (e.g. “Debye-Hückel”, Davies equation, …), and the EOS for gases. For now, follow Figure <a href="intro.html#fig:fig-7">1.7</a> using the extended “Debye-Hückel” equation (Helgeson), check the parameters and click <code>Check</code> for the aqueous speciation model. <em>This model is ideal for modeling H<span class="math inline">\(_2\)</span>O-NaCl aqueous solutions (with NaCl as background electrolyte) at hydrothermal conditions at relatively moderate salinities observed in many ore deposits.</em></p></li>
 <li><p>Then you can switch to the gas EOS model tab and choose the Peng-Robinson-Stryjek-Vera (PRSV) model and click <code>Check</code> (Fig. <a href="intro.html#fig:fig-7">1.7</a>). That’s it, now you are ready to model your first equilibrium model!</p></li>
 </ul>
 <p><em>Note: this model is for non-ideal gases, and for this purpose a new phase with the acronym (f) was added to the MINES database with all the relevant parameters using the PRSV EOS. Else the choice would be the ideal gas law with a phase using the acronym (g)</em></p>
@@ -300,7 +343,7 @@ gitbook.start({
     "options": null
   },
   "toc": {
-    "collapse": "subsection"
+    "collapse": "section"
   }
 });
 });
