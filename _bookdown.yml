@@ -1,4 +1,5 @@
 book_filename: "gems-mines-tutorial"
+new_session: yes
 rmd_files: [
   "index.Rmd",
   "01-intro.Rmd",
@@ -7,6 +8,8 @@ rmd_files: [
   "04-module4.Rmd",
   "05-module5.Rmd",
   "06-module6.Rmd",
+  "07-module7.Rmd",
+  "08-module8.Rmd",
   "acknowledgment.Rmd"
 ]
 delete_merged_file: true

@@ -81,6 +81,12 @@ fig:fig-2f
 fig:fig-3f
 fig:fig-4f
 fig:fig-5f
+fig:fig-1a
+fig:fig-t1
+fig:fig-10
+fig:fig-11
+fig:fig-12
+fig:fig-13
 intro
 installing-the-mines-thermodynamic-database
 creating-a-new-project-from-scratch
@@ -109,3 +115,9 @@ one-dimensional-reactive-transport-with-advectiondispersion-a-mode
 module6
 create-a-parent-record
 setting-up-an-acidbase-titration
+module7
+create-a-parent-record-in-the-ca-fe-p-o-h-cl-f-ree-system
+create-our-rock-and-fluid-pco-in-thermodynamic-database-mode
+setting-up-a-multipass-leaching-model-in-process-simulations
+plotting-and-model-modifications-for-more-acidic-fluid
+module8
