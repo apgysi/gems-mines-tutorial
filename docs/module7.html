@@ -95,6 +95,70 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -163,11 +227,19 @@ document.addEventListener("DOMContentLoaded", function() {
 <li class="chapter" data-level="7" data-path="module7.html"><a href="module7.html"><i class="fa fa-check"></i><b>7</b> IOA Deposits - REE fractionation and apatite vein replacement reaction</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="module7.html"><a href="module7.html#create-a-parent-record-in-the-ca-fe-p-o-h-cl-f-ree-system"><i class="fa fa-check"></i><b>7.1</b> Create a parent record in the Ca-Fe-P-O-H-Cl-F-REE system</a></li>
-<li class="chapter" data-level="7.2" data-path="module7.html"><a href="module7.html#create-our-rock-and-fluid-pco-in-thermodynamic-database-mode"><i class="fa fa-check"></i><b>7.2</b> Create our rock and fluid PCO in <code>Thermodynamic database mode</code></a></li>
+<li class="chapter" data-level="7.2" data-path="module7.html"><a href="module7.html#create-our-rock-and-fluid-pco-in-thermodynamic-database-mode"><i class="fa fa-check"></i><b>7.2</b> Create our rock and fluid PCO in Thermodynamic database mode</a></li>
 <li class="chapter" data-level="7.3" data-path="module7.html"><a href="module7.html#setting-up-a-multipass-leaching-model-in-process-simulations"><i class="fa fa-check"></i><b>7.3</b> Setting up a multipass leaching model in <code>Process</code> simulations</a></li>
 <li class="chapter" data-level="7.4" data-path="module7.html"><a href="module7.html#plotting-and-model-modifications-for-more-acidic-fluid"><i class="fa fa-check"></i><b>7.4</b> Plotting and model modifications for more acidic fluid</a></li>
+<li class="chapter" data-level="7.5" data-path="module7.html"><a href="module7.html#outcomes-3"><i class="fa fa-check"></i><b>7.5</b> Outcomes</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="module8.html"><a href="module8.html"><i class="fa fa-check"></i><b>8</b> Seawater-basalt recharge zone at Volcanic Hosted Massive Sulphide (VMS) Deposits</a></li>
+<li class="chapter" data-level="8" data-path="module8.html"><a href="module8.html"><i class="fa fa-check"></i><b>8</b> Seawater-basalt recharge zone at Volcanogenic Massive Sulfide (VMS) Deposits</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="module8.html"><a href="module8.html#calculate-the-seawater-basalt-equilibrium-at-elevated-temperatures-and-pressures"><i class="fa fa-check"></i><b>8.1</b> Calculate the seawater-basalt equilibrium at elevated temperatures and pressures</a></li>
+<li class="chapter" data-level="8.2" data-path="module8.html"><a href="module8.html#clone-and-create-a-basalt-pco-with-metals-cu-pb-zn-ag-and-au"><i class="fa fa-check"></i><b>8.2</b> Clone and create a basalt PCO with metals (Cu, Pb, Zn, Ag, and Au)</a></li>
+<li class="chapter" data-level="8.3" data-path="module8.html"><a href="module8.html#seawater-basalt-titration-model-and-porosity-evolution"><i class="fa fa-check"></i><b>8.3</b> Seawater-basalt titration model and porosity evolution</a></li>
+<li class="chapter" data-level="8.4" data-path="module8.html"><a href="module8.html#singlepass-heating-model---mobilization-of-cu-pb-zn-ag-and-au"><i class="fa fa-check"></i><b>8.4</b> Singlepass heating model - mobilization of Cu, Pb, Zn, Ag, and Au</a></li>
+<li class="chapter" data-level="8.5" data-path="module8.html"><a href="module8.html#outcomes-4"><i class="fa fa-check"></i><b>8.5</b> Outcomes</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="acknowledgment.html"><a href="acknowledgment.html"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -205,18 +277,17 @@ Figure 7.1: (left) Conceptual model of a single flow-through reactor representin
 <h2><span class="header-section-number">7.1</span> Create a parent record in the Ca-Fe-P-O-H-Cl-F-REE system<a href="module7.html#create-a-parent-record-in-the-ca-fe-p-o-h-cl-f-ree-system" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The first step is to setup a parent system record in <code>System Equilibrium</code> calculation mode (<code>SysEq</code>) using the project <strong>Module 7</strong> and calculate equlibrium to check the mineralogy, pH and aqueous speciation.</p>
 <ul>
-<li><p>Select the <code>SysEq</code> option in the left panel and create and select ‘Create a new record from scratch’.</p></li>
-<li><p>We will create a new record using a temperature of 100 <span class="math inline">\(^\circ\)</span>C and a pressure of 1000 bar. Let’s call the record <code>Fl-Rock_IOA</code></p></li>
-<li><p>For the input recipe we need to add our IOA deposit rock (60g Magnetite, 40g Fluorapatite), and our REE-bearing saline acidic fluid, see Fig. <a href="intro.html#fig:fig-1">1.1</a>. The fluid recipe is as follows:</p>
+<li><p>Select the <code>SysEq</code> option in the left panel and create and select ‘Create a new record from scratch’. We will create a new record using a temperature of 100 <span class="math inline">\(^\circ\)</span>C and a pressure of 1000 bar. Let’s call the record <code>Fl-Rock_IOA</code></p></li>
+<li><p>For the input recipe we need to add our IOA deposit rock (60g Magnetite, 40g Fluorapatite), and our REE-bearing saline acidic fluid, see Fig. <a href="module7.html#fig:fig-1">7.2</a>. The fluid recipe is as follows:</p>
 <ul>
 <li>1 kg H<sub>2</sub>O</li>
 <li>1.0 M NaCl</li>
 <li>0.01 m HCl (pH ~2.0)</li>
 <li>100 ppm of each REE.</li>
 </ul></li>
-<li><p>Now calculate equilibrium and check the results. Fig. <a href="intro.html#fig:fig-2">1.2</a> shows the calculated pH and monazite/xenotime ideal solid solution compositions.</p></li>
+<li><p>Now calculate equilibrium and check the results. Fig. <a href="module7.html#fig:fig-2">7.3</a> shows the calculated pH and monazite/xenotime ideal solid solution compositions.</p></li>
 </ul>
-<div class="figure"><span style="display:block;" id="fig:fig-t1"></span>
+<div class="figure"><span style="display:block;" id="fig:fig-1"></span>
 <img src="figures/module7/fig-1.png" alt="`SysEq` input for a new record and the fluid and rock compositions. This dialog can be reached by clicking on the yellow vial, make sure to select the correct property; for example use `DComp` to select magnetite and apatite then add the quantity and units; select `IComp` for individual REE and choose y for mg (ppm = mg/kg); choose `Compos` for custom records like Acid_HCl, H2O, and NaCl." width="80%" />
 <p class="caption">
 Figure 7.2: <code>SysEq</code> input for a new record and the fluid and rock compositions. This dialog can be reached by clicking on the yellow vial, make sure to select the correct property; for example use <code>DComp</code> to select magnetite and apatite then add the quantity and units; select <code>IComp</code> for individual REE and choose y for mg (ppm = mg/kg); choose <code>Compos</code> for custom records like Acid_HCl, H2O, and NaCl.
@@ -225,47 +296,49 @@ Figure 7.2: <code>SysEq</code> input for a new record and the fluid and rock com
 <div class="figure"><span style="display:block;" id="fig:fig-2"></span>
 <img src="figures/module7/fig-2.png" alt="`SysEq` equilibrium calculation ouputs showing the record created, the yellow vial (Input recipe), and the results window with the compositions of ideal monazite and xenotime solid solutions, stable phases, and at the bottom pH, P-T, pe, and ionic strength." width="90%" />
 <p class="caption">
-Figure 1.2: <code>SysEq</code> equilibrium calculation ouputs showing the record created, the yellow vial (Input recipe), and the results window with the compositions of ideal monazite and xenotime solid solutions, stable phases, and at the bottom pH, P-T, pe, and ionic strength.
+Figure 7.3: <code>SysEq</code> equilibrium calculation ouputs showing the record created, the yellow vial (Input recipe), and the results window with the compositions of ideal monazite and xenotime solid solutions, stable phases, and at the bottom pH, P-T, pe, and ionic strength.
 </p>
 </div>
 </div>
 <div id="create-our-rock-and-fluid-pco-in-thermodynamic-database-mode" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> Create our rock and fluid PCO in <code>Thermodynamic database mode</code><a href="module7.html#create-our-rock-and-fluid-pco-in-thermodynamic-database-mode" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">7.2</span> Create our rock and fluid PCO in Thermodynamic database mode<a href="module7.html#create-our-rock-and-fluid-pco-in-thermodynamic-database-mode" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><p>Switch to <code>Thermodynamic database mode</code>, select the <code>Compos</code> option and create a new record from scratch (Fig. <a href="intro.html#fig:fig-3">1.3</a>). We will call it <code>Rock_IOA</code>.</p></li>
-<li><p>Fig. <a href="intro.html#fig:fig-4">1.4</a> shows the <code>PCO</code> wizard, make sure to select <code>DComp</code>, then the elements (<code>IComp</code>), then the minerals (magnetite and apatite) that are in the rock.</p></li>
-<li><p>Fig. <a href="intro.html#fig:fig-5">1.5</a> shows the resulting <code>PCO</code> for the rock and all the steps. In the to tab choose <code>Settings</code> here you will see either the <code>DComp</code> chosen or if selected, the user-defined formula can be entered on the blank lines. Once you have entered units and quantities, move to <code>Page 1</code> tab. Here you will make sure that the total rock is normalized to 100g (add 0.1 kg), enter the name and information about the record, switch off/zero the <code>IComp</code> values to avoid adding additional elements to the input recipe, then click <code>re-calculate</code> to check the total composition. Finally click <code>Save</code> to save the record.</p></li>
-<li><p>The same procedure is used to create a <code>PCO</code> for the fluid, which we will call <code>Fluid_IOA</code>. Select the <code>Compos</code> option and create a new <code>PCO</code> record from scratch (Fig. <a href="intro.html#fig:fig-6">1.6</a>). Make sure to select all of the REE elements as <code>IComp</code> and the compounds HCl, NaCl, and H2O from the <code>DComp</code> selection window.</p></li>
-<li><p>Fig. <a href="intro.html#fig:fig-7">1.7</a> shows the resulting <code>PCO</code> for the fluid and all the steps. In the <code>Settings</code> tab you will see the <code>DComp</code> chosen together with units and quantities. On the <code>Page 1</code> tab make sure to enter the REE as <code>IComp</code> (100 ppm each), and put a zero in the normalization mass to let GEMS calculate the total mass of fluid, which should appear once you click on <code>re-calculate</code>. Finally click <code>Save</code> to save the record.</p></li>
+<li>Switch to <code>Thermodynamic database mode</code>, select the <code>Compos</code> option and create a new record from scratch (Fig. <a href="module7.html#fig:fig-3">7.4</a>). We will call it <code>Rock_IOA</code>.</li>
+<li>Fig. <a href="module7.html#fig:fig-4">7.5</a> shows the <code>PCO</code> wizard, make sure to select <code>DComp</code>, then the elements (<code>IComp</code>), then the minerals (magnetite and apatite) that are in the rock.</li>
 </ul>
 <div class="figure"><span style="display:block;" id="fig:fig-3"></span>
 <img src="figures/module7/fig-3.png" alt="`Compos` input for adding a new rock or flud record in `Thermodynamic database mode`. This dialog can be reached by clicking on `Compos` module on the left panel." width="90%" />
 <p class="caption">
-Figure 1.3: <code>Compos</code> input for adding a new rock or flud record in <code>Thermodynamic database mode</code>. This dialog can be reached by clicking on <code>Compos</code> module on the left panel.
+Figure 7.4: <code>Compos</code> input for adding a new rock or flud record in <code>Thermodynamic database mode</code>. This dialog can be reached by clicking on <code>Compos</code> module on the left panel.
 </p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:fig-4"></span>
 <img src="figures/module7/fig-4.png" alt="`Compos`record wizard. Choose `DComp` if you want to add a dependent component (compound like a mineral) as input recipt; choose `IComp` if you want to add individual elements `IComp` as inputs (this can always be ticked just make sure to enter zeros if you don't want it to be taken into account in your input recipt); choose the number of user defined formula if you want to enter your own formula (e.g. SiO2, HCl, etc.). The next window is self explanatory, just make sure to select `DComp` or `IComp` as needed." width="90%" />
 <p class="caption">
-Figure 1.4: <code>Compos</code>record wizard. Choose <code>DComp</code> if you want to add a dependent component (compound like a mineral) as input recipt; choose <code>IComp</code> if you want to add individual elements <code>IComp</code> as inputs (this can always be ticked just make sure to enter zeros if you don’t want it to be taken into account in your input recipt); choose the number of user defined formula if you want to enter your own formula (e.g. SiO2, HCl, etc.). The next window is self explanatory, just make sure to select <code>DComp</code> or <code>IComp</code> as needed.
+Figure 7.5: <code>Compos</code>record wizard. Choose <code>DComp</code> if you want to add a dependent component (compound like a mineral) as input recipt; choose <code>IComp</code> if you want to add individual elements <code>IComp</code> as inputs (this can always be ticked just make sure to enter zeros if you don’t want it to be taken into account in your input recipt); choose the number of user defined formula if you want to enter your own formula (e.g. SiO2, HCl, etc.). The next window is self explanatory, just make sure to select <code>DComp</code> or <code>IComp</code> as needed.
 </p>
 </div>
+<ul>
+<li><p>Fig. <a href="module7.html#fig:fig-5">7.6</a> shows the resulting <code>PCO</code> for the rock and all the steps. In the <code>Settings</code> tab you will see either the <code>DComp</code> chosen or if selected, the user-defined formula can be entered on the blank lines. Once you have entered units and quantities, move to <code>Page 1</code> tab. Here you will make sure that the total rock is normalized to 100g (add 0.1 kg), enter the name and information about the record, switch off/zero the <code>IComp</code> values to avoid adding additional elements to the input recipe, then click <code>re-calculate</code> to check the total composition. Finally click <code>Save</code> to save the record.</p></li>
+<li><p>The same procedure is used to create a <code>PCO</code> for the fluid, which we will call <code>Fluid_IOA</code>. Select the <code>Compos</code> option and create a new <code>PCO</code> record from scratch (Fig. <a href="module7.html#fig:fig-6">7.7</a>). Make sure to select all of the REE elements as <code>IComp</code> and the compounds HCl, NaCl, and H2O from the <code>DComp</code> selection window.</p></li>
+<li><p>Fig. <a href="module7.html#fig:fig-7">7.8</a> shows the resulting <code>PCO</code> for the fluid and all the steps. In the <code>Settings</code> tab you will see the <code>DComp</code> chosen together with units and quantities. On the <code>Page 1</code> tab make sure to enter the REE as <code>IComp</code> (100 ppm each), and put a zero in the normalization mass to let GEMS calculate the total mass of fluid, which should appear once you click on <code>re-calculate</code>. Finally click <code>Save</code> to save the record.</p>
 <div class="figure"><span style="display:block;" id="fig:fig-5"></span>
 <img src="figures/module7/fig-5.png" alt="`Compos`record. Start with the Settings tab to input your `DComp` or user-defined formula for your minerals or fluid compounds and add the units (1-2). In the `Page 1` tab follow the sequence: (3) enter record information; (4) enter the normalization mass (i.e., 0.1 kg); (5) make sure the `IComp` values are zero unless additional elements need to be added to the recipe; (6) click the `re-calculate` button to check the total composition shown in window (7)." width="80%" />
 <p class="caption">
-Figure 1.5: <code>Compos</code>record. Start with the Settings tab to input your <code>DComp</code> or user-defined formula for your minerals or fluid compounds and add the units (1-2). In the <code>Page 1</code> tab follow the sequence: (3) enter record information; (4) enter the normalization mass (i.e., 0.1 kg); (5) make sure the <code>IComp</code> values are zero unless additional elements need to be added to the recipe; (6) click the <code>re-calculate</code> button to check the total composition shown in window (7).
+Figure 7.6: <code>Compos</code>record. Start with the Settings tab to input your <code>DComp</code> or user-defined formula for your minerals or fluid compounds and add the units (1-2). In the <code>Page 1</code> tab follow the sequence: (3) enter record information; (4) enter the normalization mass (i.e., 0.1 kg); (5) make sure the <code>IComp</code> values are zero unless additional elements need to be added to the recipe; (6) click the <code>re-calculate</code> button to check the total composition shown in window (7).
 </p>
-</div>
+</div></li>
+</ul>
 <div class="figure"><span style="display:block;" id="fig:fig-6"></span>
 <img src="figures/module7/fig-6.png" alt="`Compos`record wizard used to create the IOA fluid. Make sure to select `DComp` in the first window to see the selected compounds for the fluid (i.e. HCl@, NaCl@, H2O@, O2@). " width="90%" />
 <p class="caption">
-Figure 1.6: <code>Compos</code>record wizard used to create the IOA fluid. Make sure to select <code>DComp</code> in the first window to see the selected compounds for the fluid (i.e. HCl@, NaCl@, H2O@, O2@).
+Figure 7.7: <code>Compos</code>record wizard used to create the IOA fluid. Make sure to select <code>DComp</code> in the first window to see the selected compounds for the fluid (i.e. HCl@, NaCl@, H2O@, O2@).
 </p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:fig-7"></span>
-<img src="figures/module7/fig-7.png" alt="`Compos`record showing the selected compounds for the fluid (i.e. HCl@, NaCl@, H2O@, O2@) in the `Settings` tab (1-2), and the `IComp` values in the `Page 1` tab (3-4). Make sure to add 100 ppm for each REE (4), input a zero in step (5), re-calculate in step (6) and inspect the results. " width="75%" />
+<img src="figures/module7/fig-7.png" alt="`Compos`record showing the selected compounds for the fluid (i.e. HCl@, NaCl@, H2O@, O2@) in the `Settings` tab (1-2), and the `IComp` values in the `Page 1` tab (3-4). Make sure to add 100 ppm for each REE (4), input a zero in step (5), re-calculate in step (6) and inspect the results. " width="60%" />
 <p class="caption">
-Figure 1.7: <code>Compos</code>record showing the selected compounds for the fluid (i.e. HCl@, NaCl@, H2O@, O2@) in the <code>Settings</code> tab (1-2), and the <code>IComp</code> values in the <code>Page 1</code> tab (3-4). Make sure to add 100 ppm for each REE (4), input a zero in step (5), re-calculate in step (6) and inspect the results.
+Figure 7.8: <code>Compos</code>record showing the selected compounds for the fluid (i.e. HCl@, NaCl@, H2O@, O2@) in the <code>Settings</code> tab (1-2), and the <code>IComp</code> values in the <code>Page 1</code> tab (3-4). Make sure to add 100 ppm for each REE (4), input a zero in step (5), re-calculate in step (6) and inspect the results.
 </p>
 </div>
 </div>
@@ -273,61 +346,67 @@ Figure 1.7: <code>Compos</code>record showing the selected compounds for the flu
 <h2><span class="header-section-number">7.3</span> Setting up a multipass leaching model in <code>Process</code> simulations<a href="module7.html#setting-up-a-multipass-leaching-model-in-process-simulations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here we will create a multipass leaching model using a single flow-through reactor in <code>Process</code> simulations. But before we start we need to create a parent record in <code>SysEq</code> and add the two PCOs we created above to our system. We will make two parent records with 100 g IOA rock and 1000 g of fluid, one record at 100 °C and the other at 350 °C and 1000 bar.</p>
 <ul>
-<li><p>Switch back to <code>System Equilibrium</code> calculation mode (<code>SysEq</code>) to add the two PCOs to our system and create the parent record. You already learned how to do this in the core tutorials, but Fig. <a href="intro.html#fig:fig-8">1.8</a> shows what to select. Let’s create a record called <code>FR_multipass</code> at 100 °C and 1000 bar, and select the two PCOs we created above (i.e. <code>Rock_IOA</code> and <code>Fluid_IOA</code>) as shown in Fig. <a href="intro.html#fig:fig-8">1.8</a>. Click ok and calculate equilibrium to check the results. You can clone the record to create another parent system at 350 °C and 1000 bar.</p></li>
-<li><p>Switch to <code>Process</code> simulation mode and create a new record from scratch. We can call it <code>FR_multipass</code> and select the <code>Process simulation code</code> (R) for the type of process to simulate as shown in Fig. <a href="intro.html#fig:fig-9">1.9</a>. In the next wizard step, make sure to select the sequence shown in Fig. <a href="module7.html#fig:fig-10">7.3</a>. First create the record at 100 °C and 1000 bar. Then repeat the process above to create another <code>Process</code> simulation record at 350 °C and 1000 bar.</p></li>
-<li><p>In the plotting window in Fig. <a href="module7.html#fig:fig-10">7.3</a> you can select the property to plot on the x- and y-axis. Here we select <code>phM</code> for phase mass in grams, and under <code>Scalars</code> select <code>J</code> which is used for fluid aliquots (right click and select <code>J</code> so that it appears as <code>xp[J]</code>, i.e. x-axis value).</p></li>
-<li><p>Accept all the following dialogues. Then click on <code>Save this record to database</code>, which creates your new process simulation record.</p></li>
-<li><p>Under <code>Process</code> simulation when you select your record, under the <code>Controls</code> tab make sure your setup is correct, including temperature, pressure, ‘iTm’ (i.e. each record will be assigned a new number, from 1000-1200 in 10 steps means a maximum of 20 records will be generated starting with 1000, 1010, and so forth). In the <code>Sampling</code> tab make sure you have xp[J] =: J which represents the x-axis, and a series of variables such as yp[J][0] =: phM[{Apatite}] which represents what to plot on the y-axis.</p></li>
+<li>Switch back to <code>System Equilibrium</code> calculation mode (<code>SysEq</code>) to add the two PCOs to our system and create the parent record. You already learned how to do this in the core tutorials, but Fig. <a href="module7.html#fig:fig-8">7.9</a> shows what to select. Let’s create a record called <code>FR_multipass</code> at 100 °C and 1000 bar, and select the two PCOs we created above (i.e. <code>Rock_IOA</code> and <code>Fluid_IOA</code>) as shown in Fig. <a href="module7.html#fig:fig-8">7.9</a>. Click ok and calculate equilibrium to check the results. You can clone the record to create another parent system at 350 °C and 1000 bar.</li>
 </ul>
 <div class="figure"><span style="display:block;" id="fig:fig-8"></span>
 <img src="figures/module7/fig-8.png" alt="`Equilibrium Calculation` mode (`SysEq`) showing how to create a parent record in preparation forthe multipass leaching model, and where to enter the rock and fluid PCOs created in the previous step. The resulting record is called `FR_multipass` and is calculated at 100 &amp;deg;C and 1000 bar. Note the initial fluid/rock ratio and amount of fluid given here will be used in the `Process` simulation; for advanced users it can also be changed in the `Process` simulation code later on. Make sure to always add a comment and title for each `SysEq` record created, it will help you to keep track of your records." width="90%" />
 <p class="caption">
-Figure 1.8: <code>Equilibrium Calculation</code> mode (<code>SysEq</code>) showing how to create a parent record in preparation forthe multipass leaching model, and where to enter the rock and fluid PCOs created in the previous step. The resulting record is called <code>FR_multipass</code> and is calculated at 100 °C and 1000 bar. Note the initial fluid/rock ratio and amount of fluid given here will be used in the <code>Process</code> simulation; for advanced users it can also be changed in the <code>Process</code> simulation code later on. Make sure to always add a comment and title for each <code>SysEq</code> record created, it will help you to keep track of your records.
+Figure 7.9: <code>Equilibrium Calculation</code> mode (<code>SysEq</code>) showing how to create a parent record in preparation forthe multipass leaching model, and where to enter the rock and fluid PCOs created in the previous step. The resulting record is called <code>FR_multipass</code> and is calculated at 100 °C and 1000 bar. Note the initial fluid/rock ratio and amount of fluid given here will be used in the <code>Process</code> simulation; for advanced users it can also be changed in the <code>Process</code> simulation code later on. Make sure to always add a comment and title for each <code>SysEq</code> record created, it will help you to keep track of your records.
 </p>
 </div>
+<ul>
+<li><p>Switch to <code>Process</code> simulation mode and create a new record from scratch. We can call it <code>FR_multipass</code> and select the <code>Process simulation code</code> (R) for the type of process to simulate as shown in Fig. <a href="module7.html#fig:fig-9">7.10</a>. In the next wizard step, make sure to select the sequence shown in Fig. <a href="module7.html#fig:fig-10">7.11</a>. First create the record at 100 °C and 1000 bar. Then repeat the process above to create another <code>Process</code> simulation record at 350 °C and 1000 bar.</p></li>
+<li><p>In the plotting window in Fig. <a href="module7.html#fig:fig-10">7.11</a> you can select the property to plot on the x- and y-axis. Here we select <code>phM</code> for phase mass in grams, and under <code>Scalars</code> select <code>J</code> which is used for fluid aliquots (right click and select <code>J</code> so that it appears as <code>xp[J]</code>, i.e. x-axis value).</p></li>
+<li><p>Accept all the following dialogues. Then click on <code>Save this record to database</code>, which creates your new process simulation record.</p></li>
+<li><p>Under <code>Process</code> simulation when you select your record, under the <code>Controls</code> tab make sure your setup is correct, including temperature, pressure, ‘iTm’ (i.e. each record will be assigned a new number, from 1000-1200 in 10 steps means a maximum of 20 records will be generated starting with 1000, 1010, and so forth). In the <code>Sampling</code> tab make sure you have xp[J] =: J which represents the x-axis, and a series of variables such as yp[J][0] =: phM[{Apatite}] which represents what to plot on the y-axis.</p></li>
+</ul>
 <div class="figure"><span style="display:block;" id="fig:fig-9"></span>
 <img src="figures/module7/fig-9.png" alt="`Process` simulation mode showing how to create a new record from scratch and select the `Process simulation code` (R) for multipass leaching model. The resulting record is called `FR_multipass_FR10`." width="90%" />
 <p class="caption">
-Figure 1.9: <code>Process</code> simulation mode showing how to create a new record from scratch and select the <code>Process simulation code</code> (R) for multipass leaching model. The resulting record is called <code>FR_multipass_FR10</code>.
+Figure 7.10: <code>Process</code> simulation mode showing how to create a new record from scratch and select the <code>Process simulation code</code> (R) for multipass leaching model. The resulting record is called <code>FR_multipass_FR10</code>.
 </p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:fig-10"></span>
 <img src="figures/module7/fig-10.png" alt="`Process` simulation wizard to setup a mutlipass leaching model. (1) Select `Leaching Compos source`, (2) select the fluid, (3) select the rock, (4) enter the P-T conditions or steps if you want to change pressure-temperature. In the `iTm` iterator, one defines the fluid aliquots, for example for record values from 1000 to 1200 in 10 steps results in a total of 20 fluid aliquots (i.e. the first record will be assigned 1000, the second one 1010, etc.). In the plotting window under `Scalars` one finds `J` which is used for flud aliquots; other variables that can be selected there are for example temperature, pH etc. You can select the `Property` in the left panel, here we choose `phM` which is phase mass in grams." width="90%" />
 <p class="caption">
-Figure 7.3: <code>Process</code> simulation wizard to setup a mutlipass leaching model. (1) Select <code>Leaching Compos source</code>, (2) select the fluid, (3) select the rock, (4) enter the P-T conditions or steps if you want to change pressure-temperature. In the <code>iTm</code> iterator, one defines the fluid aliquots, for example for record values from 1000 to 1200 in 10 steps results in a total of 20 fluid aliquots (i.e. the first record will be assigned 1000, the second one 1010, etc.). In the plotting window under <code>Scalars</code> one finds <code>J</code> which is used for flud aliquots; other variables that can be selected there are for example temperature, pH etc. You can select the <code>Property</code> in the left panel, here we choose <code>phM</code> which is phase mass in grams.
+Figure 7.11: <code>Process</code> simulation wizard to setup a mutlipass leaching model. (1) Select <code>Leaching Compos source</code>, (2) select the fluid, (3) select the rock, (4) enter the P-T conditions or steps if you want to change pressure-temperature. In the <code>iTm</code> iterator, one defines the fluid aliquots, for example for record values from 1000 to 1200 in 10 steps results in a total of 20 fluid aliquots (i.e. the first record will be assigned 1000, the second one 1010, etc.). In the plotting window under <code>Scalars</code> one finds <code>J</code> which is used for flud aliquots; other variables that can be selected there are for example temperature, pH etc. You can select the <code>Property</code> in the left panel, here we choose <code>phM</code> which is phase mass in grams.
 </p>
 </div>
 </div>
 <div id="plotting-and-model-modifications-for-more-acidic-fluid" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> Plotting and model modifications for more acidic fluid<a href="module7.html#plotting-and-model-modifications-for-more-acidic-fluid" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><p>Click on the calculator icon <code>Re-calculate and check record data</code> to display the graph of the process simulation. Figs. <a href="module7.html#fig:fig-11">7.4</a>-<a href="module7.html#fig:fig-12">7.5</a> show the resulting calculated alteration mineralogy and fluid REE concentrations for the two parent records at 100 °C and 350 °C. Note that the fluid REE concentrations are plotted as a sum of all REE (which can be defined in the <code>Sampling</code> tab code), but you can also select individual REE to plot from the wizard.</p></li>
-<li><p>To make things interesting go back to the <code>Thermodynamic database mode</code> and create a new fluid PCO with more acidic pH (i.e. 1 M HCl instead of 0.1 M HCl) and repeate the steps above. Make a parent record with fluid and rock created in <code>SysEq</code>, then in <code>Process</code> simulation use these two parent records to do the multipass simulations at 100 °C and 350 °C. Fig. <a href="module7.html#fig:fig-11">7.4</a> shows the additional results.</p></li>
-<li><p>Fig. <a href="module7.html#fig:fig-12">7.5</a> shows the type of additional plots you can make. In this case we plot log molality of light (L) and heavy (H) REE in the fluid as a function of fluid aliquots. Note that the light REE are more mobile than the heavy REE at high temperature, and that pH plays a crucial role for REE mobilization. Here we use <code>J</code> for aliquots of fluid on the x-axis, and <code>log(m_t[{element}])</code> for the y-axis, where element is the selected element. You can select individual REE to plot as well, or sum of all light and heavy REE as shown here. For individual elements remake the record and use the wizard. You can modify the plotting script in the <code>Sampling</code>tab according to Fig. <a href="module7.html#fig:fig-13">7.6</a>.</p></li>
+<li><p>Click on the calculator icon <code>Re-calculate and check record data</code> to display the graph of the process simulation. Figs. <a href="module7.html#fig:fig-11">7.12</a>-<a href="module7.html#fig:fig-12">7.13</a> show the resulting calculated alteration mineralogy and fluid REE concentrations for the two parent records at 100 °C and 350 °C. Note that the fluid REE concentrations are plotted as a sum of all REE (which can be defined in the <code>Sampling</code> tab code), but you can also select individual REE to plot from the wizard.</p></li>
+<li><p>To make things interesting go back to the <code>Thermodynamic database mode</code> and create a new fluid PCO with more acidic pH (i.e. 1 M HCl instead of 0.1 M HCl) and repeate the steps above. Make a parent record with fluid and rock created in <code>SysEq</code>, then in <code>Process</code> simulation use these two parent records to do the multipass simulations at 100 °C and 350 °C. Fig. <a href="module7.html#fig:fig-11">7.12</a> shows the additional results.</p></li>
+<li><p>Fig. <a href="module7.html#fig:fig-12">7.13</a> shows the type of additional plots you can make. In this case we plot log molality of light (L) and heavy (H) REE in the fluid as a function of fluid aliquots. Note that the light REE are more mobile than the heavy REE at high temperature, and that pH plays a crucial role for REE mobilization. Here we use <code>J</code> for aliquots of fluid on the x-axis, and <code>log(m_t[{element}])</code> for the y-axis, where element is the selected element. You can select individual REE to plot as well, or sum of all light and heavy REE as shown here. For individual elements remake the record and use the wizard. You can modify the plotting script in the <code>Sampling</code>tab according to Fig. <a href="module7.html#fig:fig-13">7.14</a>.</p></li>
 <li><p>Here is the plotting code that can be copy pasted:</p></li>
 </ul>
-<p><code>yp[J][0] =: lg(m_t[{La}]+m_t[{Ce}]+m_t[{Pr}]+m_t[{Nd}]+m_t[{Sm}]+m_t[{Eu}]+m_t[{Gd}]);  yp[J][1] =: lg(m_t[{Tb}]+m_t[{Dy}]+m_t[{Ho}]+m_t[{Er}]+m_t[{Tm}]+m_t[{Yb}]+m_t[{Lu}]);</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="module7.html#cb1-1" tabindex="-1"></a>yp[J][<span class="dv">0</span>] <span class="op">=</span>: lg(m_t[{La}]<span class="op">+</span>m_t[{Ce}]<span class="op">+</span>m_t[{Pr}]<span class="op">+</span>m_t[{Nd}]<span class="op">+</span>m_t[{Sm}]<span class="op">+</span>m_t[{Eu}]<span class="op">+</span>m_t[{Gd}])<span class="op">;</span> </span>
+<span id="cb1-2"><a href="module7.html#cb1-2" tabindex="-1"></a>yp[J][<span class="dv">1</span>] <span class="op">=</span>: lg(m_t[{Tb}]<span class="op">+</span>m_t[{Dy}]<span class="op">+</span>m_t[{Ho}]<span class="op">+</span>m_t[{Er}]<span class="op">+</span>m_t[{Tm}]<span class="op">+</span>m_t[{Yb}]<span class="op">+</span>m_t[{Lu}])<span class="op">;</span></span></code></pre></div>
 <ul>
-<li>Can you make such models? If this part became to advanced, I suggest to go back to the core tutorials and repeat the steps above for the Greisen model. Once you are familiar with the <code>SysEq</code> and <code>Process</code> simulation mode, the plotting scripts, and adding <code>PCO</code> records to the thermodynamic databse under <code>Compos</code> you can try to make your own models here again.</li>
+<li>Can you make such models? If this part became too advanced, I suggest to go back to the core tutorials and repeat the steps above for the Greisen model. Once you are familiar with the <code>SysEq</code> and <code>Process</code> simulation mode, the plotting scripts, and adding <code>PCO</code> records to the thermodynamic databse under <code>Compos</code> you can try to make your own models here again.</li>
 </ul>
 <div class="figure"><span style="display:block;" id="fig:fig-11"></span>
-<img src="figures/module7/fig-11.png" alt="Simulated results for single flow-through reactor multipass leaching models at 100 &amp;deg;C and 350 &amp;deg;C, 1 kbar, showing the simulated alteration mineralogy for a fluid with initially 0.1 m HCl (left) and 1 m HCl (right). The models nicely show the replacement reactions between apatite and REE phosphates, and magnetite and hematite. pH plays a crucial role for REE mobilization." width="90%" />
+<img src="figures/module7/fig-11.png" alt="Simulated results for single flow-through reactor multipass leaching models at 100 &amp;deg;C and 350 &amp;deg;C, 1 kbar, showing the simulated alteration mineralogy for a fluid with initially 0.1 m HCl (left) and 1 m HCl (right). The models nicely show the replacement reactions between apatite and REE phosphates, and magnetite and hematite. pH plays a crucial role for REE mobilization." width="100%" />
 <p class="caption">
-Figure 7.4: Simulated results for single flow-through reactor multipass leaching models at 100 °C and 350 °C, 1 kbar, showing the simulated alteration mineralogy for a fluid with initially 0.1 m HCl (left) and 1 m HCl (right). The models nicely show the replacement reactions between apatite and REE phosphates, and magnetite and hematite. pH plays a crucial role for REE mobilization.
+Figure 7.12: Simulated results for single flow-through reactor multipass leaching models at 100 °C and 350 °C, 1 kbar, showing the simulated alteration mineralogy for a fluid with initially 0.1 m HCl (left) and 1 m HCl (right). The models nicely show the replacement reactions between apatite and REE phosphates, and magnetite and hematite. pH plays a crucial role for REE mobilization.
 </p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:fig-12"></span>
-<img src="figures/module7/fig-12.png" alt="Simulated results for single flow-through reactor multipass leaching models at 100 &amp;deg;C and 350 &amp;deg;C, 1 kbar, showing the simulated log molality light (L) and heavy (H) REE for a fluid with 1 m HCl at 100 &amp;deg;C (top) and 350 &amp;deg;C (bottom), 1 kbar. The models nicely show that pH plays a crucial role for REE mobilization." width="80%" />
+<img src="figures/module7/fig-12.png" alt="Simulated results for single flow-through reactor multipass leaching models at 100 &amp;deg;C and 350 &amp;deg;C, 1 kbar, showing the simulated log molality light (L) and heavy (H) REE for a fluid with 1 m HCl at 100 &amp;deg;C (top) and 350 &amp;deg;C (bottom), 1 kbar. The models nicely show that pH plays a crucial role for REE mobilization." width="75%" />
 <p class="caption">
-Figure 7.5: Simulated results for single flow-through reactor multipass leaching models at 100 °C and 350 °C, 1 kbar, showing the simulated log molality light (L) and heavy (H) REE for a fluid with 1 m HCl at 100 °C (top) and 350 °C (bottom), 1 kbar. The models nicely show that pH plays a crucial role for REE mobilization.
+Figure 7.13: Simulated results for single flow-through reactor multipass leaching models at 100 °C and 350 °C, 1 kbar, showing the simulated log molality light (L) and heavy (H) REE for a fluid with 1 m HCl at 100 °C (top) and 350 °C (bottom), 1 kbar. The models nicely show that pH plays a crucial role for REE mobilization.
 </p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:fig-13"></span>
 <img src="figures/module7/fig-13.png" alt="`Sampling` tab in `Process` simulation mode showing the plotting script for the log molality of light (L) for `yp[J][0]` and heavy (H) for `yp[J][1]` rare earth elements in the fluid as a function of fluid aliquots `xp[J]`. " width="90%" />
 <p class="caption">
-Figure 7.6: <code>Sampling</code> tab in <code>Process</code> simulation mode showing the plotting script for the log molality of light (L) for <code>yp[J][0]</code> and heavy (H) for <code>yp[J][1]</code> rare earth elements in the fluid as a function of fluid aliquots <code>xp[J]</code>.
+Figure 7.14: <code>Sampling</code> tab in <code>Process</code> simulation mode showing the plotting script for the log molality of light (L) for <code>yp[J][0]</code> and heavy (H) for <code>yp[J][1]</code> rare earth elements in the fluid as a function of fluid aliquots <code>xp[J]</code>.
 </p>
 </div>
+</div>
+<div id="outcomes-3" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Outcomes<a href="module7.html#outcomes-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Congratulations, you know now how to make a vein replacement model in GEMS using the MINES thermodynamic database! Couple of things to think about:
 - How would the results change if you change the initial fluid composition?
 - How would the results change if you change the initial fluid/rock ratio?

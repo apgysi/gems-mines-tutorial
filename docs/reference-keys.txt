@@ -82,7 +82,6 @@ fig:fig-3f
 fig:fig-4f
 fig:fig-5f
 fig:fig-1a
-fig:fig-t1
 fig:fig-10
 fig:fig-11
 fig:fig-12
@@ -121,3 +120,11 @@ create-our-rock-and-fluid-pco-in-thermodynamic-database-mode
 setting-up-a-multipass-leaching-model-in-process-simulations
 plotting-and-model-modifications-for-more-acidic-fluid
 module8
+calculate-the-seawater-basalt-equilibrium-at-elevated-temperatures-and-pressures
+clone-and-create-a-basalt-with-cu-pb-zn-ag-and-au
+clone-and-create-a-basalt-pco-with-metals-cu-pb-zn-ag-and-au
+seawater-basalt-titration-model-and-porosity-evolution
+singlepass-heating-model---mobilization-of-cu-pb-zn-ag-and-au
+outcomes-3
+outcomes-4
+outcomes-5

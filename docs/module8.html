@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Seawater-basalt recharge zone at Volcanic Hosted Massive Sulphide (VMS) Deposits | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
-  <meta name="description" content="8 Seawater-basalt recharge zone at Volcanic Hosted Massive Sulphide (VMS) Deposits | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <title>8 Seawater-basalt recharge zone at Volcanogenic Massive Sulfide (VMS) Deposits | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database</title>
+  <meta name="description" content="8 Seawater-basalt recharge zone at Volcanogenic Massive Sulfide (VMS) Deposits | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
   <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Seawater-basalt recharge zone at Volcanic Hosted Massive Sulphide (VMS) Deposits | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta property="og:title" content="8 Seawater-basalt recharge zone at Volcanogenic Massive Sulfide (VMS) Deposits | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Seawater-basalt recharge zone at Volcanic Hosted Massive Sulphide (VMS) Deposits | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
+  <meta name="twitter:title" content="8 Seawater-basalt recharge zone at Volcanogenic Massive Sulfide (VMS) Deposits | A tutorial for geochemical modeling of fluid-rock interaction using GEM-Selektor and the MINES thermodynamic database" />
   
   
   
@@ -95,6 +95,70 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -167,7 +231,14 @@ document.addEventListener("DOMContentLoaded", function() {
 <li class="chapter" data-level="7.3" data-path="module7.html"><a href="module7.html#setting-up-a-multipass-leaching-model-in-process-simulations"><i class="fa fa-check"></i><b>7.3</b> Setting up a multipass leaching model in <code>Process</code> simulations</a></li>
 <li class="chapter" data-level="7.4" data-path="module7.html"><a href="module7.html#plotting-and-model-modifications-for-more-acidic-fluid"><i class="fa fa-check"></i><b>7.4</b> Plotting and model modifications for more acidic fluid</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="module8.html"><a href="module8.html"><i class="fa fa-check"></i><b>8</b> Seawater-basalt recharge zone at Volcanic Hosted Massive Sulphide (VMS) Deposits</a></li>
+<li class="chapter" data-level="8" data-path="module8.html"><a href="module8.html"><i class="fa fa-check"></i><b>8</b> Seawater-basalt recharge zone at Volcanogenic Massive Sulfide (VMS) Deposits</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="module8.html"><a href="module8.html#calculate-the-seawater-basalt-equilibrium-at-elevated-temperatures-and-pressures"><i class="fa fa-check"></i><b>8.1</b> Calculate the seawater-basalt equilibrium at elevated temperatures and pressures</a></li>
+<li class="chapter" data-level="8.2" data-path="module8.html"><a href="module8.html#clone-and-create-a-basalt-pco-with-metals-cu-pb-zn-ag-and-au"><i class="fa fa-check"></i><b>8.2</b> Clone and create a basalt PCO with metals (Cu, Pb, Zn, Ag, and Au)</a></li>
+<li class="chapter" data-level="8.3" data-path="module8.html"><a href="module8.html#seawater-basalt-titration-model-and-porosity-evolution"><i class="fa fa-check"></i><b>8.3</b> Seawater-basalt titration model and porosity evolution</a></li>
+<li class="chapter" data-level="8.4" data-path="module8.html"><a href="module8.html#singlepass-heating-model---mobilization-of-cu-pb-zn-ag-and-au"><i class="fa fa-check"></i><b>8.4</b> Singlepass heating model - mobilization of Cu, Pb, Zn, Ag, and Au</a></li>
+<li class="chapter" data-level="8.5" data-path="module8.html"><a href="module8.html#outcomes-3"><i class="fa fa-check"></i><b>8.5</b> Outcomes</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="acknowledgment.html"><a href="acknowledgment.html"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -190,9 +261,178 @@ document.addEventListener("DOMContentLoaded", function() {
 
             <section class="normal" id="section-">
 <div id="module8" class="section level1 hasAnchor" number="8">
-<h1><span class="header-section-number">8</span> Seawater-basalt recharge zone at Volcanic Hosted Massive Sulphide (VMS) Deposits<a href="module8.html#module8" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This is text</p>
+<h1><span class="header-section-number">8</span> Seawater-basalt recharge zone at Volcanogenic Massive Sulfide (VMS) Deposits<a href="module8.html#module8" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Volcanogenic Massive Sulfide (VMS) deposits occur as ancient seafloor ore bodies rich sulfides containing copper, zinc, lead, gold, and silver. These deposits are thought to have formed close to hydrothermal vents, which are found at mid-ocean ridge and back arc basins. The hydrothermal fluids are thought to be derived from oxidized sulfate (<span class="math inline">\(\text{SO}_4^{2-}\)</span>) seawater that has circulated through the oceanic crust and reacted with the basaltic rocks with the sulfur reduced to sulfides.</p>
+<p>Base and precious metals are leached from the basaltic rocks and precipitated as sulfides in the seafloor. There are several zones that can be distinguished in the formation of VMS deposits, including the seawater recharge zone, the hydrothermal fluid flow zone, and the seafloor deposition zone.</p>
+<p>In this module, we will focus on the seawater recharge zone and model the interaction of seawater with basalt at elevated temperatures and pressures, simulating the conditions found in the subsurface near hydrothermal vents. The model we will setup includes a titration model to study the porosity evolution with reaction progress. The model will also include the formation of secondary minerals, such as smectites and chlorite, which can affect the porosity and permeability of the rock. Then we will setup a single pass cooling model to study the mobility of base and precious metals including Cu, Pb, Zn, Ag, and Au. The model will also include the formation of sulfide minerals, such as pyrite, galena, sphalerite, and chalcopyrite, which can affect the metal mobility and deposition near the seafloor.</p>
+<div class="figure"><span style="display:block;" id="fig:fig-1"></span>
+<img src="figures/module8/fig-1.png" alt="Schematic of a VMS deposit showing the seawater recharge zone, the hydrothermal fluid flow zone, and the seafloor deposition zone. The seawater recharge zone is where seawater infiltrates the oceanic crust and reacts with basaltic rocks, leading to the formation of hydrothermal fluids that eventually precipitate metals as sulfides on the seafloor. Modified from Hurtig, N. C., Gysi, A. P., Monecke, T., Petersen, S., &amp; Hannington, M. D. (2024). Tellurium transport and enrichment in volcanogenic massive sulfide deposits: Numerical simulations of vent fluids and comparison to modern sea-floor sulfides. Economic Geology, 119(4), 829-851. " width="80%" />
+<p class="caption">
+Figure 8.1: Schematic of a VMS deposit showing the seawater recharge zone, the hydrothermal fluid flow zone, and the seafloor deposition zone. The seawater recharge zone is where seawater infiltrates the oceanic crust and reacts with basaltic rocks, leading to the formation of hydrothermal fluids that eventually precipitate metals as sulfides on the seafloor. Modified from Hurtig, N. C., Gysi, A. P., Monecke, T., Petersen, S., &amp; Hannington, M. D. (2024). Tellurium transport and enrichment in volcanogenic massive sulfide deposits: Numerical simulations of vent fluids and comparison to modern sea-floor sulfides. Economic Geology, 119(4), 829-851.
+</p>
+</div>
+<div id="calculate-the-seawater-basalt-equilibrium-at-elevated-temperatures-and-pressures" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Calculate the seawater-basalt equilibrium at elevated temperatures and pressures<a href="module8.html#calculate-the-seawater-basalt-equilibrium-at-elevated-temperatures-and-pressures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The seawater and basalt compositions are taken from the MINES database, and can be inspected in the <code>Thermodynamic database</code> mode. The seawater composition is based on the standard seawater composition, and the basalt composition is based on a typical mid-ocean ridge basalt (MORB) composition. The major problem with these models is the kinetics and possibly the thermodynamic properties for some of the minerals and/or aqueous species that need to be updated. Typically, this results in some minerals that should form at high temperature that stabilize in the model at temperatures much lower than these occur in natural systems. Here we will learn how to add a metastability constrain to deal with these phases, and allow metastable phases to form instead of the thermodynamically stable phases. A typicall example would be modeling of chalcedony/quartz and smectites/chlorite stability.</p>
+<ul>
+<li>The first step is to prepare a record in <code>SysEq</code> to calculate the equilibrium between seawater and basalt at elevated temperatures and pressures. Create a new record in <code>SysEq</code>, call it <code>SW-B</code> and select the seawater and basalt compositions from the MINES database. Set the temperature to 250 <span class="math inline">\(^{\circ}\)</span>C and the pressure to 1 kbar, which are typical conditions found in the subsurface near hydrothermal vents. For the input recipe use 1000 g seawater and 50 g basalt; to spice things up we will add 0.1 ppm Ag and Au, 100 ppm Cu and 1000 ppm Zn and Pb to the system composition. The record is shown in Fig. <a href="module8.html#fig:fig-2">8.2</a>. We then calculate the equilibrium and inspect the results.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:fig-2"></span>
+<img src="figures/module8/fig-2.png" alt="`SysEq` window showing how to create a new parent record. Select basalt and seawater from the MINES thermodynamic database, listed under `Compos`, and select base and precious metals under `IComp` and add the respective concentrations." width="80%" />
+<p class="caption">
+Figure 8.2: <code>SysEq</code> window showing how to create a new parent record. Select basalt and seawater from the MINES thermodynamic database, listed under <code>Compos</code>, and select base and precious metals under <code>IComp</code> and add the respective concentrations.
+</p>
+</div>
+<ul>
+<li>The results show that the seawater-basalt reaction is dominated by the formation of secondary minerals, such as phyllosilicates (chlorite, smectites), epidote, anhydrite, and the metals precipitate into sulfides such as sphalerite, galena, chalcocite. Now we can try to add a metastability contrain to avoid forming smectites at this temperature. We open the <code>Recipe dialog</code> (yellow vial) and select `Kin.upper (dul_), since the smectites are solid solutions we need to select all saponite endmembers and add 0 M. See Fig. <a href="module8.html#fig:fig-3">8.3</a> for more details. Then re-calculate equilibrium to check what happens when smectites are “switched off”.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:fig-3"></span>
+<img src="figures/module8/fig-3.png" alt="`SysEq` window showing the modeling results for basalt alteration minerals (top) and the input recipe window (yellow vial) to add kinetic metastability constrain `Kin.upper(dul_)` for saponite (bottom)." width="80%" />
+<p class="caption">
+Figure 8.3: <code>SysEq</code> window showing the modeling results for basalt alteration minerals (top) and the input recipe window (yellow vial) to add kinetic metastability constrain <code>Kin.upper(dul_)</code> for saponite (bottom).
+</p>
+</div>
+</div>
+<div id="clone-and-create-a-basalt-pco-with-metals-cu-pb-zn-ag-and-au" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Clone and create a basalt PCO with metals (Cu, Pb, Zn, Ag, and Au)<a href="module8.html#clone-and-create-a-basalt-pco-with-metals-cu-pb-zn-ag-and-au" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The seawater and basalt compositions are taken from the MINES database, and can be inspected in the <code>Thermodynamic database</code> mode. We will now add base and precious metals to the basalt composition.</p>
+<ul>
+<li><p>Switch to <code>Thermodynamic database</code> mode, and under <code>Compos</code> select R_Basalt and <code>Clone</code> this record and call it “R_Basalt_metals”. Make sure to select Cu, Pb, Zn, Ag, and Au in the next window (Fig. <a href="module8.html#fig:fig-4">8.4</a>).</p></li>
+<li><p>Add 0.1 ppm Ag and Au, 100 ppm Cu and 1000 ppm Zn and Pb. In the normalization amount field you can add a zero, then re-calculate, it should then generate the outputs shown in Fig. <a href="module8.html#fig:fig-4">8.4</a>. Note if you go in the <code>Settings</code> tab you can inspect the basalt composition, under <code>Page 1</code> tab you see the base and precious metals entered as independent components (<code>IComp</code>).</p></li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:fig-4"></span>
+<img src="figures/module8/fig-4.png" alt=" Setup of a PCO in `Compos` in `thermodynamic database mode` showing how to create/clone the basaltic rock and add base and precious metals to its input comosition. Make sure to select the independent components (`IComp`) as shown in the top window, and add the amounts and units in the first tab on `Page 1`. Choose 0.1 ppm Au and Ag, 100 ppm Cu, and 1000 ppm Pb and Zn." width="80%" />
+<p class="caption">
+Figure 8.4:  Setup of a PCO in <code>Compos</code> in <code>thermodynamic database mode</code> showing how to create/clone the basaltic rock and add base and precious metals to its input comosition. Make sure to select the independent components (<code>IComp</code>) as shown in the top window, and add the amounts and units in the first tab on <code>Page 1</code>. Choose 0.1 ppm Au and Ag, 100 ppm Cu, and 1000 ppm Pb and Zn.
+</p>
+</div>
+</div>
+<div id="seawater-basalt-titration-model-and-porosity-evolution" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Seawater-basalt titration model and porosity evolution<a href="module8.html#seawater-basalt-titration-model-and-porosity-evolution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before we dive into any open system modeling, let’s have a look at a titration model. The goal is to titrate 50 to 500 g of basalt in 10 g steps to 1000 g of seawater and inspect the evolving alteration mineralogy. We will create a custom script to track volume percent minerals (vol%) as a function to fluid/rock ratios (F/R). High F/R ratios represent the core of the upflow/recharge zone where the fluid completely dominates and leaches the rock. Low F/R ratios (high basalt mass) represent the fresh rock matrix far from the conduit.</p>
+<ul>
+<li>To begin we create a parent record in <code>SysEq</code> with the basalt and seawater, then we move on to the <code>Process simulation</code> mode (left panel of GEMS) and create a new record. Make sure to select the parent record you just created, call it “SW-B_titr” and select the titration model, which is called <code>S mode</code> (Fig. <a href="module8.html#fig:fig-5">8.5</a>).</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:fig-5"></span>
+<img src="figures/module8/fig-5.png" alt="Top shows the parent record created in `SysEq` with seawater and basalt added. The bottom window shows the selection of this parent record when creating a new record in the `Process simulation` mode for the titration model (`S mode`)." width="80%" />
+<p class="caption">
+Figure 8.5: Top shows the parent record created in <code>SysEq</code> with seawater and basalt added. The bottom window shows the selection of this parent record when creating a new record in the <code>Process simulation</code> mode for the titration model (<code>S mode</code>).
+</p>
+</div>
+<ul>
+<li><p>The next window show the tiration model setup (Fig. <a href="module8.html#fig:fig-6">8.6</a>), make sure to enter these numbers and select the correct model. The number 1 problem I encounter is when someone forgets to add a reasonable pressure in the pressure cell. Click next and select the variables to plot (Fig. <a href="module8.html#fig:fig-6">8.6</a>). For now we choose cNu which is g rocks titrated, and phVol which is volume of each mineral in cm3.</p></li>
+<li><p>Click your way through the wizard until step 4 and make sure to tick <code>Volume V, I ('vV')</code> for allocating an optional data vectors (Fig. <a href="module8.html#fig:fig-6">8.6</a>). What this does, it frees up a variable in which we will save the sum or total volume of each of our minerals. Click next. Make sure to save this record.</p></li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:fig-6"></span>
+<img src="figures/module8/fig-6.png" alt="(Step 2) Titration model setup in `S mode` in the `Process simulation` mode. Make sure to (1) select the correct model, (2) select the titrant, here we use basalt, (3) select the initial, final and steps of basalt to be added, (4) add the correct pressure and temperature (here we use a constant P-T, but steps and gradients can be scripted). (Step 3) Variables to be selected for plotting, here we choose first `Scalars`, right click and choose abscissa for cNu which is grams rock added, then switch to `phVol` to select phase volumes in cm3. (step 4) Tick `Volume V, I ('vV')` for allocating an optional data vectors " width="80%" />
+<p class="caption">
+Figure 8.6: (Step 2) Titration model setup in <code>S mode</code> in the <code>Process simulation</code> mode. Make sure to (1) select the correct model, (2) select the titrant, here we use basalt, (3) select the initial, final and steps of basalt to be added, (4) add the correct pressure and temperature (here we use a constant P-T, but steps and gradients can be scripted). (Step 3) Variables to be selected for plotting, here we choose first <code>Scalars</code>, right click and choose abscissa for cNu which is grams rock added, then switch to <code>phVol</code> to select phase volumes in cm3. (step 4) Tick <code>Volume V, I ('vV')</code> for allocating an optional data vectors
+</p>
+</div>
+<ul>
+<li><p>The next step is to click on the calculator to test our calculation. Check the <code>Results</code> tab and you can plot the results which should display volume minerals as a function of mass of basalt added.</p></li>
+<li><p>Now let’s take it a step further, and create a custom script (copy paste them from below). If you want you can clone the record you made earlier and rename it to test the custom script. I made this one for you, try it out. Copy paste the scripts below; one is for the the <code>Controls</code> window/tab, here we want to create a variable called <code>ipe</code> which captures the logarithm of fluid/rock ratio (F/R). We move then to the <code>Sampling</code> tab to update our x-axis to plot the F/R ratio and y-axis to plot mineral volume %. Fig. <a href="module8.html#fig:fig-7">8.7</a> shows how your script window should look like.</p></li>
+<li><p>Script for <code>Controls</code> window:</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="module8.html#cb1-1" tabindex="-1"></a>$titration model</span>
+<span id="cb1-2"><a href="module8.html#cb1-2" tabindex="-1"></a>xa_[{R_Basalt_metals}] <span class="op">=</span>: cNu <span class="op">*</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="module8.html#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="module8.html#cb1-4" tabindex="-1"></a>$(custom script) calculate Log10 Fluid<span class="op">/</span>Rock mass ratio using iterator ipe </span>
+<span id="cb1-5"><a href="module8.html#cb1-5" tabindex="-1"></a>ipe <span class="op">=</span>: lg( phM[{aq_gen}] <span class="op">/</span> cNu )<span class="op">;</span></span>
+<span id="cb1-6"><a href="module8.html#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="module8.html#cb1-7" tabindex="-1"></a>$(custom script) metastability constraints smectites</span>
+<span id="cb1-8"><a href="module8.html#cb1-8" tabindex="-1"></a>dul_[{Ca<span class="op">-</span>Saponite}]<span class="op">=</span>: ( cTC <span class="op">&gt;=</span> <span class="dv">200</span>? <span class="dv">0</span> : <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb1-9"><a href="module8.html#cb1-9" tabindex="-1"></a>dul_[{Fe<span class="op">-</span>Saponite}]<span class="op">=</span>: ( cTC <span class="op">&gt;=</span> <span class="dv">200</span>? <span class="dv">0</span> : <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb1-10"><a href="module8.html#cb1-10" tabindex="-1"></a>dul_[{K<span class="op">-</span>Saponite}]<span class="op">=</span>: ( cTC <span class="op">&gt;=</span> <span class="dv">200</span>? <span class="dv">0</span> : <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb1-11"><a href="module8.html#cb1-11" tabindex="-1"></a>dul_[{Na<span class="op">-</span>Saponite}]<span class="op">=</span>: ( cTC <span class="op">&gt;=</span> <span class="dv">200</span>? <span class="dv">0</span> : <span class="dv">1</span>)<span class="op">;</span></span></code></pre></div>
+<ul>
+<li>Script for <code>Sampling</code> window:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="module8.html#cb2-1" tabindex="-1"></a>xp[J] <span class="op">=</span>: ipe<span class="op">;</span></span>
+<span id="cb2-2"><a href="module8.html#cb2-2" tabindex="-1"></a>$(custom script) make variable to calc total volume</span>
+<span id="cb2-3"><a href="module8.html#cb2-3" tabindex="-1"></a>cV[J] <span class="op">=</span>:  phVol[{Alkali Feldspar}] <span class="op">+</span> phVol[{Plagioclase}] <span class="op">+</span> phVol[{Chlorite}] <span class="op">+</span> phVol[{Cpx}] <span class="op">+</span> phVol[{Epidote}] <span class="op">+</span> phVol[{Quartz}] <span class="op">+</span> phVol[{Titanite}] <span class="op">+</span> phVol[{Hematite}] <span class="op">+</span> phVol[{Magnetite}] <span class="op">+</span> phVol[{Prehnite}] <span class="op">+</span> phVol[{Anhydrite}] <span class="op">+</span> phVol[{Gold}] <span class="op">+</span> phVol[{Silver}] <span class="op">+</span> phVol[{Acanthite}] <span class="op">+</span> phVol[{Bornite}] <span class="op">+</span> phVol[{Chalcocite}] <span class="op">+</span> phVol[{Chalcopyrite}] <span class="op">+</span> phVol[{Covellite}] <span class="op">+</span> phVol[{Galena}] <span class="op">+</span> phVol[{Pyrite}] <span class="op">+</span> phVol[{Sphalerite}]<span class="op">;</span></span>
+<span id="cb2-4"><a href="module8.html#cb2-4" tabindex="-1"></a>yp[J][<span class="dv">0</span>] <span class="op">=</span>: phVol[{Alkali Feldspar}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-5"><a href="module8.html#cb2-5" tabindex="-1"></a>yp[J][<span class="dv">1</span>] <span class="op">=</span>: phVol[{Plagioclase}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-6"><a href="module8.html#cb2-6" tabindex="-1"></a>yp[J][<span class="dv">2</span>] <span class="op">=</span>: phVol[{Chlorite}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-7"><a href="module8.html#cb2-7" tabindex="-1"></a>yp[J][<span class="dv">3</span>] <span class="op">=</span>: phVol[{Cpx}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-8"><a href="module8.html#cb2-8" tabindex="-1"></a>yp[J][<span class="dv">4</span>] <span class="op">=</span>: phVol[{Epidote}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-9"><a href="module8.html#cb2-9" tabindex="-1"></a>yp[J][<span class="dv">5</span>] <span class="op">=</span>: phVol[{Quartz}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-10"><a href="module8.html#cb2-10" tabindex="-1"></a>yp[J][<span class="dv">6</span>] <span class="op">=</span>: phVol[{Titanite}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-11"><a href="module8.html#cb2-11" tabindex="-1"></a>yp[J][<span class="dv">7</span>] <span class="op">=</span>: phVol[{Hematite}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-12"><a href="module8.html#cb2-12" tabindex="-1"></a>yp[J][<span class="dv">8</span>] <span class="op">=</span>: phVol[{Magnetite}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-13"><a href="module8.html#cb2-13" tabindex="-1"></a>yp[J][<span class="dv">9</span>] <span class="op">=</span>: phVol[{Prehnite}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-14"><a href="module8.html#cb2-14" tabindex="-1"></a>yp[J][<span class="dv">10</span>] <span class="op">=</span>: phVol[{Anhydrite}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-15"><a href="module8.html#cb2-15" tabindex="-1"></a>yp[J][<span class="dv">11</span>] <span class="op">=</span>: phVol[{Gold}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-16"><a href="module8.html#cb2-16" tabindex="-1"></a>yp[J][<span class="dv">12</span>] <span class="op">=</span>: phVol[{Silver}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-17"><a href="module8.html#cb2-17" tabindex="-1"></a>yp[J][<span class="dv">13</span>] <span class="op">=</span>: phVol[{Acanthite}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-18"><a href="module8.html#cb2-18" tabindex="-1"></a>yp[J][<span class="dv">14</span>] <span class="op">=</span>: phVol[{Bornite}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-19"><a href="module8.html#cb2-19" tabindex="-1"></a>yp[J][<span class="dv">15</span>] <span class="op">=</span>: phVol[{Chalcocite}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-20"><a href="module8.html#cb2-20" tabindex="-1"></a>yp[J][<span class="dv">16</span>] <span class="op">=</span>: phVol[{Chalcopyrite}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-21"><a href="module8.html#cb2-21" tabindex="-1"></a>yp[J][<span class="dv">17</span>] <span class="op">=</span>: phVol[{Covellite}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-22"><a href="module8.html#cb2-22" tabindex="-1"></a>yp[J][<span class="dv">18</span>] <span class="op">=</span>: phVol[{Galena}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-23"><a href="module8.html#cb2-23" tabindex="-1"></a>yp[J][<span class="dv">19</span>] <span class="op">=</span>: phVol[{Pyrite}] <span class="op">/</span> cV<span class="op">;</span></span>
+<span id="cb2-24"><a href="module8.html#cb2-24" tabindex="-1"></a>yp[J][<span class="dv">20</span>] <span class="op">=</span>: phVol[{Sphalerite}] <span class="op">/</span> cV<span class="op">;</span></span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:fig-7"></span>
+<img src="figures/module8/fig-7.png" alt="`Process simulation mode` with `Controls` window used for the titration script setup and the `Sampling` script to plot up variables. Here we use a custom script which can be copy-pasted from the text into your script windows." width="75%" />
+<p class="caption">
+Figure 8.7: <code>Process simulation mode</code> with <code>Controls</code> window used for the titration script setup and the <code>Sampling</code> script to plot up variables. Here we use a custom script which can be copy-pasted from the text into your script windows.
+</p>
+</div>
+<ul>
+<li>Finally run the script by clicking re-calculate, and inspect the results. You should be getting something similar to Fig. <a href="module8.html#fig:fig-8">8.8</a>. The plot can be modified in the plot window including x-/y-axes labels, plot title, etc.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:fig-8"></span>
+<img src="figures/module8/fig-8.png" alt="Seawater-basalt interaction simulation results showing the volume % of minerals as a function of logarithm of the fluid/rock ratios (F/R)." width="80%" />
+<p class="caption">
+Figure 8.8: Seawater-basalt interaction simulation results showing the volume % of minerals as a function of logarithm of the fluid/rock ratios (F/R).
+</p>
+</div>
+</div>
+<div id="singlepass-heating-model---mobilization-of-cu-pb-zn-ag-and-au" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Singlepass heating model - mobilization of Cu, Pb, Zn, Ag, and Au<a href="module8.html#singlepass-heating-model---mobilization-of-cu-pb-zn-ag-and-au" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Instead of adding rock to a single beaker, we are now taking a fixed packet of fluid (<span class="math inline">\(1000\text{ g}\)</span> of seawater) and passing it sequentially through a series of connected rock blocks (reactors) along a progressive temperature gradient. In this model we will simulate the recharge zone where cold seawater reacts with a series of boxes with fresh basalts. This open system model investigates at which temperature we find the optimal metal mobility, and is also useful to build an input fluid model for later modeling the fluid conduit and uplow zone towards the hydrothermal vents. Typically, the highest temperatures reached at depth close to the impermeable zone and magma body is about 400 <span class="math inline">\(^{\circ}\)</span>C.</p>
+<ul>
+<li><p>In <code>SysEq</code> create a parent record with seawater and basalt containing the metals by cloning the record you created for the tiration model. Call it “SW-B_singlep” and calculate equilibrium at 25 <span class="math inline">\(^{\circ}\)</span>C and 500 bar. We will use 1000 g of seawater and 5 g of basalt. Calculate equilibrium, note that different mineral phases are now stable, some make sense at low temprature such as celadonite, others might be related to the need to add metastability constraints or update the thermodynamic data, which might be more adequate at higher temperature.</p></li>
+<li><p>Switch to the <code>Process simulation</code> mode and create a new record from scratch. Make sure to select the parent record you just created. Call the record “SW-B_singlepass” and choose the <code>R mode</code> this time for single flow-through reactor. Fig. <a href="module8.html#fig:fig-9">8.9</a> shows the setup for the flushing model and plotting window. For the x-axis (abscissa, right click in scalar) we choose <code>cTC</code> and for the y-axis we choose <code>lgm_t</code> which is logarithm molality of total dissolved elements. Click next to get out of the wizard, save, and calculate your results.</p></li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:fig-9"></span>
+<img src="figures/module8/fig-9.png" alt=" (Step 2) Setup of singlepass flushing and heating model (`R mode`): (1) select flushing, (2) select the basalt, (3) seawater, (4) a temperature increase from 25 to 400 &amp;deg;C at 500 bar. (Step 3) Select the log molality elements to be plotted under `logm_t`; use temperature for the x-axis under `Scalar`." width="80%" />
+<p class="caption">
+Figure 8.9:  (Step 2) Setup of singlepass flushing and heating model (<code>R mode</code>): (1) select flushing, (2) select the basalt, (3) seawater, (4) a temperature increase from 25 to 400 °C at 500 bar. (Step 3) Select the log molality elements to be plotted under <code>logm_t</code>; use temperature for the x-axis under <code>Scalar</code>.
+</p>
+</div>
+<ul>
+<li><p>Your plot should look like Fig. <a href="module8.html#fig:fig-10">8.10</a>. If you want you can make additional plots by cloning this record, and for example select pH, Eh, or other variables to plot.</p></li>
+<li><p>In Fig. <a href="module8.html#fig:fig-10">8.10</a> we can see two competing processing for metal mobility. On one hand we have sulfate that gets reduced through interaction of seawater with basalt and results in the precipitation of sulfides in the low temperature range of the model (25-50 °C). This is reflected by the dip in concentration, which is followed by an increase in metal mobility due to an increase in solubility of these metals with prograde temperatures. The reason for this lies in the speciation and a fundamental understanding of metal-ligand complexes, which can be further inspected in the model. To do so I invite you to try to model different fluid parameters to get a better understanding of what controls metal mobility in VMS systems.</p></li>
+<li><p>A major problem of this model is that sulfur is entirely consumed around 175 °C (Fig. <a href="module8.html#fig:fig-10">8.10</a>), however, we want to see how soluble the sulfides are. The model assumes that the metals are part of the basaltic glass when we added them to the <code>PCO</code> and created the metal-bearing basalt. There are several possible reasons why this might not be realistic. Details aside, the flushing model only represents a single pass through the basalt, but once an alteration zones develops, S might be able to be mobilized further into the high temperature region. To model a series of sequential reactors with multiple fluid passes you can try the <a href="module5.html#module5">GEM2MT Module 5</a>.</p></li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:fig-10"></span>
+<img src="figures/module8/fig-10.png" alt="Singlepass flushing and heating model showing the logarithm molality of total dissolved elements in the reacted seawater, pH, eH and activities of OH^-^ and H^+^. This model was setup with 5 g of basalt in each box, 1000 g of reactive seawater and a temperature increase from 25 to 400 &amp;deg;C at 500 bar." width="75%" />
+<p class="caption">
+Figure 8.10: Singlepass flushing and heating model showing the logarithm molality of total dissolved elements in the reacted seawater, pH, eH and activities of OH<sup>-</sup> and H<sup>+</sup>. This model was setup with 5 g of basalt in each box, 1000 g of reactive seawater and a temperature increase from 25 to 400 °C at 500 bar.
+</p>
+</div>
+</div>
+<div id="outcomes-3" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Outcomes<a href="module8.html#outcomes-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Congratulations, you now know how to make a rock with metals, setup a custom script to plot volume %/porosity evolution, and setup a single pass heating model to inspect metal mobility in VMS systems! Couple of things to think about:</p>
+<ul>
+<li>How would the results change if you change the initial basalt compositions, maybe add 1500 ppm S?</li>
+<li>How would the results change if you change the initial seawater/basalt ratio?</li>
+<li>Why are Pb and Zn so mobile? what complexes control transport of Cu? What minerals control solubility of Cu, Pb, and Zn?</li>
+<li>What is the role of pH for metal mobility? and what controls pH in VMS deposits?</li>
+</ul>
+<p><strong>Couple of hints</strong>:</p>
+<p><strong>The Magnesium-Clearing Engine</strong>: The bulk pH of the fluid is fundamentally driven by a massive chemical exchange between seawater and the rock matrix. Pristine seawater contains a huge reservoir of dissolved Mg<sup>2+</sup>. As it heats up, it aggressively pulls silica and iron from the dissolving basalt to form hydrous secondary sheet silicates.</p>
+<p><strong>The Structural OH<sup>−</sup> Consumer</strong>: Chlorite (and at lower temperatures, Mg-smectites like saponite) is the primary mineral that controls and locks away OH<sup>−</sup> groups. This occurs between 200 and 300 °C.</p>
+<p>4SiO<sub>2</sub>​ (aq)+5Mg<sup>2+</sup>+Fe<sup>2+</sup>+10H<sub>2</sub>​O→Mg<sub>5</sub>​FeSi<sub>4</sub>​O<sub>10</sub>​(OH)<sub>8</sub>​ (Chlorite)+12H<sup>+</sup></p>
+<p><strong>The Proton Surplus</strong>: To supply the hydroxyl (OH<sup>−</sup>) groups required to precipitate chlorite, neutral water molecules (H<sub>2</sub>​O) are forced to dissociate. The mineral consumes the OH<sup>−</sup>, pumping a massive surplus of free protons (H+) straight into the fluid, crashing the pH.</p>
+<p>The Acidification Curve: As temperature climbs from 25 to 350 °C, fluid pH drops drastically from a slightly alkaline ~8-9 down to an acidic 2-4.</p>
+<p>Once Reaction A generates acidity (H+) at high temperatures (&gt;350 °C), the fluid switches from a hydration agent to a leaching agent. It uses that acid to strip trace metals out of the primary basalt matrix, turning into an ore-forming fluid:</p>
+<p>CuFeS<sub>2</sub>​ (Chalcopyrite in basalt)+2H<sup>+</sup>+2Cl<sup>−</sup>→CuCl<sup>2−​</sup> (aq)+Fe<sup>2+</sup> (aq)+2H<sub>2</sub>​S (aq)</p>
+<p>Lots to think about…</p>
 
+</div>
 </div>
             </section>
 

@@ -33,7 +33,6 @@ knitr::include_graphics("figures/module6/fig-1.png")
 
 - In the "Controls" tab make sure your setup is correct, including temperature, pressure, amounts of titrants, pH ranges and steps, and have enough records under 'iTm' (i.e. each record will be assigned a new number, from 1000-1200 in 1 steps means a maximum of 200 records will be generated starting with 1000, 1001, and so forth). Not that error messages during the calculations commonly stem from to little amounts added for maximum acid/bases in the 'ipXi' field. If that is the case you can try to increase the mole amounts from 0.1 to 1 mol. The amount of acid/based required to reach a certain pH depends on the initial fluid composition, minerals used, temperature etc.
 
-Congratulations, you know now how to make a REE speciation diagram in GEMS using the MINES thermodynamic database!
 
 - Then click on the calculator icon `Re-calculate and check record data` to display the graph. Figure  \@ref(fig:fig-5f) shows the resulting pH-activity diagram for Nd speciation.
 
@@ -54,3 +53,6 @@ knitr::include_graphics("figures/module6/fig-5.png")
 ```
 
 
+## Outcomes
+
+Congratulations, you now know how to make a REE speciation diagram in GEMS using the MINES thermodynamic database! Understanding these diagrams is crucial to interpret what controls element mobility in hydrothermal fluids. pH is a master variable for fluid-rock interaction, and the solubility of REE strongly depends on pH due to the formation of REE chloride, hydroxyl, and other complexes. This example illustrates that geochemical modeling is a key tool to better understand the underlying chemistry that controls element transport, be it for preparing experimental work in the lab or to prepare a model for interpreting natural geological systems.

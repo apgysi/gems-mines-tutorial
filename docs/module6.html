@@ -159,15 +159,24 @@ document.addEventListener("DOMContentLoaded", function() {
 <ul>
 <li class="chapter" data-level="6.1" data-path="module6.html"><a href="module6.html#create-a-parent-record"><i class="fa fa-check"></i><b>6.1</b> Create a parent record</a></li>
 <li class="chapter" data-level="6.2" data-path="module6.html"><a href="module6.html#setting-up-an-acidbase-titration"><i class="fa fa-check"></i><b>6.2</b> Setting up an acid/base titration</a></li>
+<li class="chapter" data-level="6.3" data-path="module6.html"><a href="module6.html#outcomes-3"><i class="fa fa-check"></i><b>6.3</b> Outcomes</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="module7.html"><a href="module7.html"><i class="fa fa-check"></i><b>7</b> IOA Deposits - REE fractionation and apatite vein replacement reaction</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="module7.html"><a href="module7.html#create-a-parent-record-in-the-ca-fe-p-o-h-cl-f-ree-system"><i class="fa fa-check"></i><b>7.1</b> Create a parent record in the Ca-Fe-P-O-H-Cl-F-REE system</a></li>
-<li class="chapter" data-level="7.2" data-path="module7.html"><a href="module7.html#create-our-rock-and-fluid-pco-in-thermodynamic-database-mode"><i class="fa fa-check"></i><b>7.2</b> Create our rock and fluid PCO in <code>Thermodynamic database mode</code></a></li>
+<li class="chapter" data-level="7.2" data-path="module7.html"><a href="module7.html#create-our-rock-and-fluid-pco-in-thermodynamic-database-mode"><i class="fa fa-check"></i><b>7.2</b> Create our rock and fluid PCO in Thermodynamic database mode</a></li>
 <li class="chapter" data-level="7.3" data-path="module7.html"><a href="module7.html#setting-up-a-multipass-leaching-model-in-process-simulations"><i class="fa fa-check"></i><b>7.3</b> Setting up a multipass leaching model in <code>Process</code> simulations</a></li>
 <li class="chapter" data-level="7.4" data-path="module7.html"><a href="module7.html#plotting-and-model-modifications-for-more-acidic-fluid"><i class="fa fa-check"></i><b>7.4</b> Plotting and model modifications for more acidic fluid</a></li>
+<li class="chapter" data-level="7.5" data-path="module7.html"><a href="module7.html#outcomes-4"><i class="fa fa-check"></i><b>7.5</b> Outcomes</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="module8.html"><a href="module8.html"><i class="fa fa-check"></i><b>8</b> Seawater-basalt recharge zone at Volcanic Hosted Massive Sulphide (VMS) Deposits</a></li>
+<li class="chapter" data-level="8" data-path="module8.html"><a href="module8.html"><i class="fa fa-check"></i><b>8</b> Seawater-basalt recharge zone at Volcanogenic Massive Sulfide (VMS) Deposits</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="module8.html"><a href="module8.html#calculate-the-seawater-basalt-equilibrium-at-elevated-temperatures-and-pressures"><i class="fa fa-check"></i><b>8.1</b> Calculate the seawater-basalt equilibrium at elevated temperatures and pressures</a></li>
+<li class="chapter" data-level="8.2" data-path="module8.html"><a href="module8.html#clone-and-create-a-basalt-pco-with-metals-cu-pb-zn-ag-and-au"><i class="fa fa-check"></i><b>8.2</b> Clone and create a basalt PCO with metals (Cu, Pb, Zn, Ag, and Au)</a></li>
+<li class="chapter" data-level="8.3" data-path="module8.html"><a href="module8.html#seawater-basalt-titration-model-and-porosity-evolution"><i class="fa fa-check"></i><b>8.3</b> Seawater-basalt titration model and porosity evolution</a></li>
+<li class="chapter" data-level="8.4" data-path="module8.html"><a href="module8.html#singlepass-heating-model---mobilization-of-cu-pb-zn-ag-and-au"><i class="fa fa-check"></i><b>8.4</b> Singlepass heating model - mobilization of Cu, Pb, Zn, Ag, and Au</a></li>
+<li class="chapter" data-level="8.5" data-path="module8.html"><a href="module8.html#outcomes-5"><i class="fa fa-check"></i><b>8.5</b> Outcomes</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="acknowledgment.html"><a href="acknowledgment.html"><i class="fa fa-check"></i>Acknowledgment</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -217,10 +226,7 @@ Figure 6.1: Input recipe in ‘SysEq’ which we need to add our acid (HCl) and 
 <li><p>Select items to be plotted (<code>Scalars</code>: pH; <code>lga</code>: aqueous Nd species; ‘lgm_t’ dissolved Nd, as shown in Figure <a href="module6.html#fig:fig-4f">6.4</a>.</p></li>
 <li><p>Accept all the following dialogues. Then click on <code>Save this record to database</code>, which creates your new process simulation record.</p></li>
 <li><p>In the “Controls” tab make sure your setup is correct, including temperature, pressure, amounts of titrants, pH ranges and steps, and have enough records under ‘iTm’ (i.e. each record will be assigned a new number, from 1000-1200 in 1 steps means a maximum of 200 records will be generated starting with 1000, 1001, and so forth). Not that error messages during the calculations commonly stem from to little amounts added for maximum acid/bases in the ‘ipXi’ field. If that is the case you can try to increase the mole amounts from 0.1 to 1 mol. The amount of acid/based required to reach a certain pH depends on the initial fluid composition, minerals used, temperature etc.</p></li>
-</ul>
-<p>Congratulations, you know now how to make a REE speciation diagram in GEMS using the MINES thermodynamic database!</p>
-<ul>
-<li>Then click on the calculator icon <code>Re-calculate and check record data</code> to display the graph. Figure <a href="module6.html#fig:fig-5f">6.5</a> shows the resulting pH-activity diagram for Nd speciation.</li>
+<li><p>Then click on the calculator icon <code>Re-calculate and check record data</code> to display the graph. Figure <a href="module6.html#fig:fig-5f">6.5</a> shows the resulting pH-activity diagram for Nd speciation.</p></li>
 </ul>
 <div class="figure"><span style="display:block;" id="fig:fig-2f"></span>
 <img src="figures/module6/fig-2.png" alt="In `Process` we create a new record from scratch and select the `Process simulation code` (G) for inverse titration." width="90%" />
@@ -246,6 +252,10 @@ Figure 6.4: In this wizard step we select the variables to be plotted. pH is fou
 Figure 6.5: pH-acitivty plot showing the total dissolved molality of Nd as a function of pH and the log activity of acqueous Nd species. In this example Nd3+ and Nd chloride species are predominant at acidic pH and Nd hydroxyl species at higher pH. Note that the Nd hydroxyl species originate from the Supcrt92 database, and need to be updated in the future. The species are represented as anhydrous compounds but can be related to the more common stoichiometric formula, for e.g. NdO2H0 + H2O = Nd(OH)30.
 </p>
 </div>
+</div>
+<div id="outcomes-3" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Outcomes<a href="module6.html#outcomes-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Congratulations, you now know how to make a REE speciation diagram in GEMS using the MINES thermodynamic database! Understanding these diagrams is crucial to interpret what controls element mobility in hydrothermal fluids. pH is a master variable for fluid-rock interaction, and the solubility of REE strongly depends on pH due to the formation of REE chloride, hydroxyl, and other complexes. This example illustrates that geochemical modeling is a key tool to better understand the underlying chemistry that controls element transport, be it for preparing experimental work in the lab or to prepare a model for interpreting natural geological systems.</p>
 
 </div>
 </div>
